@@ -1,0 +1,13 @@
+var timeDiff = function (timestamp_diff, end_time) {
+  var _now = getDate().getTime()
+  var _nowDate = getDate(_now + timestamp_diff).getTime()
+  var endTime = getDate(end_time).getTime()
+  if (_nowDate > endTime) {
+    return true
+  }
+  if (_nowDate < endTime) {
+    return false
+  }
+}
+
+module.exports = timeDiff

@@ -1,0 +1,4 @@
+<span class="currency">
+  <i class="currency-symbol">￥</i>
+  <span>{{ cValue }}</span>
+</span>

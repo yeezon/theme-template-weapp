@@ -1,0 +1,28 @@
+
+.checkout_sums {
+  padding: 13px 15px;
+  background-color: #fff;
+}
+.checkout_sums-item {
+  display: flex;
+  justify-content: space-between;
+  line-height: 26px;
+}
+.checkout_sums-count {
+  flex: 1;
+  padding: 0 0 0 15px;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.total {
+  color: #f44;
+  font-weight: bold;
+}
+
+.cell {
+  border: 0 solid #d5d5d5;
+  border-width: 1rpx 0;
+  background-color: #fff;
+}

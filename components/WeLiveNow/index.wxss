@@ -1,0 +1,6 @@
+:host {
+  position: fixed;
+  top: 90%;
+  left: calc(100% - 100px);
+  background-color: #fff;
+}

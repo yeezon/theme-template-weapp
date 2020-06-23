@@ -1,0 +1,23 @@
+<!--pages/security/security.wxml-->
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+<ui-scroll-view>
+  <view wx:if="{{customer && customer.social_type}}" class="security-row-list">
+    <row-list title="绑定普通账号" desc="" mode="none" bindtap="bindAccount"></row-list>
+  </view>
+  <view wx:if="{{customer && !customer.social_type}}" class="security-row-list">
+    <row-list title="账号密码" desc="修改账号密码" mode="none" bindtap="changePassword"></row-list>
+  </view>
+  <!-- <view class="security-bind-wrap">
+    <view class="security-bind-title">社交账号绑定</view>
+    <view class="security-social_cell">
+      <image src="../../assets/icons/icon-tips.svg" mode="aspectFill"></image>
+      <text>暂未对接社交平台</text>
+    </view>
+  </view> -->
+</ui-scroll-view>
+
+
+<!-- 登录modal  -->
+<login-modal show="{{showLoginModal}}"></login-modal>

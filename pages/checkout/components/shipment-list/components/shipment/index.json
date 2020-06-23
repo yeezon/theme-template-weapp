@@ -1,0 +1,9 @@
+
+{
+  "component": true,
+  "usingComponents": {
+    "price": "../../../../../../components/price/price",
+    "popup": "../../../../../../components/popup/popup",
+    "product": "./components/product/index"
+  }
+}

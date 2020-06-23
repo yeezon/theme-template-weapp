@@ -1,0 +1,10 @@
+
+.checkout_ship_list-tips {
+  margin: 15px 0;
+  padding: 13px 15px;
+  background-color: #fff;
+  border: 0 solid #d5d5d5;
+  border-width: 1rpx 0;
+  line-height: 22px;
+  color: #999;
+}

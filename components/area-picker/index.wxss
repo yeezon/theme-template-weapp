@@ -1,0 +1,29 @@
+
+.area-picker {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;  
+}
+
+.area-picker-text {
+  font-size: 28rpx;
+  color: #a6a6a6;
+  overflow: hidden;
+  font-weight: normal;
+  text-overflow: ellipsis;
+}
+
+.area-picker-text.selected {
+  color: #262626;
+  font-weight: bold;
+}
+
+.area-picker-image {
+  position: absolute;
+  top: -6rpx;
+  right: 0;
+  width: 22rpx;
+  height: 38rpx;
+}

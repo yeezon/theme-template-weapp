@@ -1,0 +1,6 @@
+
+{
+  "usingComponents": {
+    "main": "./components/main/index"
+  }
+}

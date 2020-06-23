@@ -1,0 +1,18 @@
+/* components/load-tips/load-tips.js.wxss */
+.load-tips-wrap {
+  padding: 25% 0 0;
+  width: 100%;
+  text-align: center;
+
+}
+
+.img {
+  width: 144rpx;
+  height: 144rpx;
+  margin: 0 0 30rpx;
+}
+
+.text {
+  font-size: 28rpx;
+      color: #9e9e9e;
+}

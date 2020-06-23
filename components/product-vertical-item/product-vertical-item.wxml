@@ -1,0 +1,17 @@
+<!--components/product-vertical-item/product-vertical-item.wxml-->
+<view class='product-vertical-item' id="{{product.id}}" bindtap='onTap'>
+  <image src='https:{{product.feature_image.src}}' mode='aspectFill'>
+    <!-- <view wx:if="{{!product.sku_stock}}" class="soldout-tag">售罄</view> -->
+  </image>
+  <view class='product-vertical-item_info'>
+    <view class="brand">{{product.vendor.name}}</view>
+    <view class='name'>{{product.name}}</view>
+    <view class='price'>
+      <text wx:if="{{priceTag}}" class="product-item_tag">{{priceTag}}</text>
+      <price value="{{product.price_min}}" font-size="28"></price>
+      <text wx:if="{{product.price_min < product.price_max}}" class="price_line">~</text>
+      <price wx:if="{{product.price_min < product.price_max}}" value="{{product.price_max}}" font-size="28"></price>
+      <price wx:if="{{product.price_min < product.compare_price_max}}" value="{{product.compare_price_max}}" font-size="24" type="del"></price>
+    </view>
+  </view>
+</view>

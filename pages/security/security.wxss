@@ -1,0 +1,48 @@
+/* pages/security/security.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.security-row-list {
+  padding-top: 30rpx;
+}
+
+.security-row-list row-list button {
+  border-top: 1rpx solid #d5d5d5;
+  border-bottom: 1rpx solid #d5d5d5;
+}
+
+.security-row-list row-list button /deep/ .list__body {
+  min-height: 88rpx;
+}
+
+.security-bind-wrap {
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  color: #333;
+  padding: 0 30rpx;
+  border-top: 1rpx solid #d5d5d5;
+  border-bottom: 1rpx solid #d5d5d5;
+  background: #fff;
+}
+
+.security-bind-title {
+  font-size: 28rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #333;
+  border-bottom: 1rpx solid #d5d5d5;
+}
+
+.security-social_cell {
+  display: flex;
+  padding: 20rpx 0;
+  background-color: #fff;
+}
+
+.security-social_cell image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}

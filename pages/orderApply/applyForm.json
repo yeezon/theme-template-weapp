@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "ui-scroll-view": "../../components/scroll-view/scroll-view",
+    "login-modal": "../../components/login-modal/login-modal",
+    "s-apply-schedule": "../../components/s-apply-schedule/s-apply-schedule",
+    "price": "../../components/price/price",
+    "upload": "./components/upload/upload"
+  }
+}

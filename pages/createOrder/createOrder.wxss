@@ -1,0 +1,296 @@
+/* pages/createOrder/createOrder.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+button {
+  margin: 0;
+  border: none;
+  border-radius: 8rpx;
+}
+
+button::after {
+  border: none;
+  border-radius: 8rpx;
+}
+
+.new-order-info {
+  padding-bottom: 90rpx;
+}
+
+.new-order-address-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120rpx;
+  margin-bottom: 18rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.new-order-address-wrap .address-icon {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 30rpx;
+}
+
+.new-order-address_noAddress {
+  display: flex;
+  font-size: 28rpx;
+  color: #333;
+  align-items: center;
+}
+
+.new-order-address-wrap .new-order-address_noAddress .address-icon {
+  margin-right: 22rpx;
+}
+
+.new-order-address_hasAddress {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 25rpx 30rpx;
+}
+
+.new-order-address_hasAddress .address-info {
+  flex: 1;
+}
+
+.new-order-address_hasAddress .address-info .user {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #444;
+  font-weight: bold;
+}
+
+.new-order-address_hasAddress .address-info .address {
+  font-size: 24rpx;
+  color: #444;
+  margin-top: 10rpx;
+}
+
+.new-order-address_hasAddress .address-info .user .name {
+  display: inline-block;
+  max-width: 250rpx;
+}
+
+.new-order-address_hasAddress .address-info .user .mobile {
+  display: inline-block;
+  margin-left: 20rpx;
+}
+
+.new-order-address_hasAddress .address-info .user .tag {
+  display: inline-flex;
+  width: 60rpx;
+  height: 30rpx;
+  margin-left: 18rpx;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15rpx;
+  font-size: 20rpx;
+  font-weight: normal;
+  color: #fff;
+  background-color: #ff812d;
+}
+
+.new-order-address_hasAddress .address-select-icon {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}
+
+/*  */
+
+.new-order-pro-info-wrap {
+  margin-bottom: 18rpx;
+  background: #fff;
+}
+
+.new-order-pro-info {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
+  margin-left: 32rpx;
+  padding: 30rpx 32rpx 30rpx 0;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.package-title {
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.package-tag {
+  display: inline-block;
+  height: 40rpx;
+  padding: 0 16rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #fdac39;
+  border: 1rpx solid #fdac39;
+  border-radius: 4rpx;
+}
+
+.new-order-pro-info:last-child {
+  border-bottom: none;
+}
+
+.new-order-pro-info image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 4rpx;
+}
+
+.new-order-pro-info .info {
+  flex: 1;
+  margin-left: 28rpx;
+  overflow: hidden;
+}
+
+.new-order-pro-info .info .name {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 6rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.new-order-pro-info .info .sku {
+  font-size: 24rpx;
+  color: #999;
+  height: 36rpx;
+  line-height: 32rpx;
+}
+
+.new-order-pro-info .info .price {
+  display: flex;
+  margin-top: 8rpx;
+}
+
+.new-order-pro-info .info new-price {
+  flex: 1;
+  display: flex;
+  font-size: 32rpx;
+}
+
+.new-order-pro-info .info .quantity {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.new-order-pro-info-wrap .remark-wrap {
+  padding: 20rpx 0 26rpx;
+}
+
+.new-order-pro-info-wrap .remark {
+  height: 72rpx;
+  background: #f1f1f1;
+  border-radius: 36rpx;
+  margin: 0 32rpx;
+  font-size: 28rpx;
+  color: #999;
+  padding: 0 30rpx;
+}
+
+/*  */
+
+.new-order-list {
+  margin: 32rpx 0;
+}
+
+.new-order-list-item {
+  display: flex;
+  font-size: 28rpx;
+  color: #262626;
+  align-items: center;
+  margin-bottom: 26rpx;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #ebebeb;
+}
+
+.new-order-list-item .title-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.new-order-list-item .text {
+  flex: 1;
+  margin: 0 25rpx;
+}
+
+.new-order-cupon .allow-icon {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+/*  */
+
+.new-order-bottom {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+  text-align: center;
+  /* padding: 30rpx 0 48rpx; */
+  background: #fff;
+  z-index: 9;
+}
+
+.new-order-bottom .isIpx {
+  padding-bottom: ;
+}
+
+.new-order-bottom .tips {
+  font-size: 24rpx;
+  color: #a6a6a6;
+  padding: 0 48rpx;
+  margin-bottom: 30rpx;
+}
+
+.new-order-bottom .pay-amount {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  padding-left: 30rpx;
+}
+
+.new-order-bottom .pay-postage {
+  margin: 0 30rpx;
+  font-size: 22rpx;
+  color: #999;
+}
+
+.new-order-bottom form {
+  height: 100%;
+}
+
+.new-order-bottom .pay-btn {
+  display: flex;
+  width: 240rpx;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: #fb544e;
+  border-radius: 0;
+}
+
+.new-order-bottom .pay-btn:active {
+  opacity: 0.9;
+}

@@ -1,0 +1,8 @@
+
+.new-scroll-view::-webkit-scrollbar {
+  display: block;
+}
+.fix-iphonex-bottom {
+  width: 100%;
+  height: 68rpx;
+}

@@ -1,0 +1,5 @@
+<!--components/product-set-title/product-set-title.wxml-->
+<view class='product-set-title'>
+  <view class='main-title'>{{mainTitle}}</view>
+  <view class='sub-title'>{{subTitle}}</view>
+</view>

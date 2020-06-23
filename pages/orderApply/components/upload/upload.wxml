@@ -1,0 +1,16 @@
+<!--pages/orderApply/components/upload/upload.wxml-->
+<view class="s-upload">
+  <view class="s-upload-item" wx:for="{{imgs}}" wx:key="{{index}}" style="`background-image:url('${img.src}')`">
+    <view class="s-delete">
+      <text class="s-delete-btn">删除</text>
+    </view>
+  </view>
+  <view wx:if="{{imgs.length < size}}" class="s-upload-item s-upload-btn">
+    <view class="s-cont" bindtap="chooseImage">
+      <!-- <sk-icon name="plus" class="s-icon"></sk-icon> -->
+      <image class="s-icon" src="../../../../assets/icons/plus.svg" mode="aspectFit"></image>
+      <view>上传凭证</view>
+      <view>(最多{{size}}张)</view>
+    </view>
+  </view>
+</view>

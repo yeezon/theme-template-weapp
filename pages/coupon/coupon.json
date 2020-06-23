@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "scroll-view": "../../components/scroll-view/scroll-view",
+    "load-tips": "../../components/load-tips/load-tips",
+    "price": "../../components/price/price"
+  }
+}

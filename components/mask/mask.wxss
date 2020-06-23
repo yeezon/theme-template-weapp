@@ -1,0 +1,54 @@
+/* components/mask/mask.wxss */
+
+.new-mask-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+  -webkit-backface-visibility: hidden;
+  z-index: 996;
+}
+
+.new-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+  -webkit-backface-visibility: hidden;
+  z-index: 996;
+}
+
+.new-mask.scale-out, .new-mask-wrap.scale-out {
+  transition: all 0.25s ease-in;
+  transform: scale(0);
+}
+
+.new-mask.scale-out.show, .new-mask-wrap.scale-out.show {
+  transform: scale(1);
+}
+
+.new-mask.scale-in, .new-mask-wrap.scale-in {
+  transition: all 0.25s ease-in;
+  transform: scale(1.2);
+}
+
+.new-mask.scale-in.show, .new-mask-wrap.scale-in.show {
+  transform: scale(1);
+}
+
+.new-mask.show, .new-mask-wrap.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*  */

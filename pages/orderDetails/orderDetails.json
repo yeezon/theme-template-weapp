@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "price": "../../components/price/price",
+    "ui-scroll-view": "../../components/scroll-view/scroll-view",
+    "login-modal": "../../components/login-modal/login-modal",
+    "count-down": "../../components/count-down/count-down"
+  }
+}

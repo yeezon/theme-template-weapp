@@ -1,0 +1,71 @@
+<!--  -->
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+
+<view class="search" style='margin-top: {{navBarHeight}}px'>
+  <view class="search-wrap" style='top: {{navBarHeight}}px;'>
+    <view class="search-input-con">
+      <image src='../../assets/icons/search_icon.svg' mode='aspectFit'></image>
+      <input placeholder='搜索想要的商品' placeholder-style="color: #808080;" bindblur='inputStatusChange' bindfocus='inputStatusChange' focus='{{autoFocus}}' bindinput='searchInput' bindconfirm="confirmSearch" value="{{searchKey}}"></input>
+      <image wx:if="{{inputClearShow || searchKey}}" class='delete-icon' src='../../assets/icons/close_circle_icon.svg' mode='aspectFit' bindtap='clearInput'></image>
+    </view>
+    <view class="search-btn" bindtap='confirmSearch'>搜索</view>
+  </view>
+  <!--  -->
+  <ui-scroll-view bindscrolltolower="scrolltolower">
+    <!-- 未搜索 -->
+    <!--  || !searchKey && inputFocus -->
+    <view wx:if="{{!showResault}}" class="search-result-wrap">
+      <view wx:if="{{searchDatas.length}}" class="search-history-wrap">
+        <view class="search-history">
+          <view class="search-history-title">历史搜索</view>
+          <view class="search-history-delete" bindtap='clearAll'>
+            <image src='../../assets/icons/search_delete.png' mode='aspectFit'></image>
+          </view>
+        </view>
+        <view class="history-list">
+          <block wx:for="{{searchDatas}}" wx:key="{{index}}">
+            <view class="history-item ellipsis" data-key="{{item}}" bindtap='searchKeyTap'>{{item}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <!-- 搜索结果 -->
+    <view wx:else class="search-result-wrap">
+      <!-- 筛选 -->
+      <view class='search-result-filter'>
+        <view class='search-result-filter-item'>
+          <view class="text {{config.sort_type === 1 ? 'active' : ''}}" id='1' bindtap='filterChange'>综合</view>
+        </view>
+        <view class='search-result-filter-item'>
+          <view class="text {{config.sort_type === 2 ? 'active' : ''}}" id='2' bindtap='filterChange'>最新</view>
+        </view>
+        <view class='search-result-filter-item'>
+          <view class="text {{config.sort_type === 3 ? 'active' : ''}}" id='3' bindtap='filterChange'>最热</view>
+        </view>
+        <view class='search-result-filter-item'>
+          <view class="text {{config.sort_type === 4 || config.sort_type === 5 ? 'active' : ''}}" id='5' bindtap='filterChange'>
+            价格
+            <view class="triangle-up {{config.sort_type === 5 ? 'active' : ''}}"></view>
+            <view class="triangle-down {{config.sort_type === 4 ? 'active' : ''}}"></view>
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{products.length}}">
+        <view class='search-products-con'>
+          <!-- 商品列表 -->
+          <product-list products="{{products}}"></product-list>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="search-products-con_empty">
+          <image src='../../assets/icons/search_empty_icon.png' mode='aspectFit'></image>
+          <view>无搜索结果</view>
+        </view>
+      </block>
+      <!--  -->
+      <view wx:if="{{loadedAll}}" class='pro-loaded-all'>没有更多了~</view>
+    </view>
+  </ui-scroll-view>
+</view>

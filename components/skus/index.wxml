@@ -1,0 +1,11 @@
+
+<wxs module="getButtonClass" src="./modules/getButtonClass.wxs"></wxs>
+
+<view class="sku-options">
+  <block wx:for="{{ options }}" wx:for-item="oOpt" wx:key="id">
+    <view class="s-label">{{ oOpt.name }}</view>
+    <view class="s-key" wx:for="{{ oOpt.values }}" wx:for-index="nIndex" wx:for-item="val" wx:key="nIndex">
+      <button class="s-btn {{ getButtonClass(oOpt.id, nIndex + 1, oIsChoose, cannotChooseList) }}" type="text" bindtap="fnChoose" data-id="{{ oOpt.id }}" data-rank="{{ nIndex + 1 }}">{{ val || '默认' }}</button>
+    </view>
+  </block>
+</view>

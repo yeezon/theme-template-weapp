@@ -1,0 +1,363 @@
+/* pages/search/search.wxss */
+
+page {
+  background: #f4f4f4;
+}
+
+.search-wrap {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #fff;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f4f4f4;
+  z-index: 2;
+}
+
+.search-wrap image {
+  width: 34rpx;
+  height: 34rpx;
+  padding: 8rpx 20rpx;
+  margin-right: 10rpx;
+}
+
+.search-input-con {
+  position: relative;
+  flex: 1;
+  height: 72rpx;
+  display: inline-flex;
+  align-items: center;
+  background: #f2f2f2;
+  border-radius: 36rpx;
+  margin-left: 28rpx;
+}
+
+.search-input-con image {
+  width: 28rpx;
+  height: 28rpx;
+  margin: 0 16rpx 0 22rpx;
+}
+
+.search-input-con input {
+  flex: 1;
+  font-size: 26rpx;
+  color: #262626;
+  margin-right: 66rpx;
+  padding-right: 6rpx;
+}
+
+.search-input-con .delete-icon {
+  position: absolute;
+  top: 10rpx;
+  right: 18rpx;
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-flex;
+  align-items: center;
+  padding: 10rpx;
+  margin: 0;
+}
+
+.search-btn {
+  width: 100rpx;
+  height: 70rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #333;
+  background: #fff;
+  margin-left: 14rpx;
+  margin-right: 20rpx;
+  border-radius: 4rpx;
+}
+
+.search-history {
+  display: flex;
+  padding: 30rpx 30rpx 20rpx;
+  background: #fff;
+}
+
+.search-history-title {
+  flex: 1;
+  font-size: 24rpx;
+  color: #999;
+  align-items: center;
+}
+
+.search-history-delete {
+  display: inline-flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.search-history-delete image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
+}
+
+.search-history-wrap {
+  background: #fff;
+}
+
+.history-list {
+  margin: 0 28rpx 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.history-item {
+  display: inline-block;
+  max-width: 90%;
+  min-width: 38rpx;
+  padding: 0 28rpx;
+  font-size: 24rpx;
+  min-height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-right: 18rpx;
+  margin-bottom: 10rpx;
+  color: #666;
+  background: #ededed;
+  border-radius: 30rpx;
+}
+
+.search-result-wrap {
+  /* padding-top: 92rpx; */
+}
+
+.search-products-con {
+  padding: 40rpx 0;
+  background: #fff;
+}
+
+.search-result-filter {
+  position: sticky;
+  top: 0rpx;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72rpx;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  color: #444;
+  background: #fff;
+  border-bottom: 1rpx solid #f4f4f4;
+  z-index: 9;
+}
+
+.search-result-filter-item {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 72rpx;
+  line-height: 72rpx;
+}
+
+.search-result-filter-item image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 6rpx;
+}
+
+.search-result-filter-item .line {
+  position: absolute;
+  left: 0;
+  color: #dedede;
+}
+
+.search-result-filter-item .text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-result-filter-item .text.active {
+  font-weight: bold;
+  color: #ee1c3f;
+  border-bottom: 2rpx solid #ee1c3f;
+}
+
+.search-result-filter-item .text.filter.active {
+  border-bottom: none;
+}
+
+.triangle-up {
+  position: absolute;
+  top: 26rpx;
+  right: -18rpx;
+  width: 0;
+  height: 0;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  border-bottom: 8rpx solid #444;
+}
+
+.triangle-down {
+  position: absolute;
+  top: 38rpx;
+  right: -18rpx;
+  width: 0;
+  height: 0;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  border-top: 8rpx solid #444;
+}
+
+.triangle-up.active {
+  border-bottom: 8rpx solid #ee1c3f;
+}
+
+.triangle-down.active {
+  border-top: 8rpx solid #ee1c3f;
+}
+
+.search-products-con_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 276rpx;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.search-products-con_empty image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 28rpx;
+}
+
+.pro-loaded-all {
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+  padding: 30rpx;
+}
+
+/* new-popup  */
+
+.search-popup {
+  z-index: 999 !important;
+}
+
+.search-popup-content {
+  width: 660rpx;
+  overflow: hidden;
+  background: #fff;
+}
+
+.search-popup .search-filter-popup-container {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.search-filter-popup-filter {
+  /* min-height: calc(100% - 27rpx); */
+  padding: 38rpx 38rpx 28rpx 42rpx;
+}
+
+/*  */
+
+.search-popup-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #e0e0e0;
+}
+
+.search-popup-bottom button {
+  margin: 0;
+  border: none;
+  border-radius: none;
+  font-size: 28rpx;
+}
+
+.search-popup-bottom button::after {
+  border: none;
+  border-radius: none;
+}
+
+.search-popup-bottom button.clear-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-right: 18rpx;
+  color: #262626;
+  box-sizing: border-box;
+}
+
+.search-popup-bottom .comfirm-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  background: #d04233;
+  box-sizing: border-box;
+}
+
+/*  */
+
+.search-filter-popup-filter-wrap {
+  margin-bottom: 15rpx;
+}
+
+.search-filter-list {
+  /* display: flex; */
+  padding: 10rpx 0;
+}
+
+.search-filter-item {
+  /* width: 180rpx; */
+  display: inline-flex;
+  margin: 0 20rpx 20rpx 0;
+  padding: 28rpx 44rpx;
+  border-radius: 0;
+  color: #1f2d3d;
+  background-color: #f2f2f2;
+  line-height: 1;
+  font-size: 24rpx;
+  transition: all 0.2s;
+}
+
+.search-filter-item.active {
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+.search-popup-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  line-height: 44px;
+  font-size: 28rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.search-popup-title image {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 30rpx;
+  top: 14px;
+}

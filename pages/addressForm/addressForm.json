@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "new-nav-bar": "../../components/nav-bar/nav-bar",
+    "new-input": "../../components/input/input",
+    "new-scroll-view": "../../components/scroll-view/scroll-view",
+    "area-picker": "../../components/area-picker"
+  }
+}

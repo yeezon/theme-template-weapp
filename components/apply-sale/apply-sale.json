@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "apply-due": "./components/apply-due",
+    "sale-due": "./components/sale-due"
+  }
+}

@@ -1,0 +1,5 @@
+<view class="new-mask-wrap {{ effect }} {{ selfShow ? 'show' : ''}}" catch:touchmove="handleTouchMove">
+  <view class="new-mask {{ effect }} {{ selfShow ? 'show' : ''}}" bindtap="handleMaskTap" style="opacity: {{opacity}}">
+  </view>
+  <slot></slot>
+</view>

@@ -1,0 +1,208 @@
+/* pages/services/services.wxss */
+page {
+  background: #f4f4f4;
+}
+.select-container {
+  background: #fff;
+  position: sticky;
+  top:0;
+  left: 0;
+}
+.select-tool {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  height: 72rpx;
+  line-height: 72rpx;
+  color: #444;
+}
+
+.input-container {
+  display: flex;
+  padding: 10rpx 20rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  align-items: center;
+}
+
+.input-container .input {
+  width: 80%;
+  border: 1rpx solid #ccc;
+  padding: 0 20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+}
+
+.input-container text {
+  margin-left: 20rpx;
+}
+
+.select-tool .picker {
+  position: relative;
+  display: inline;
+  align-items: center;
+  justify-content: center;
+}
+
+.triangle-up {
+  position: absolute;
+  top: 26rpx;
+  right: -18rpx;
+  width: 0;
+  height: 0;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  border-bottom: 8rpx solid #444;
+}
+
+.triangle-down {
+  position: absolute;
+  top: 50%;
+  right: -28rpx;
+  width: 0;
+  height: 0;
+  border-left: 6rpx solid transparent;
+  border-right: 6rpx solid transparent;
+  border-top: 8rpx solid #444;
+
+}
+
+/* */
+
+.s-order-item {
+  background: #fff;
+  margin-top: 20rpx;
+  border-top: 2rpx solid #ddd;
+}
+
+.s-order-header {
+  padding: 24rpx 30rpx;
+  color: #333;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.s-order-type {
+  font-size: 32rpx;
+}
+
+.s-order-info {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+.s-order-info .s-info-line {
+  padding: 0 16rpx;
+  color: #ddd;
+  font-weight: 100;
+}
+
+.s-order-list {
+  border-bottom: 2rpx solid #ddd;
+}
+
+.s-order-list_item {
+  display: flex;
+}
+
+.s-order-pro {
+  flex: 1;
+  width: 70%;
+  border-bottom: 2rpx solid #ddd;
+  align-items: center;
+}
+
+.s-pro-list {
+  flex: 1;
+  overflow: hidden;
+}
+
+.s-pro {
+  padding: 30rpx;
+  flex: 1;
+  /* width: 70%; */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.s-pro-img {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.s-pro-info {
+  flex: 1;
+  margin-left: 16rpx;
+  font-size: 24rpx;
+  color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.s-pro-name {
+  color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.s-pro-sku {
+  margin: 10rpx 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #888;
+}
+
+.s-status {
+  width: auto;
+  padding: 0 50rpx;
+  border-left: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.s-order-confg {
+  width: 100%;
+  line-height: 74rpx;
+  height: 74rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+
+.s-order-confg text {
+  padding: 20rpx;
+  margin: 0 10rpx;
+  font-size: 24rpx;
+}
+
+.s-no-orders {
+  margin-top: 24rpx;
+  padding: 240px 15rpx;
+  text-align: center;
+  border-top: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #ddd;
+  color: #888;
+  background: #fff;
+}
+
+.s-status .s-warming {
+  color: #f44;
+}
+
+.loaded-all {
+  display: block;
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+  padding: 20rpx;
+  margin-bottom: 18rpx;
+}

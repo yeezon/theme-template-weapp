@@ -1,0 +1,13 @@
+/**
+ * nSku, nDisID
+ */
+var checkPartialDis = function (oSkuMap, oEventSkuMap, oProDisMap, nSku, nDisID) {
+  var _sku = nSku + ''
+  var _oSku = oSkuMap[_sku] || {}
+  var _nProID = _oSku.product_id || null
+  var _isEventSku = oEventSkuMap[_sku]
+
+  return (oProDisMap[_nProID + ''] === nDisID) && !_isEventSku && _oSku.is_check
+}
+
+module.exports = checkPartialDis

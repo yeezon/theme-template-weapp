@@ -1,0 +1,15 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav-bar": "../../../../components/nav-bar/nav-bar",
+    "ui-scroll-view": "../../../../components/scroll-view/scroll-view",
+    "load-tips": "../../../../components/load-tips/load-tips",
+    "price": "../../../../components/price/price",
+    "address": "../address/index",
+    "payment": "../payment/index",
+    "shipment-list": "../shipment-list/index",
+    "remark": "../remark/index",
+    "sums": "../sums/index",
+    "bar": "../bar/index"
+  }
+}

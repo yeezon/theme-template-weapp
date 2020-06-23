@@ -1,0 +1,66 @@
+/* pages/socialSync/socialSync.wxss */
+
+page {
+  background: #f6f4f9;
+  font-size: 28rpx;
+}
+
+.social-sync-wrap {
+  padding-top: 30rpx;
+}
+
+.input-container {
+  margin: 0 30rpx;
+  background: #fff;
+  display: flex;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-top: 1rpx solid #d5d5d5;
+}
+.input-container:first-child {
+  border-top: none;
+}
+
+.input-container .input-wrap {
+  flex: 1;
+}
+
+.input {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  flex-grow: 1;
+}
+
+.text {
+  width: 100rpx;
+}
+
+.sub-btn {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 60rpx auto auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 8rpx;
+  background: #fb544e;
+}
+
+.input-list {
+  border-top: 1rpx solid #d5d5d5;
+  border-bottom: 1rpx solid #d5d5d5;
+  background: #fff;
+}
+
+.social-sync-wrap .btn-type-change {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 10rpx auto auto;
+  text-align: center;
+  color: #fb544e;
+  border-radius: 8rpx;
+  border: 1px solid #fb544e;
+  box-sizing: border-box;
+}

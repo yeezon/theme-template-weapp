@@ -1,0 +1,5 @@
+var formatAddress = function (address) {
+  return (address.split(',')[0] || '') + ' ' + (address.split(',')[1] || '') + ' ' + (address.split(',')[2] || '')
+}
+
+module.exports = formatAddress

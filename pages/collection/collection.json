@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "ui-scroll-view": "../../components/scroll-view/scroll-view",
+    "product-set-title": "../../components/product-set-title/product-set-title",
+    "product-list": "../../components/product-list/product-list"
+  }
+}

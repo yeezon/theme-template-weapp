@@ -1,0 +1,82 @@
+/* components/apply-sale/components/apply-due.wxss */
+.dialog-container {
+  width:80%;
+  padding:40rpx;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  z-index: 998;
+  margin-left: -40%;
+  border-radius: 8rpx;
+}
+ .s-title{
+  font-weight: bold;
+  margin: 0 0 72rpx;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close-image {
+  width:36rpx;
+  height: 36rpx;
+}
+.s-main{
+  padding-bottom: 28rpx;
+}
+.s-apply-item{
+  text-align: left;
+  border:2rpx solid #999;
+  border-radius: 6rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  padding:20rpx;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.s-box-apply .active{
+  border:4rpx solid #4d90fe;
+  padding: 19rpx;
+}
+.s-apply-icon image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 40rpx;
+}
+.sk-icon.s-star{
+  font-size:70rpx;
+}
+.s-apply-txt{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.s-apply-title{
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  padding-top:6rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+}
+.s-apply-desc{
+  font-size:24rpx;
+  color:#999;
+}
+.footer {
+  padding: 40rpx;
+}
+.s-ensure{
+  padding:16rpx 40rpx;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 8rpx;
+  color: #fff;
+  background: #4685ee;
+  border-width: 0;
+}

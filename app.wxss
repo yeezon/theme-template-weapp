@@ -1,0 +1,224 @@
+/**app.wxss**/
+
+scroll-view::-webkit-scrollbar {
+  display: none;
+}
+
+/* 0 的时候用 0px，不然 calc 计算时不会自动转换类型，导致计算出错 */
+page {
+  --statusBar: 0px;
+  --homeIndicator: 0px;
+  --navBar: 44px;
+  --tabBar: 49px;
+
+  --borderColor: #d5d5d5;
+  --backgroundColor: #f6f4f9;
+  --1px: 1rpx;
+  --100vh: 100vh;
+
+  font-family: 'PingFang SC', -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+}
+
+@supports (bottom: constant(safe-area-inset-bottom)) {
+  page {
+    --statusBar: constant(safe-area-inset-top);
+    --homeIndicator: constant(safe-area-inset-bottom);
+  }
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+  page {
+    --statusBar: env(safe-area-inset-top);
+    --homeIndicator: env(safe-area-inset-bottom);
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*  */
+
+button {
+  border-radius: 0;
+  border: none;
+  margin: 0;
+}
+
+button::after {
+  border-radius: 0;
+  border: none;
+}
+
+/*  */
+
+.new-nav-bar-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28rpx;
+}
+
+.new-nav-bar_service {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10rpx;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+}
+
+.new-nav-bar_service::after {
+  border: none;
+  border-radius: 0;
+}
+
+.new-tabbar-icon {
+  width: 46rpx;
+  height: 48rpx;
+}
+
+/*  */
+
+.fix-iphonex-button {
+  bottom: 68rpx !important;
+}
+
+.fix-iphonex-button::after {
+  content: ' ';
+  position: fixed;
+  bottom: 0 !important;
+  height: 68rpx !important;
+  width: 100%;
+  background: #fff;
+}
+
+/*  */
+/*  加载更多   */
+
+.loading {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+  background-size: 100%;
+}
+
+.loadmore {
+  width: 65%;
+  margin: 0.5em auto;
+  line-height: 1.6em;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.loadmore__tips {
+  display: inline-block;
+  vertical-align: middle;
+  color: #3c3c3c;
+}
+
+.loadmore_line {
+  border-top: 1rpx solid #e5e5e5;
+  margin-top: 2em;
+}
+
+.loadmore_line .loadmore__tips {
+  position: relative;
+  top: -0.9em;
+  padding: 0 0.55em;
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+
+/* confirm-model */
+.confirm-model {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  width: 80%;
+  border-radius: 8rpx;
+  background: #fff;
+  overflow: hidden;
+  transform: translate(-50%);
+  z-index: 998;
+}
+
+.confirm-model .title {
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #262626;
+  border-bottom: 1rpx solid #eee;
+}
+
+.confirm-model .content {
+  display: flex;
+  align-items: center;
+  padding: 50rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.confirm-model .content .text {
+  flex: 1;
+}
+
+.confirm-model .content::before {
+  content: '';
+  display: inline-flex;
+  width: 15rpx;
+  height: 15rpx;
+  margin-right: 10rpx;
+  border-radius: 100%;
+  background: #999;
+}
+
+.confirm-model .bottom {
+  display: flex;
+  border-top: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.confirm-model .bottom button {
+  flex: 1;
+  height: 88rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 30rpx;
+  border-radius: 0;
+  color: #333;
+  border-right: 1rpx solid #eee;
+  background: #fff;
+}
+
+.confirm-model .bottom button.confirm-btn {
+  color: #fe384f;
+}
+
+.confirm-model .bottom button:last-child {
+  border-right: none;
+}
+
+.confirm-model .bottom button::after {
+  border: none;
+}

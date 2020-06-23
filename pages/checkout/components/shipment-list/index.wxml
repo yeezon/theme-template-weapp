@@ -1,0 +1,7 @@
+
+<view class="checkout_ship_list">
+  <block wx:for="{{ shipments }}" wx:key="index">
+    <shipment bind:change="setShip" shipment="{{ item }}" order="{{ shipments.length > 1 ? (index + 1) : null }}"></shipment>
+  </block>
+  <view wx:if="{{ !shipments.length }}" class="checkout_ship_list-tips">选购商品暂不显示，请先添加收货地址</view>
+</view>

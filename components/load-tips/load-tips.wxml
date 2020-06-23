@@ -1,0 +1,5 @@
+<!--components/load-tips/load-tips.js.wxml-->
+<view class="load-tips-wrap">
+  <image class="img" wx:if="{{emptyIconSrc}}" src="{{emptyIconSrc}}" mode='aspectFit'>  </image>
+  <view class="text">{{emptyText}}</view>
+</view>

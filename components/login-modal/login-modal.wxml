@@ -1,0 +1,22 @@
+<mask show="{{show}}">
+  <view class="login-modal">
+    <!-- <image class="bg-image" src='../../assets/images/login_modal_bg.png' mode='widthFix'></image> -->
+    <image class="close-image" src='../../assets/icons/close_icon.svg' mode="aspectFit" bindtap='closeModal'></image>
+    <view class="header">
+      <!-- <image class="logo" src="../../assets/icons/login_modal_logo.svg" mode="aspectFit"></image> -->
+      <!-- <view class="title">抢新就上</view> -->
+      <view class="title">{{shopName}}</view>
+      <view class="content">部分功能需要登录后才能使用</view>
+    </view>
+    <!-- <functional-page-navigator name="loginAndGetUserInfo" version="develop" bind:success="loginSuccess">
+      <button>登录到插件</button>
+    </functional-page-navigator> -->
+    <!-- <navigator url="plugin-private://wxf099ab9e49ee5663/pages/idnex/index">
+      Go to pages/hello-page!
+    </navigator> -->
+    <button class="button" open-type='getUserInfo' bindgetuserinfo="getuserinfo">
+      <image src="../../assets/icons/wechat_icon.svg" mode="aspectFit"></image>
+      <text>微信登录</text>
+    </button>
+  </view>
+</mask>

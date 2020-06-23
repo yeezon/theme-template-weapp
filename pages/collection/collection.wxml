@@ -1,0 +1,15 @@
+<!--pages/collection/collection.wxml-->
+
+<nav-bar navigateBack="true">
+  <view slot="center">{{titile}}</view>
+</nav-bar>
+
+<ui-scroll-view>
+  <view class='collection-con'>
+    <view class='image-con'>
+      <image src='https:{{collection.img_path}}' mode='widthFix'></image>
+    </view>
+    <product-set-title main-title="{{collection.name}}" sub-title="{{collection.title}}"></product-set-title>
+    <product-list products="{{collection.products}}"></product-list>
+  </view>
+</ui-scroll-view>

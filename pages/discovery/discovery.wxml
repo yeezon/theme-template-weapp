@@ -1,0 +1,115 @@
+<!-- navigateBack="true" -->
+<nav-bar>
+  <!-- <view slot="left" class="new-nav-bar-left" bindtap='toSearch'>
+    <image class="new-tabbar-icon" src='../../assets/icons/nav_search_icon.svg'></image>
+  </view> -->
+  <view slot="center">{{title}}</view>
+</nav-bar>
+
+<view class="search" style='margin-top: {{navBarHeight}}px'>
+  <!-- <view class="search-wrap" style='top: {{navBarHeight}}px;'>
+    <image src='../../assets/icons/search_icon.svg' mode='aspectFit' bindtap='toSearch'></image>
+    <image src='../../assets/icons/pro-list_{{listStyle}}.svg' mode='aspectFit' bindtap='changeListStyle'></image>
+  </view> -->
+  <!--  -->
+  <ui-scroll-view bindscrolltolower="scrolltolower" checkIpx="{{false}}">
+
+    <!-- 搜索结果 -->
+    <view class="search-result-wrap">
+      <!-- 筛选 -->
+      <view class='search-result-filter'>
+        <view class='search-result-filter-item'>
+          <view class="text {{oQuery.sort_type === 1 ? 'active' : ''}}" id='1' bindtap='filterChange'>综合</view>
+        </view>
+        <view class='search-result-filter-item'>
+          <view class="text {{oQuery.sort_type === 2 ? 'active' : ''}}" id='2' bindtap='filterChange'>最新</view>
+        </view>
+        <view class='search-result-filter-item'>
+          <view class="text {{oQuery.sort_type === 3 ? 'active' : ''}}" id='3' bindtap='filterChange'>最热</view>
+        </view>
+        <view class='search-result-filter-item'>
+          <view class="text {{oQuery.sort_type === 4 || oQuery.sort_type === 5 ? 'active' : ''}}" id='5' bindtap='filterChange'>
+            价格
+            <view class="triangle-up {{oQuery.sort_type === 5 ? 'active' : ''}}"></view>
+            <view class="triangle-down {{oQuery.sort_type === 4 ? 'active' : ''}}"></view>
+          </view>
+        </view>
+        <!--  -->
+        <view class='search-result-filter-item'>
+          <text class='line'>|</text>
+          <view class="text filter {{filter.in_stock ||filter.vendor || filter.type  ? 'active' : ''}}" bindtap='getFilter'>筛选
+            <image src="../../assets/icons/pro_filter_icon{{filter.in_stock ||filter.vendor || filter.type ? '_active' : ''}}.svg" mode='aspectFit'></image>
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{products.length}}">
+        <view class='search-products-con'>
+          <!-- 商品列表 -->
+          <product-vertical-list wx:if="{{listStyle === 1}}" products="{{products}}"></product-vertical-list>
+          <product-list wx:if="{{listStyle === 2}}" products="{{products}}"></product-list>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="search-products-con_empty">
+          <image src='../../assets/icons/search_empty_icon.png' mode='aspectFit'></image>
+          <view>暂无商品</view>
+        </view>
+      </block>
+      <!--  -->
+      <view wx:if="{{loadedAll}}" class='pro-loaded-all'>没有更多了~</view>
+    </view>
+  </ui-scroll-view>
+</view>
+
+<!--  -->
+<popup show="{{showFilter}}" custom-class="search-popup" content-class="search-popup-content" position="right">
+  <view class='search-popup-title' style="margin-top: {{statusBarHeight}}px">
+    <image src='../../assets/icons/close_icon.svg' mode='aspectFit' bindtap='closeFilter'></image>
+    <text>筛选</text>
+  </view>
+  <form>
+    <scroll-view scroll-y style='height:calc(100% - 96rpx - {{navBarHeight}}px);' class="search-filter-popup-container">
+      <view class="search-filter-popup-filter">
+        <!--  -->
+        <view class="search-filter-popup-filter-wrap">
+          <search-summary state="summary">
+            <view slot="title">状态</view>
+            <view slot="details" class="search-filter-list">
+            <view class="search-filter-item {{in_stock ? 'active' : ''}}" bindtap='exChange'>
+                <text>仅显示有货</text>
+              </view>
+            </view>
+          </search-summary>
+        </view>
+        <!--  -->
+        <view class="search-filter-popup-filter-wrap" wx:if="{{vendors.length}}">
+          <search-summary state="summary" item-len="{{vendors.length}}">
+            <view slot="title">品牌</view>
+            <view slot="details" class="search-filter-list">
+            <view wx:for="{{vendors}}" wx:key="item.handle" class="search-filter-item {{vendor === item.name ? 'active' : ''}}" data-vendor="{{item.name}}" bindtap='vendorChange'>
+                <text>{{item.name}}</text>
+              </view>
+            </view>
+          </search-summary>
+        </view>
+        <!--  -->
+        <view class="search-filter-popup-filter-wrap" wx:if="{{types.length}}">
+          <search-summary state="summary" item-len="{{types.length}}">
+            <view slot="title">分类</view>
+            <view slot="details" class="search-filter-list">
+              <view wx:for="{{types}}" wx:key="item.handle" class="search-filter-item {{type === item.name ? 'active' : ''}}" data-type="{{item.name}}" bindtap='typeChange'>
+                <text>{{item.name}}</text>
+              </view>
+            </view>
+          </search-summary>
+        </view>
+        <!--  -->
+        <!--  -->
+      </view>
+    </scroll-view>
+    <view class="search-popup-bottom">
+      <button class="clear-btn" plain form-type="reset" bindtap='clearFilter'>清空选项</button>
+      <button class="comfirm-btn" bindtap="filterComfirn">确定</button>
+    </view>
+  </form>
+</popup>

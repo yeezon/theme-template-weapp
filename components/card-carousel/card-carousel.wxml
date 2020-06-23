@@ -1,0 +1,36 @@
+<!--components/card-carousel/card-carousel.wxml-->
+
+<view class='card-carousel' bindtouchstart='bindtouchstart' catchtouchmove='catchtouchmove' catchtouchend='catchtouchend'>
+  <view class='card-carousel-con' style="height:calc({{'100vw + ' + (wrapHeight + 'rpx')}});{{wrapHeight > 0 ? 'overflow:hidden;' : ''}}">
+    <view wx:for="{{images}}" wx:key="{{index}}" class="card-carousel-item" style="top: {{curIndex === index ? '0' : (curIndex > index ? '-102vw' : ((index - curIndex) * 100) + 'rpx')}};  z-index: calc(99 - {{index}});" data-index="{{index}}" data-active="{{index === curIndex}}" data-type="{{item.redirect_type}}"
+      id="{{item.redirect_type !== 1 ? item.redirect_type === 2 ? item.sc_id : item.redirect_type === 3 ? item.sp_id : '' : ''}}" bindtap="fnTap">
+      <image src='https:{{item.src}}' mode='aspectFill'>
+        <!-- <view class='card-carousel-item_text'>
+          <text class='card-carousel-item_main-title'>韩国女生都在买的甜美复古风</text>
+          <text class='card-carousel-item_sub-title'>sweet retro look</text>
+        </view> -->
+      </image>
+    </view>
+  </view>
+</view>
+
+
+<!-- 
+{{wrapHeight > 0 ? 'overflow:hidden;' : ''}}
+height: {{index === images.length - 1 && index != curIndex ? '50px' : ''}};
+ -->
+
+<!-- <view class="card-carousel" bindtouchstart='bindtouchstart' catchtouchmove='catchtouchmove' catchtouchend='catchtouchend'>
+  <view class="card-carousel__images-wrapper" style="height: {{wrapHeight}}px;{{wrapHeight > 0 ? 'overflow:hidden;' : ''}}">
+    <view wx:for="{{images}}" wx:key="{{index}}" class="card-carousel__image-item" style="z-index: {{index + 1}}; transform: {{index === 0 ? index > curIndex ? 'translateY(-' + ((windowWidth - 50) * (index - curIndex - 1) - windowWidth * curIndex) + 'px)' : 'translateY(-' + windowWidth * curIndex + 'px)' : index - 1 > curIndex ? 'translateY(' + (-(windowWidth - 50) * (index - curIndex - 1) - windowWidth * curIndex) + 'px)' : 'translateY(-' + (windowWidth * curIndex) + 'px)'}}; "
+      data-index="{{index}}" bindtap="fnTap">
+      <view class="card-carousel__image" style="background-image: url({{item.src}}); background-position-y: {{curIndex >= index ? '0': '-100'}}px;"></view>
+      <view class="card-carousel__image-title card-carousel__image-title-current">
+        韩国女生都在买的甜美复古风
+      </view>
+      <view class="card-carousel__image-desc" style="transform: translate(-50%, {{index === curIndex ? '0' : -windowWidth * 0.835}}px);">
+        SWEET RETRO LOOK
+      </view>
+    </view>
+  </view>
+</view> -->

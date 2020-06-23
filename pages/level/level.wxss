@@ -1,0 +1,73 @@
+/* pages/level/level.wxss */
+page {
+  background: #f6f4f9;
+}
+
+.level-container {
+  padding: 40rpx 30rpx;
+  font-size: 28rpx;
+  background: #fff;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.level-title {
+    margin: 0 0 30rpx;
+    font-size: 32rpx;
+    line-height: 1;
+}
+
+.level-desc {
+  line-height: 1;
+  color: #777;
+}
+
+.levels-wrap {
+  margin: 60rpx 0;
+}
+
+.level-row {
+  position: relative;
+  display: flex;
+  margin: 0 22rpx 20rpx;
+}
+
+.level-item {
+  position: relative;
+  width: 30%;
+  height: 100rpx;
+}
+.level-item:last-child {
+  width: 0;
+}
+
+.level-item:last-child .level-bar{
+  display: none;
+}
+
+.level-bar {
+    position: absolute;
+    top: 18rpx;
+    right: 0;
+    width: 100%;
+    height: 10rpx;
+    line-height: 0;
+    font-size: 0;
+    background-color: #d5d5d5;
+}
+
+.level-sign-icon {
+  width: 44rpx;
+  height: 44rpx;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 10;
+}
+
+.level-sign-desc {
+    position: absolute;
+    top: 60rpx;
+    left: 0;
+    width: max-content;
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "scroll-view": "/components/scroll-view/scroll-view",
+    "currency": "/components/currency/currency",
+    "product-list": "/components/product-list/product-list",
+    "product-vertical-list": "/components/product-vertical-list/product-vertical-list",
+    "limit": "./components/limit/limit"
+  }
+}

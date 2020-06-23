@@ -1,0 +1,11 @@
+/* components/product-horizon-list/product-horizon-list.wxss */
+
+.product-horizon-list_scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.product-horizon-list {
+  width: auto;
+  padding: 30rpx;
+}

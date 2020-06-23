@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "price": "../../components/price/price",
+    "popup": "../../components/popup/popup",
+    "scroll-view": "../../components/scroll-view/scroll-view",
+    "mask": "../../components/mask/mask",
+    "ui-rich-text": "../../components/rich-text/rich-text",
+    "login-modal": "../../components/login-modal/login-modal",
+    "skus-popup": "../../components/skus-popup/skus-popup",
+    "badge": "../../components/badge/badge",
+    "info": "./components/info/info"
+  }
+}

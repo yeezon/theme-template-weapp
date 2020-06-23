@@ -1,0 +1,123 @@
+/* pages/services/detail.wxss */
+
+page {
+  background-color: #f3f3f3;
+  font-size: 28rpx;
+}
+
+.s-cancel-btn {
+  color: #fff;
+  background-color: #4685ec;
+  border-color: #4685ec;
+  padding: 14rpx 18rpx;
+  font-size: 24rpx;
+  border-radius: 6rpx;
+  position: absolute;
+  right: 20px;
+}
+
+.s-schedule-cont {
+  margin-top: 24rpx;
+  border: 2rpx solid #ddd;
+  border-bottom: none;
+}
+
+.s-title {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #333;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #ddd;
+  background: #fff;
+}
+.s-title_text {
+  flex: 1;
+  font-size: 36rpx;
+}
+.s-select {
+  box-sizing: border-box;
+  display: block;
+  margin: 20rpx 0;
+  width: 100%;
+  max-width: 290rpx;
+  padding: 0 20rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background-color: #fff;
+  border: 2rpx solid #bbb;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 8rpx;
+}
+.s-input {
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+}
+.s-input input{
+  width: 440rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  display: inline-block;
+  border-radius: 8rpx 0 0 8rpx;
+  border: 2rpx solid #dcdfe6;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.s-input text {
+  height: 56rpx;
+  line-height: 56rpx;
+  background-color: #f5f7fa;
+  color: #333;
+  position: relative;
+  left: -2rpx;
+  display: inline-block;
+  border: 2rpx solid #dcdfe6;
+  border-radius: 0 8rpx 8rpx 0;
+  padding: 0 40rpx;
+  vertical-align: top;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-size: 24rpx;
+}
+
+.s-apply-cont {
+  padding: 0 30rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #ddd;
+}
+.s-apply-info {
+  padding: 30rpx 0;
+  border-bottom: 2rpx dashed #ddd;
+}
+.s-apply-info_item {
+  font-size: 28rpx;
+  line-height: 56rpx;
+  color: #777;
+  margin-right: 60rpx;
+}
+.s-apply-info_item:last-child {
+  margin-right: 0;
+}
+.s-info{
+  color: #333;
+}
+
+.s-apply-address {
+  padding: 30rpx 0;
+  border-bottom: 2rpx dashed #ddd;
+}
+.s-apply-address_item {
+  color: #777;
+  line-height: 60rpx;
+}
+.s-apply-history_title {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  padding: 30rpx 0;
+}
+

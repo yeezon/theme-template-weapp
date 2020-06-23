@@ -1,0 +1,37 @@
+var formatTime = function (date, fmt) {
+  date = getDate(date).toString()
+  var regexp = getRegExp("-", "img")
+  var _date = getDate(date.replace(regexp, '/'))
+
+  var o = [
+    { key: "y+", value: _date.getFullYear() },
+    { key: "M+", value: _date.getMonth() + 1 },
+    { key: "d+", value: _date.getDate() },
+    { key: "h+", value: _date.getHours() },
+    { key: "m+", value: _date.getMinutes() },
+    { key: "s+", value: _date.getSeconds() },
+    { key: "q+", value: Math.floor((_date.getMonth() + 3) / 3) },
+    { key: "S+", value: _date.getMilliseconds() }
+  ];
+
+  for (var i = 0; i < o.length; i++) {
+    var exp = getRegExp("(" + o[i].key + ")")
+
+    if (exp.test(fmt)) {
+      var mark = exp.exec(fmt)[0]
+      var len = mark.length
+      if (o[i].key == "y+") {
+        fmt = fmt.replace(mark, ("" + o[i].value).substring(4 - len));
+      } else if (o[i].key == "S+") {
+        var lens = len;
+        lens = lens == 1 ? 3 : lens;
+        fmt = fmt.replace(mark, ("00" + o[i].value).substring(("" + o[i].value).length - 1, lens));
+      } else {
+        fmt = fmt.replace(mark, (len == 1) ? (o[i].value) : (("00" + o[i].value).substring(("" + o[i].value).length)));
+      }
+    }
+  }
+  return fmt
+}
+
+module.exports = formatTime

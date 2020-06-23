@@ -1,0 +1,46 @@
+<!-- input area -->
+<view class="input-list">
+  <view class="input-container">
+    <view class="input-wrap">
+      <input
+        class="input"
+        type="number"
+        placeholder="手机号"
+        data-type="tel"
+        bindinput="handleInputChange"
+        value="{{ tel }}" />
+    </view>
+    <view class="input-tip" wx:if="{{ telTip }}">{{ telTip }}</view>
+    <button class="get-phone-number" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">获取微信手机号输入</button>
+  </view>
+
+  <view class="input-container">
+    <view class="input-wrap">
+      <input
+        class="input"
+        type="number"
+        placeholder="短信验证码"
+        data-type="code"
+        bindinput="handleInputChange"
+        maxlength="{{ 4 }}"
+        value="{{ code }}" />
+      <view
+        class="{{ canIGetCode ? 'btn-get-code' : 'btn-get-code forbid' }}"
+        bindtap="handleGetCode">
+        {{ btnCodeTip }}
+      </view>
+    </view>
+    <view class="input-tip" wx:if="{{ codeTip }}">{{ codeTip }}</view>
+  </view>
+</view>
+
+<!-- btn-area -->
+<view class="sub-btn" bindtap="handleSubmitTap">绑定</view>
+<captcha-modal
+  show="{{ isShowCaptchaModal }}"
+  captchaUrl="{{ captchaUrl }}"
+  captchaId="{{ captchaId }}"
+  mobile="{{ tel }}"
+  bindregetcaptcha="handleRegetCaptcha"
+  bindcountdown="handleCountDown"
+  bindclosemodal="handleCloseModal" />

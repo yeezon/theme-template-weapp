@@ -1,0 +1,36 @@
+/* pages/user/edit.wxss */
+page {
+  background: #f6f4f9;
+  font-size: 28rpx;
+}
+
+.input-container {
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  background: #fff;
+  display: flex;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.input {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  flex-grow: 1;
+}
+
+.text {
+  width: 200rpx;
+}
+
+.sub-btn {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 60rpx auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 8rpx;
+  background: #fb544e;
+}

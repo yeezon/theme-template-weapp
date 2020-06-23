@@ -1,0 +1,7 @@
+.currency {
+  display: inline-block;
+}
+
+.currency .currency-symbol {
+  display: inline-block;
+}

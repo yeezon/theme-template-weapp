@@ -1,0 +1,17 @@
+/* pages/discounts/discounts.wxss */
+.s-details {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.s-details .s-details_item {
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.products-list-wrapper .pro-loaded-all {
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+  padding: 30rpx;
+}

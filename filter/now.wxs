@@ -1,0 +1,8 @@
+var now = function (timestamp_diff) {
+  var _now = getDate().getTime()
+  var _nowDate = getDate(_now + timestamp_diff)
+  // console.log(_now)
+  return _nowDate.toISOString()
+}
+
+module.exports = now

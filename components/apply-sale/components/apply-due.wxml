@@ -1,0 +1,44 @@
+<!--components/apply-sale/components/apply-due.wxml-->
+<mask show="{{isShowApply}}">
+  <view class="dialog-container">
+    <view class="s-title">
+      <text>申请售后</text>
+      <image class="close-image" src='../../../assets/icons/close_icon.svg' mode="aspectFit" bindtap='FnClose'></image>
+    </view>
+    <view class="s-box-apply">
+      <view class="s-apply-item {{selectItem === 0 ? 'active':''}}"  bindtap='FnSelect' data-type="0">
+        <view class="s-apply-icon">
+          <image src='../../../assets/icons/apply-money-back.svg' mode="aspectFit"></image>
+        </view>
+        <view class="s-apply-txt">
+          <text class="s-apply-title">仅退款</text>
+          <text class="s-apply-desc">未收到货（ 包含未签收 ），或商家协商同意前提下</text>
+        </view>
+      </view>
+      <view wx:if="!isVirtual" class="s-apply-item {{selectItem === 1 ? 'active':''}}" bindtap='FnSelect' data-type="1">
+        <view class="s-apply-icon">
+          <image src='../../../assets/icons/apply-all-back.svg' mode="aspectFit"></image>
+        </view>
+        <view class="s-apply-txt">
+          <text class="s-apply-title">退货退款</text>
+          <text class="s-apply-desc">已收到货，需要退还已收到的货物</text>
+        </view>
+      </view>
+      <view wx:if="!isVirtual" class="s-apply-item {{selectItem === 2 ? 'active':''}}" bindtap='FnSelect' data-type="2">
+        <view class="s-apply-icon">
+          <image src='../../../assets/icons/apply-product-back.svg' mode="aspectFit"></image>
+        </view>
+        <view class="s-apply-txt">
+          <text class="s-apply-title">换货</text>
+          <text class="s-apply-desc">已收到货，需要更换已收到的货物</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class="footer">
+        <text bindtap='FnToLink' class="s-ensure">确定</text>
+      </view>
+      <!--  -->
+    </view>
+  </view>
+</mask>
+

@@ -1,0 +1,99 @@
+<!--components/cart/cart.wxml-->
+<wxs module="getDisTypeDesc" src="./module/getDisTypeDesc.wxs"></wxs>
+<wxs module="checkPartialDis" src="./module/checkPartialDis.wxs"></wxs>
+<wxs module="fnCheckDis" src="./module/fnCheckDis.wxs"></wxs>
+
+<view class='cart-cont' style='padding-top: 76rpx'>
+  <block wx:if="{{items.length}}">
+    <block wx:if="!nLock && items.length">
+      <view class='cart-top' style='top: {{navBarHeight}}px'>
+        <view class='cart-top-check' bindtap='fnAllCheck'>
+          <view class="checkbox__inner {{nCheck && !hasUnCheck ? 'is-checked' : ''}}"></view>
+          <text>全选</text>
+        </view>
+        <text class='cart-top-del' bindtap='fnDelCheck'>删除</text>
+        <text class='cart-top-clear' bindtap='fnClear'>清除无效商品</text>
+      </view>
+      <!-- 活动商品 -->
+      <block wx:for="{{discounts}}" wx:for-item="oDis" wx:key="oDis.id">
+        <view wx:if="{{oDis.range_type === 'partial'}}" wx:key="oDis.id" class='dis_items cells'>
+          <view class='dis_info'>
+            <text class='dis_type'>{{ getDisTypeDesc(oDis.discount_type) }}</text>
+            <text class='dis_name'>{{ oDis.name }}</text>
+            <view class='dis_tips' data-oDis="{{oDis}}" bindtap='fnDisDesc'>
+              <image src='../../assets/icons/icon-cart-explain.svg' mode='aspectFill'></image>
+              <text>规则</text>
+            </view>
+            <text class='dis_link'>去凑单!</text>
+          </view>
+          <!--  -->
+          <block wx:for="{{skuList}}" wx:for-item="nSku" wx:key="nSku">
+            <cart-item wx:if="{{checkPartialDis(oSkuMap, oEventSkuMap, oProDisMap, nSku, oDis.id)}}" item="{{oSkuMap[nSku]}}" wx:key="nSku" discount="{{oEventSkuMap[nSku]}}" bindcheck="fnCheck" binddel="fnDelItem" bindquantity="fnQuantity"></cart-item>
+          </block>
+          <view class='dis_sum'>
+            <view wx:if="{{oDis.discount_amount}}">已优惠:
+              <price value="{{oDis.discount_amount}}" font-size="26" text-color="#333"></price>
+            </view>
+            <view>小计:
+              <price value="{{oDis.match_item_amount - oDis.discount_amount}}" font-size="26" text-color="#333"></price>
+            </view>
+          </view>
+        </view>
+      </block>
+      <!-- 正常商品 -->
+      <view wx:if="{{hasCommon}}" class="items cells">
+        <block wx:for="{{skuList}}" wx:for-item="nSku" wx:key="nSku">
+          <cart-item wx:if="{{oSkuMap[nSku] && oSkuMap[nSku].available && !fnCheckDis(oSkuMap, oEventSkuMap, oProDisMap, nSku, oDis.id)}}" item="{{oSkuMap[nSku]}}" discount="{{oEventSkuMap[nSku]}}" bindcheck="fnCheck" binddel="fnDelItem" bindquantity="fnQuantity" wx:key="nSku"></cart-item>
+        </block>
+      </view>
+      <!-- 错误商品 -->
+      <view wx:if="{{hasErrItem}}" class="invalid cells">
+        <block wx:for="{{skuList}}" wx:for-item="nSku" wx:key="nSku">
+          <cart-item wx:if="{{oSkuMap[nSku] && !oSkuMap[nSku].available && !fnCheckDis(oSkuMap, oEventSkuMap, oProDisMap, nSku, oDis.id)}}" item="{{oSkuMap[nSku]}}" wx:key="nSku" discount="{{oEventSkuMap[nSku]}}" bindcheck="fnCheck" binddel="fnDelItem" bindquantity="fnQuantity"></cart-item>
+        </block>
+      </view>
+    </block>
+    <!--  -->
+    <view class='info cells' wx:if="{{hasCommonDis}}">
+      <view class='info_dis'>
+        <block wx:for="{{discounts}}" wx:for-item="oDis" wx:key="oDis.id">
+          <block wx:if="{{oDis.range_type !== 'partial'}}">
+            <view wx:if="{{oDis.discount_type === 'coupon'}}">
+              <text class="info_dis_name">{{ oDis.name }}</text>
+              <text>可获得：</text>
+              <image src='../../assets/icons/icon-cart-coupon.svg' mode='widthFix'></image>
+            </view>
+            <view wx:else>
+              <text class="info_dis_name">{{ oDis.name }}</text>
+              <text>已优惠：</text>
+              <price value="{{oDis.discount_amount}}" font-size="26" text-color="#333"></price>
+            </view>
+          </block>
+        </block>
+      </view>
+    </view>
+
+  </block>
+  <block wx:else>
+    <view class="cart-empty">
+      <image src="../../../../assets/icons/icon-cart-empty.svg" mode="widthFix"></image>
+      <view>购物车里还没有商品</view>
+      <button bindtap="fnGoBuy">去逛逛</button>
+    </view>
+  </block>
+</view>
+<!--  -->
+<view wx:if="{{items.length}}" class='sum-bar'>
+  <view class='sum-bar_info'>
+    <view class='sum-bar_sum'>
+      <text>合计：</text>
+      <price value="{{(nItemsSum - nDisSum - nDisSumHide) <= 0 ? 0 : (nItemsSum - nDisSum - nDisSumHide)}}" font-size="28" text-color="#f71"></price>
+    </view>
+    <view class='sum-bar_tips' wx:if="{{nDisSum}}">
+      （不含运费，已优惠：
+      <price value="{{nDisSum}}" font-size="22" text-color="#989898"></price>)
+    </view>
+    <view class='sum-bar_tips' wx:else>（不含运费）</view>
+  </view>
+  <button class='sum-bar_btn' bindtap='fnSubmit'>确认结算</button>
+</view>

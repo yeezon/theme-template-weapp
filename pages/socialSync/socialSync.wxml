@@ -1,0 +1,34 @@
+<!--pages/socialSync/socialSync.wxml-->
+
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+
+<ui-scroll-view>
+  <view class="social-sync-wrap">
+    <block wx:if="{{ LOGIN_TYPE === 'normal' }}">
+      <view class="input-list">
+        <view class="input-container">
+          <view class="text">账号</view>
+          <view class="input-wrap">
+            <input class="input" type="text" placeholder='手机/邮箱/用户名' data-type="account" bindinput="bindKeyInput" value="{{account}}"></input>
+          </view>
+        </view>
+        <view class="input-container">
+          <view class="text">密码</view>
+          <view class="input-wrap">
+            <input class="input" type="password" placeholder='登录密码' data-type="password" bindinput="bindKeyInput" value="{{password}}"></input>
+          </view>
+        </view>
+      </view>
+      <view class="sub-btn" bindtap="fnSubmit">绑定</view>
+    </block>
+    <block wx:if="{{ LOGIN_TYPE === 'tel' }}">
+      <tel-login />
+    </block>
+    <view class="btn-type-change" bindtap="handleTypeChange">{{ BTN_TYPE_TITLE }}</view>
+  </view>
+</ui-scroll-view>
+
+<!-- 登录modal  -->
+<login-modal show="{{showLoginModal}}"></login-modal>

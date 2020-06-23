@@ -1,0 +1,7 @@
+<!--components/price/price.wxml-->
+<view class="price price_{{type}} custom-class" style="{{type === 'del' ? 'color:' + delColor : 'color:' + textColor}}; font-size: {{fontSize}}rpx">
+  <text wx:if="{{icon === 'add'}}" class="add">+</text>
+  <text wx:if="{{icon === 'reduce'}}" class="reduce">-</text>
+  <text class="symbol">{{symbol}}</text>
+  <text class="num">{{price}}</text>
+</view>

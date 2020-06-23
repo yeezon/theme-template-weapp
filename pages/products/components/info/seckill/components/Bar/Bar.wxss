@@ -1,0 +1,37 @@
+
+.product_info-limit-bar {
+  background: #f55;
+  height: 80rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding: 0;
+}
+
+.s-h {
+  font-size: 36rpx;
+  margin: 0 0 0 30rpx;
+  font-weight: 700;
+}
+
+.s-tips {
+  margin: 0 20rpx;
+  font-size: 24rpx;
+}
+
+.s-event_price{
+  margin: 0 5px;
+}
+.s-fr {
+  outline: none;
+  margin: 0 24rpx 0 auto;
+}
+.icon {
+  display: inline-block;
+  margin: 0 0 0 6rpx;
+  width: 30rpx;
+  height: 30rpx;
+  color: #fff;
+  vertical-align: middle;
+}

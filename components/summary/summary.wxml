@@ -1,0 +1,14 @@
+<view class="new-summary">
+  <view class="new-summary-title">
+    <view class="title">
+      <slot name="title"></slot>
+    </view>
+    <view wx:if="{{showArrow}}" class="button" bindtap="touchStartHandler">
+      <text>全部</text>
+      <image class="button-image" style="transition: {{animate ? 'all 0.4s' : ''}};transform: {{buttonImageObj.transform}}" src="../../assets/icons/more_icon.svg"></image>
+    </view>
+  </view>
+  <view class="details" style="max-height: {{detailsObj.maxHeight}}rpx; transition: {{animate ? 'height 0.3s' : ''}}">
+    <slot name="details"></slot>
+  </view>
+</view>

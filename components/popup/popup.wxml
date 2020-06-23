@@ -1,0 +1,7 @@
+<!-- capture-catch:touchmove="handleTouchMove"  -->
+<view class="new-popup {{ show ? 'show' : '' }} custom-class">
+  <view class="new-popup-content {{ show ? 'show' : '' }} {{ position }} content-class {{isIpx ? 'is-ipx' : ''}}">
+    <slot></slot>
+  </view>
+  <view class="new-popup-mask {{ show ? 'show' : '' }}" catch:touchmove="handleTouchMove" bindtap="handleMaskTap"></view>
+</view>

@@ -1,0 +1,24 @@
+/* components/product-list/product-list.wxss */
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  padding: 30rpx 30rpx 0;
+}
+
+.product-list-items {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-list product-item {
+  margin-bottom: 44rpx;
+  /* margin-right: 14rpx; */
+}
+
+/* .product-list product-item:nth-child(2n + 2) {
+  margin-right: 0;
+} */

@@ -1,0 +1,36 @@
+
+var isChoose = function (nOptID, nRank, oIsChoose) {
+  return oIsChoose[nOptID.toString()] === nRank
+}
+
+var canChoose = function (nOptID, nRank, cannotChooseList) {
+  var _has = false
+
+  for (var index = 0; index < cannotChooseList.length; index++) {
+    var _item = cannotChooseList[index]
+    var _mark = nOptID + '.' + nRank
+
+    if (_item === _mark) {
+      _has = true
+      break
+    }
+  }
+
+  return !_has
+}
+
+// { 'i-on': isChoose(oOpt.id, nIndex + 1), 'i-can': canChoose(oOpt.id, nIndex + 1),}
+
+module.exports = function (id, rank, oIsChoose, cannotChooseList) {
+  var _class = ''
+
+  if (isChoose(id, rank, oIsChoose)) {
+    _class += ' i-on'
+  }
+  
+  if (canChoose(id, rank, cannotChooseList)) {
+    _class += ' i-can'
+  }
+
+  return _class
+}

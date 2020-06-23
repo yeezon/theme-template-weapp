@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "product-horizon-item": "../product-horizon-item/product-horizon-item"
+  }
+}

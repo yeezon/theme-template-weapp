@@ -1,0 +1,194 @@
+<!--pages/orderApply/applyForm.wxml-->
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+
+<ui-scroll-view>
+  <s-apply-schedule wx:if="{{info.trade_after_sale}}" type="{{info.trade_after_sale.after_sale_type}}" status="{{info.trade_after_sale.after_sale_status}}"></s-apply-schedule>
+    <!--  -->
+  <view class="s-apply-wrap">
+      <view class="s-title">{{type}}</view>
+    <view class="s-pro-list">
+      <view class="s-pro-item" wx:for="{{info.refund_trade_items}}" wx:key="index">
+        <!-- <a
+          :href="item.page_url"
+          class="s-pro-img"
+          :style="`background-image: url('${getImageUrl(item.image_id,item.image_name,'60x60',item.image_epoch)}')`"
+          target="_blanck"
+        ></a> -->
+        <image class="s-pro-img" src="{{item.imgUrl}}"></image>
+        <view class="s-pro-info">
+          <text class="s-pro-name">{{item.product_name}}</text>
+          <view class="s-pro-sku">{{item.options_desc || ''}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 退款 -->
+    <view wx:if="{{info.trade_after_sale && info.trade_after_sale.after_sale_type === 0}}" class="s-form">
+      <view class="form-wrap">
+        <view class="form-item is-required">
+          <view class="item-left">
+            货物状态：
+          </view>
+          <view class="item-right">
+            <radio-group class="radio-group" bindchange="fnShipmentStatusChange">
+                <radio class="radio" wx:for-items="{{shipmentStatus}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                    <text>{{item.value}}</text>
+                </radio>
+            </radio-group>
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item is-required">
+          <view class="item-left">
+            退款原因：
+          </view>
+          <view class="item-right">
+            <picker data-name="reasonList1" bindchange="fnReasonChange" value="{{reasonIndex}}" range="{{reasonList1}}">
+              <view class="picker">
+                {{reasonIndex === '' ? '请选择退款原因' : reasonList1[reasonIndex]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item is-required">
+          <view class="item-left">
+            退款金额：
+          </view>
+          <view class="item-right">
+            <input class="input" type="number" value="{{formData.refund_amount}}" bindinput="inputFn" placeholder="请填写退款金额"/>
+            <view class="input-tips">
+              最多
+              <price font-size="24" textColor="#999" value="{{info.trade_after_sale.max_refund_amount}}"></price>，含发货邮费
+              <price font-size="24" textColor="#999" value="{{info.trade_after_sale.refund_shipment}}"></price>
+            </view>
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item">
+          <view class="item-left">
+            退款说明：
+          </view>
+          <view class="item-right">
+            <textarea class="s-textarea" value="{{formData.customer_remark}}" bindinput="textareaFn" placeholder="请填写详细描述"  />
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item">
+          <view class="item-left">
+            上传图片：
+          </view>
+          <view class="item-right">
+            <upload></upload>
+          </view>
+        </view>
+        <!--  -->
+        <view class="btn-wrap">
+          <view class="s-comfirm-btn" bindtap="fnComfirn">提交</view>
+        </view>
+        <!--  -->
+      </view>
+    </view>
+    <!-- 退货退款 -->
+    <view wx:if="{{info.trade_after_sale && info.trade_after_sale.after_sale_type === 1}}" class="s-form">
+      <view class="form-wrap">
+        <view class="form-item is-required">
+           <view class="item-left">
+            退货原因：
+          </view>
+          <view class="item-right">
+            <picker data-name="reasonList2" bindchange="fnReasonChange" value="{{reasonIndex}}" range="{{reasonList2}}">
+              <view class="picker">
+                {{reasonIndex === '' ? '请选择退货原因' : reasonList2[reasonIndex]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item is-required">
+           <view class="item-left">
+            退款金额：
+          </view>
+          <view class="item-right">
+            <input class="input" type="number" value="{{formData.refund_amount}}" bindinput="inputFn" placeholder="请填写退款金额"/>
+            <view class="input-tips">
+              最多
+              <price font-size="24" textColor="#999" value="{{info.trade_after_sale.max_refund_amount}}"></price>，含发货邮费
+              <price font-size="24" textColor="#999" value="{{info.trade_after_sale.refund_shipment}}"></price>
+            </view>
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item">
+          <view class="item-left">
+            退货说明：
+          </view>
+          <view class="item-right">
+            <textarea class="s-textarea" value="{{formData.customer_remark}}" bindinput="textareaFn" placeholder="请填写详细描述"  />
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item is-required">
+          <view class="item-left">
+            上传图片：
+          </view>
+          <view class="item-right">
+            <upload></upload>
+          </view>
+        </view>
+        <!--  -->
+        <view class="btn-wrap">
+          <view class="s-comfirm-btn"  bindtap="fnComfirn">提交</view>
+        </view>
+        <!--  -->
+      </view>
+    </view>
+    <!-- 换货 -->
+    <view wx:if="{{info.trade_after_sale && info.trade_after_sale.after_sale_type === 2}}" class="s-form">
+       <view class="form-wrap">
+          <view class="form-item is-required">
+          <view class="item-left">
+            换货原因：
+          </view>
+          <view class="item-right">
+            <picker data-name="reasonList3" bindchange="fnReasonChange" value="{{reasonIndex}}" range="{{reasonList3}}">
+              <view class="picker">
+                {{reasonIndex === '' ? '请选择换货原因' : reasonList3[reasonIndex]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <!--  -->
+        <view class="form-item is-required">
+          <view class="item-left">
+            换货说明：
+          </view>
+          <view class="item-right">
+            <textarea class="s-textarea" value="{{formData.customer_remark}}" bindinput="textareaFn" placeholder="请填写详细描述"  />
+          </view>
+        </view>
+        <!--  -->
+         <view class="form-item is-required">
+          <view class="item-left">
+            上传图片：
+          </view>
+          <view class="item-right">
+            <upload></upload>
+          </view>
+        </view>
+        <!--  -->
+        <view class="btn-wrap">
+          <view class="s-comfirm-btn"  bindtap="fnComfirn">提交</view>
+        </view>
+        <!--  -->
+       </view>
+    </view>
+    <!--  -->
+    <!--  -->
+  </view>
+</ui-scroll-view>
+
+
+<!-- 登录modal  -->
+<login-modal show="{{showLoginModal}}"></login-modal>

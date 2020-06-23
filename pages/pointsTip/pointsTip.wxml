@@ -1,0 +1,11 @@
+<!--pages/pointsTip/pointsTip.wxml-->
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+<scroll-view cut-height="96">
+  <view class="pointsTip">
+    <view class="pointsTip-item">1. 积分赠送会在订单完成后自动到账， 取消订单则无法获得相应积分；</view>
+    <view class="pointsTip-item">2. 有效积分可直接用于支付网站订单。积分可抵现金额具体以订单显示为准；</view>
+    <view class="pointsTip-item">3. 积分可以累积，有效期最长 2 年，最短 1 年，即从获得积分开始至次年年底，逾期自动作废。例如：2015-12-31 将清空 2014 年度获得但未使用的积分。</view>
+  </view>
+</scroll-view>

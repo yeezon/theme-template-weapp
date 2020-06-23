@@ -1,0 +1,6 @@
+
+module.exports = function (location_full_titles) {
+  location_full_titles = location_full_titles || ''
+
+  return location_full_titles.replace(getRegExp(',', 'g'), ' ')
+}

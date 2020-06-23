@@ -1,0 +1,21 @@
+<!--pages/discounts/components/limit.wxml-->
+<view wx:if="{{marketing && marketing.id && (endTime > nowTime)}}" class="discounts-limit">
+  <view wx:if="{{marketing.description}}" class="desc">{{ marketing.description }}</view>
+  <view class="times">
+    <block wx:if="{{now}}">
+      <text class="tip">距开抢还剩</text>
+      <view class="count-wrap">
+        <count-down start-date="{{marketing.start_at}}" end-date="{{marketing.end_at}}" bindendcount="fnStart"></count-down>
+      </view>
+      <!-- <count-down class="time" key="1" @end="fnStart()" :end-time="marketing.start_at" :timeType="timeType"></count-down> -->
+    </block>
+    <block wx:else>
+      <text class="tip">距结束仅剩</text>
+      <view class="count-wrap" wx:if="{{marketing.start_at}}">
+        <count-down  start-date="{{marketing.start_at}}" end-date="{{marketing.end_at}}" bindendcount="fnEnd"></count-down>
+      </view>
+      <!-- <count-down wx:if="marketing.start_at" class="time" key="2" @end="fnEnd()" :end-time="marketing.end_at" :timeType="timeType"></count-down> -->
+      <text wx:else class="time">0天0时0分0秒</text>
+    </block>
+  </view>
+</view>

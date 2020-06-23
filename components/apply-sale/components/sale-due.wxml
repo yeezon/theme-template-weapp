@@ -1,0 +1,10 @@
+<!--components/apply-sale/components/sale-due.wxml-->
+<mask show="{{isShowDue}}">
+  <view class="dialog-container">
+    <view class="s-title">
+      <text>售后已过期</text>
+      <image class="close-image" src='../../../assets/icons/close_icon.svg' mode="aspectFit" bindtap='FnCloseDue'></image>
+    </view>
+      <view class="s-box-due">很遗憾，订单已超过售后申请时间段，感谢理解。</view>
+  </view>
+</mask>

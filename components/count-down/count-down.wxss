@@ -1,0 +1,22 @@
+/* components/count-down/count-down.wxss */
+
+.new-count-down {
+  display: flex;
+  align-items: center;
+}
+.new-count-down .text {
+  min-width: 30rpx;
+}
+
+.new-count-down_ms {
+  /* display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24rpx;
+  height: 26rpx;
+  font-size: 20rpx;
+  border-radius: 4rpx;
+  margin-left: 4rpx;
+  color: #fff;
+  background: #a6a6a6; */
+}

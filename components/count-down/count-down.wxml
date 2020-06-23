@@ -1,0 +1,7 @@
+<view class="new-count-down">
+  <text wx:if="{{showDay}}" class="text">{{time.d}}天</text>
+  <text wx:if="{{showHour}}" class="text">{{time.h}}小时</text>
+  <text wx:if="{{showMin}}" class="text">{{time.m}}分</text>
+  <!-- <text wx:if="{{showSec}}" class="text">{{time.s}}秒</text> -->
+  <!-- <text wx:if="{{showMs}}" class="new-count-down_ms ms-class">{{time.ms}}</text> -->
+</view>

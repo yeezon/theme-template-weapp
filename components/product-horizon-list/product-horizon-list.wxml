@@ -1,0 +1,10 @@
+<!--components/product-horizon-list/product-horizon-list.wxml-->
+<view>
+  <scroll-view scroll-x="{{true}}" class='product-horizon-list_scroll'>
+    <view class='product-horizon-list'>
+      <block wx:for="{{products}}" wx:key="{{index}}">
+        <product-horizon-item product="{{item}}"></product-horizon-item>
+      </block>
+    </view>
+  </scroll-view>
+</view>

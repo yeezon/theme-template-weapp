@@ -1,0 +1,35 @@
+<!--pages/products/components/info/seckill/seckill.wxml-->
+<view class="product_info-seckill">
+  <view class="s-bar"><bar info="{{oNowEventInfo}}" price="{{nEventPrice}}" bindstart="fnStart" bindend="fnEnd"></bar></view>
+  <view class="info">
+    <view class="name">{{product.name}}</view>
+    <view class="desc" wx:if="{{product.short_desc}}">{{product.short_desc}}</view>
+  </view>
+  <view class="s-cont">
+    <view class="s-price">
+      <view class="s-dt">秒杀价</view>
+      <view class="s-dd">
+        <price value="{{nEventPrice}}" font-size="48"></price>
+        <block wx:if="{{sku.price > nEventPrice}}">
+          <text class="s-original_price">售价</text>
+          <price value="{{sku.price}}" font-size="24" type="del"></price>
+        </block>
+      </view>
+    </view>
+    <view class="s-award" wx:if="{{tips}}">
+      <view class="s-dt">奖励</view>
+      <view class="s-dd">{{tips}}</view>
+    </view>
+    <view class="s-limit">
+      <view class="s-dt">限制</view>
+      <view class="s-dd">
+        <view>特价商品不可与优惠券叠加使用</view>
+        <view>特价商品不与满减送类活动叠加使用</view>
+      </view>
+    </view>
+     <view class="s-item i-sale_sum" wx:if="{{nSale}}">
+        <view class="s-dt">销量</view>
+        <view class="s-dd">{{ nSale }}</view>
+      </view>
+  </view>
+</view>

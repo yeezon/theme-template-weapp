@@ -1,0 +1,53 @@
+.checkout_payment {
+  vertical-align: middle;
+  padding: 0 15px;
+  background-color: #fff;
+}
+.checkout_payment-title {
+  padding: 14px 0 15px;
+  border: 0 solid #d5d5d5;
+  border-width: 0 0 1rpx;
+  line-height: 1;
+}
+.checkout_payment-text {
+  padding: 15px 0;
+  color: #999;
+}
+.checkout_payment-tips {
+  padding: 0 28px 15px;
+  color: #777;
+  font-size: 13px;
+}
+.checkout_payment-tips_items {
+  margin: 10px 0 0;
+  font-size: 12px;
+}
+.checkout_payment-tips_item {
+  display: flex;
+}
+.checkout_payment-tips_img {
+  margin: 0 5px 0 0;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.checkout_payment-tips_info {
+  flex: 1;
+  overflow: hidden;
+}
+.checkout_payment-tips_info > .item {
+  height: 15px;
+  line-height: 15px;
+}
+.checkout_payment-tips_name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.radio {
+  display: block;
+  margin: 12px;
+}

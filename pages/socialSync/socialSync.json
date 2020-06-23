@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "ui-scroll-view": "../../components/scroll-view/scroll-view",
+    "login-modal": "../../components/login-modal/login-modal",
+    "row-list": "../../components/row-list/row-list",
+    "tel-login": "./components/telLogin/telLogin",
+    "captcha-modal": "./components/captcha-modal/captcha-modal"
+  }
+}

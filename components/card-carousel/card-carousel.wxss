@@ -1,0 +1,123 @@
+/* components/card-carousel/card-carousel.wxss */
+
+
+.card-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.card-carousel-con {
+  position: relative;
+  transition: all 0.5s;
+  /* padding-bottom: 16rpx; */
+}
+
+.card-carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  padding-bottom: 100%;
+  transition: all 0.5s;
+  border-radius: 0 0 16rpx 16rpx;
+  /* overflow: hidden; */
+}
+
+
+.card-carousel-item image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 16rpx 16rpx;
+  overflow: hidden;
+  box-shadow: 0rpx 4rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+}
+
+.card-carousel-item_text {
+  position: absolute;
+  display: block;
+  padding: 0 30rpx;
+  top: 0;
+  left: 0;
+}
+
+.card-carousel-item image text {
+  position: absolute;
+  display: block;
+  color: #fff;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.card-carousel-item_main-title {
+  bottom: 50rpx;
+}
+
+.card-carousel-item_sub-title {
+  bottom: 20rpx;
+}
+
+/*  */
+
+/* .card-carousel {
+  width: 100%;
+  position: relative;
+}
+
+.card-carousel__images-wrapper {
+  
+  transition: all 0.5s;
+}
+
+.card-carousel__image-item {
+  height: 100vw;
+  border-radius: 0 0 16rpx 16rpx;
+  overflow: hidden;
+}
+
+.card-carousel__image, .card-carousel__image-item {
+  width: 100%;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.card-carousel__image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-position-y: 0;
+  border-radius: 0 0 16rpx 16rpx;
+  background-position-x: center;
+  overflow: hidden;
+  
+}
+
+.card-carousel__image-desc, .card-carousel__image-title {
+  position: absolute;
+  color: #fff;
+  text-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.3);
+  text-align: center;
+  left: 50%;
+  font-weight: 500;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+  width: 80%;
+}
+
+.card-carousel__image-title {
+  bottom: 120rpx;
+  line-height: 80rpx;
+  padding: 0 100rpx;
+  font-size: 60rpx;
+}
+
+.card-carousel__image-title-current {
+  bottom: 120rpx;
+}
+
+.card-carousel__image-desc {
+  bottom: 38rpx;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  transform: translate(-50%);
+} */

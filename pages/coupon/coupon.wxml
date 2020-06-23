@@ -1,0 +1,58 @@
+<!--pages/coupon/coupon.wxml-->
+<wxs module="formatTime" src="../../filter/formatTime.wxs"></wxs>
+
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+<scroll-view >
+  <view class="nav-wrap">
+    <view class="nav-item {{nShowStatus === 'pending' ? 'active': ''}}" bindtap='fnTab' data-status='pending'>
+      <text>未使用</text>
+    </view>
+    <view class="nav-item {{nShowStatus === 'used' ? 'active': ''}}" bindtap='fnTab' data-status='used'>
+      <text>已使用</text>
+    </view>
+    <view class="nav-item {{nShowStatus === 'expired' ? 'active': ''}}" bindtap='fnTab' data-status='expired'>
+      <text>已过期</text>
+    </view>
+  </view>
+  <!--  -->
+  <view class="list-wrap">
+    <!--  -->
+    <load-tips wx:if="{{list.length === 0 }}" emptyText="暂无相关优惠券" emptyIconSrc="../../assets/icons/yk-icon-coupon.svg"></load-tips>
+    <view class="list-item" wx:for="{{list}}" wx:key="index">
+      <view class="item-bar">
+        <text>{{item.coupon_group_name}}</text>
+        <text class="item-bar-desc">{{item.statusText}}</text>
+      </view>
+      <view class="item-ticket">
+      <!--  -->
+        <view class="item-icon">
+          <view class="item-icon-info">
+            <view class="item-currency">
+              <!-- <price value="{{product.price_min}}" font-size="28"></price> -->
+              <price textColor="#fff" fontSize="32" wx:if="{{item.isAmount}}" value="{{item.couponDesc}}"></price>
+              <text wx:else>{{item.couponDesc}}</text>
+            </view>
+            <view class="item-icon-desc">
+              满<price textColor="#fff" fontSize="26" value="{{item.active_amount}}"></price>
+              <block wx:if="{{item.isAmount}}"> 减 <price textColor="#fff" fontSize="26" value="{{item.couponDesc}}"></price></block>
+              <block wx:else> 打 {{item.couponDesc}}</block>
+            </view>
+          </view>
+        </view>
+        <!-- {{formatTime(order.order_time, 'yyyy.MM.dd hh:mm')}} -->
+        <view class="item-info">
+          <view class="item-info-title">{{ item.coupon_group_name }}</view>
+          <view>
+            {{ formatTime(item.actived_at, 'yyyy-MM-dd hh:mm')}} 
+            - {{ item.expired_at ? formatTime(item.expired_at, 'yyyy-MM-dd hh:mm') : '永久'}}
+          </view>
+          <view>编码: {{item.code}}</view>
+        </view>
+        <!--  -->
+      </view>
+    </view>
+    <!--  -->
+  </view>
+</scroll-view>

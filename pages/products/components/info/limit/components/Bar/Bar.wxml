@@ -1,0 +1,14 @@
+<!--pages/products/components/info/limit/components/Bar/Bar.wxml-->
+<view class="product_info-limit-bar">
+  <text wx:if="{{isStarted}}" class="s-h">折扣中</text>
+  <text wx:if="{{isStarted}}" class="s-tips">距离结束</text>
+  <view wx:else>
+    <text>低至</text>
+    <price value="{{price}}" font-size="24" text-color="#fff" class="s-event_price"></price>
+    <text>距优惠开抢</text>
+  </view>
+  <count-down start-date="{{oInfo.start_at}}" end-date="{{oInfo.end_at}}" bindstart="fnStart" bindendcount="fnEnd"></count-down>
+  <navigator class="s-fr" wx:if="{{oInfo.handle}}" url="/pages/discounts/discounts?handle={{oInfo.handle}}">
+    <image src="../../../../../../../assets/icons/right-white.svg" class="icon"></image>
+  </navigator>
+</view>

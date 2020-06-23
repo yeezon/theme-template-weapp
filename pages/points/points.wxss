@@ -1,0 +1,132 @@
+/* pages/points/points.wxss */
+page{
+    background:#f6f4f9;
+}
+.points{    
+    line-height: 1;
+    color: #333;
+}
+.points-info{
+    text-align: center;
+    padding: 0 0 40rpx;
+    background: #ffffff;
+}
+.points-top{
+    padding: 30rpx;
+    text-align: right;
+    color: #fb544e;
+    display:flex;
+    align-items : center;
+    justify-content : flex-end;
+}
+.points-top-text{
+    font-size: 28rpx;
+    margin-left: 4rpx;
+}
+.points-title{
+    font-size: 28rpx;
+}
+.points-point{
+    font-size: 60rpx;
+    margin: 24rpx 0 24rpx;
+    font-weight: bold;
+}
+.points-valid{
+    font-size: 24rpx;
+}
+.points-valid-point{
+    font-weight: bold;
+    color: #777;
+    font-size: 28rpx;
+}
+.points-tab-bar{
+    display: flex;
+    border-width: 2rpx 0 2rpx 0;
+    border-style: solid;
+    border-color: #d5d5d5;
+    margin: 0 0 30rpx 0;
+    background: #ffffff;
+}
+.points-tab-bar-item{
+    display: block;
+    flex: 1;
+    text-align: center;
+}
+.points-tab-bar-item-text{
+    display:inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-width: 112rpx;
+    outline: none;
+    line-height: 76rpx;
+    background-color: transparent;
+    border: none;
+    font-size: 28rpx;
+}
+.points-tab-bar-item.active .points-tab-bar-item-text{
+    color: #4685ee;
+}
+.points-tab-bar-item.active .points-tab-bar-item-text:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2rpx;
+    left: 0;
+    width: 100%;
+    height: 4rpx;
+    font-size: 0;
+    background-color: #4685ee;
+}
+.points-details{
+    border-width: 2rpx 0 2rpx 0;
+    border-style: solid;
+    border-color: #d5d5d5;
+    padding: 0 15px;
+    margin: 0 0 30rpx 0;
+    background-color: #fff;
+}
+.points-details-item{
+    display: flex;
+    padding: 30rpx 0;
+    border-width: 0 0 2rpx 0;
+    border-style: solid;
+    border-color: #d5d5d5;
+    justify-content:space-between;
+    align-items:center;
+}
+.points-details-item:last-child{
+    border: none;
+}
+.points-details-info{
+    font-size: 28rpx;
+}
+.points-details-time{
+    margin: 16rpx 0 0;
+    font-size: 24rpx;
+    color: #777;
+}
+.points-details-point{
+    color: #1bb974;
+    font-size: 32rpx;
+}
+.points-details-point.i-out{
+    color: #fb544e;
+}
+.points-notice{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    margin: 30rpx 0;
+    padding: 120rpx 0 140rpx;
+}
+.points-notice-img{
+    display: block;
+    margin: 0 0 30rpx;
+    width: 152rpx;
+    height: 152rpx;
+}
+.points-notice-text{
+    color: #9e9e9e;
+    font-size: 28rpx;
+}

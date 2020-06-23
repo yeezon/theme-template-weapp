@@ -1,0 +1,44 @@
+<!--pages/points/points.wxml-->
+<wxs module="formatTime" src="../../filter/formatTime.wxs"></wxs>
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+<scroll-view > 
+  <view class="points">
+    <view class="points-info">
+      <view class="points-top" data-url="pointsTip" bind:tap="gotoPage">
+        <block>
+          <icon type="info_circle" size="14" color="#fb544e" />
+        </block>
+        <text class="points-top-text">积分说明</text>
+      </view>
+      <view class="points-title">可用积分</view>
+      <view class="points-point">{{ oPoints.reward_point_total || 0 }}</view>
+      <view class="points-valid">{{ year }}-12-31 将过期 <text class="points-valid-point">{{ oPoints.last_year_point || 0 }}</text> 积分</view>
+    </view>
+    <view class="points-tab-bar">
+      <view class="points-tab-bar-item {{nShowType === 0 ? 'active' : ''}}" data-id="{{0}}" bindtap="tabChange">
+        <text class="points-tab-bar-item-text">积分明细</text>
+      </view>
+      <view class="points-tab-bar-item {{nShowType === 1 ? 'active' : ''}}" data-id="{{1}}" bindtap="tabChange">
+        <text class="points-tab-bar-item-text">收入</text>
+      </view>
+      <view class="points-tab-bar-item {{nShowType === 2 ? 'active' : ''}}" data-id="{{2}}" bindtap="tabChange">
+        <text class="points-tab-bar-item-text">支付</text>
+      </view>
+    </view>
+    <view class="points-details">
+      <view class="points-details-item" wx:for="{{ details }}" wx:if="{{ nShowType === 1 ? (item.point > 0 ? true : false) : (nShowType === 2 ? (item.point < 0 ? true : false) : true) }}">
+        <view class="points-details-info">
+          <view class="points-details-desc">{{ item.reward_point_desc || '无说明' }}</view>
+          <view class="points-details-time">{{formatTime(item.created_at, 'yyyy.MM.dd hh:mm')}}</view>
+        </view>
+        <view class="points-details-point {{item.point < 0 ? 'i-out' : ''}}">{{ item.point }}</view>
+      </view>
+      <view class="points-notice" wx:if="{{ noticeShow }}">
+        <image class="points-notice-img" src='../../assets/icons/points_defalt_icon.svg' mode='aspectFit'></image>
+        <text class="points-notice-text">暂无相关积分明细</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

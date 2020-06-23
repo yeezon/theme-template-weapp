@@ -1,0 +1,17 @@
+
+<wxs module="getAddressText" src="./modules/getAddressText.wxs"></wxs>
+
+<view class="checkout_bar">
+  <view wx:if="Object.keys(address).length" class="checkout_bar-add">
+    <view>寄送至：{{ getAddressText(address.location_full_titles) }} {{ address.detail }}</view>
+    <view>收货人：{{ address.name }} {{ address.mobile }}</view>
+  </view>
+  <view class="checkout_bar-cont">
+    <view class="checkout_bar-left">
+      <view class="checkout_bar-sum">实付金额：<price class="price" fontSize="28" value="{{ amount }}"></price></view>
+      <view wx:if="point" class="checkout_bar-point">可获得积分：{{ point }}</view>
+    </view>
+    <button class="checkout_bar-submit" type="danger" bindtap="fnSubmit" disabled="{{ amount === null }}">提交订单</button>
+  </view>
+  <view class="home_indicator"></view>
+</view>

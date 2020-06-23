@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "skus": "../skus/index",
+    "price": "../price/price",
+    "stepper": "../stepper/stepper",
+    "popup": "../popup/popup"
+  }
+}

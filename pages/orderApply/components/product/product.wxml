@@ -1,0 +1,31 @@
+<!--pages/orderApply/components/product.wxml-->
+<view class="s-product-item item-test {{!isSupport ? 'no-change-goods':'' }}">
+  <view class="s-item-left">
+    <!-- <su-button type="text" wx:if="isSupport" class="s-check" @click="fnCheck">
+      <sk-icon wx:if="isCheck" class="s-check_ico i-on" name="cart-check-on" slot="icon"></sk-icon>
+      <sk-icon wx:else class="s-check_ico" name="cart-check" slot="icon"></sk-icon>
+    </su-button> -->
+    <view wx:if="{{isSupport}}" class="checkbox__inner {{isCheck ? 'is-checked' : ''}}" bindtap="fnCheck"></view>
+    <!-- <view wx:else class="s-tips">{{ item.reason || '商品暂不可购' }}</view> -->
+  </view>
+  <view class="s-item-inner">
+    <view class="s-item-img">
+      <image src="{{item.imgUrl}}" mode="aspectFit"></image>
+      <!-- <img src="getImageUrl(item.image_id,item.image_name,'60x60',item.image_epoch)" alt=""> -->
+    </view>
+    <view class="s-item-name">
+      <text class="s-item-title">{{item.name}}</text>
+      <view class="s-item-attrs" wx:if="{{item.options_desc}}">
+          <text class="s-attr">{{item.options_desc  || ''}}</text>
+      </view>
+      <text wx:if="{{!isSupport}}" class="s-item-no-changegoods"><!-- <sk-icon class="" name="apply-tips"></sk-icon> -->未发货的商品暂不支持退换货</text>
+    </view>
+    <view class="s-item-paid">
+      <price textColor="#333" value="{{item.item_amount}}" font-size="28"></price>
+      <!-- <su-currency class="s-price" :val="Number(item.item_amount)"></su-currency> -->
+      <!-- <span class="s-item-quantity-mob">
+        x {{item.quantity}}
+      </span> -->
+    </view>
+  </view>
+</view>

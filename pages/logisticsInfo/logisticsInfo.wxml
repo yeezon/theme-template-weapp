@@ -1,0 +1,30 @@
+<!--  -->
+<new-nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</new-nav-bar>
+
+<!--  -->
+<new-scroll-view>
+  <view class="new-logistics-Info">
+    <view class="new-logistics-Info-header">
+      <view class="new-logistics-Info-header_center">
+        <view class="info">
+          <text>物流公司：</text>
+          <text>{{shipmentName}}</text>
+        </view>
+        <view class="info">
+          <text>物流单号：</text>
+          <text>{{shipmentNum || '-'}}</text>
+          <text wx:if="{{shipmentNum}}" class="copy-btn" data-no="{{shipmentNum}}" bindtap="copyNumber">复制</text>
+        </view>
+      </view>
+      <view class="new-logistics-Info-header_right">
+        <button class="new-logistics-service-btn" open-type='contact'>联系客服</button>
+      </view>
+    </view>
+    <view class="new-logistics-Info-list">
+      <view wx:if="{{!info.data || !info.data.length === 0}}" class="no-logistics-Info">暂时未能查询到物流信息</view>
+      <new-steps wx:else steps="{{info.data}}"></new-steps>
+    </view>
+  </view>
+</new-scroll-view>

@@ -1,0 +1,8 @@
+<!--pages/services/components/s-apply-schedule.wxml.wxml-->
+<view class="s-apply-schedule">
+  <view class="schedule-step {{item.done ? 'done':''}}" wx:for="{{typeArr}}" wx:key="index">
+    <view class="tail-cont" style="display:inline;"><text class="tail tail-c"></text><text class="tail"></text></view>
+    <!-- <text class="s-step-tag {{item.done ? 'done':''}}">{{index + 1}}</text> -->
+    <text>{{item.title}}</text>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/products/components/Limit/limit.wxml-->
+<view class="product_info-limit">
+  <view class="s-bar"><Bar info="{{oNowEventInfo}}" price="{{nEventPrice}}" bindstart="fnStart" bindend="fnEnd"></Bar></view>
+  <view class="info">
+    <view class="name">{{proDetails.name}}</view>
+    <view class="desc">{{proDetails.short_desc}}</view>
+  </view>
+  <view class="s-cont">
+    <view class="s-price">
+      <view class="s-dt">折扣价</view>
+      <view class="s-dd">
+        <price value="{{nEventPrice}}" font-size="48"></price>
+        <text class="s-original_price">售价</text>
+        <price value="{{sku.price}}" font-size="24" type="del"></price>
+      </view>
+    </view>
+    <view class="s-award">
+      <view class="s-dt">奖励</view>
+      <view class="s-dd">{{tips}}</view>
+    </view>
+    <view class="s-limit">
+      <view class="s-dt">限制</view>
+      <view class="s-dd">
+        <view>特价商品不可与优惠券叠加使用</view>
+        <view>特价商品不与满减送类活动叠加使用</view>
+      </view>
+    </view>
+  </view>
+</view>

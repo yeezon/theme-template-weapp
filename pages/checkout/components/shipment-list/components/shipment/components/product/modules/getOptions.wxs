@@ -1,0 +1,7 @@
+
+module.exports = function (val) {
+  val = (val || '')
+  val = val.replace(',', ' ')
+
+  return val
+}

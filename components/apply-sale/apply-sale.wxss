@@ -1,0 +1,16 @@
+/* components/apply-sale/apply-sale.wxss */
+.order-btn {
+  height: 60rpx;
+  padding: 0 18rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  margin-left: 12rpx;
+  margin-right: 0;
+  color: #4685ee;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  border: 1rpx solid #4685ee;
+  background-color: #fff;
+}

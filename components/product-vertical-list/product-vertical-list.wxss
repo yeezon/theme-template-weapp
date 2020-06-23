@@ -1,0 +1,5 @@
+/* components/product-vertical-list/product-vertical-list.wxss */
+
+.product-vertical-list {
+  padding-bottom: 30rpx;
+}

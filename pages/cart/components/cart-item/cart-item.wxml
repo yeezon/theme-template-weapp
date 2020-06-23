@@ -1,0 +1,24 @@
+<!--components/cart-item/cart-item.wxml-->
+<view class='cart-product' wx:key="{{oItem.id}}">
+  <view class='cart-product-info'>
+    <view wx:if="{{oItem.reason}}" class='info-left'>
+      <view class='product-tips'>{{oItem.reason}}</view>
+    </view>
+    <view wx:else class='info-left' bindtap='fnCheck'>
+      <view class="checkbox__inner {{hasCheck ? 'is-checked' : ''}}"></view>
+    </view>
+    <view class='info-cont'>
+      <image class='product-img' src='{{oItem.image_src}}' mode='aspectFill'></image>
+      <view class='product-name'>{{oItem.name}}</view>
+    </view>
+    <view class='info-right'>
+      <price value="{{discount.event_price > -1 ? discount.event_price : oItem.price}}" font-size="28" text-color="#000"></price>
+      <view class='product-del' bindtap='fnDel'>删除</view>
+    </view>
+  </view>
+  <!--  -->
+  <view class='cart-product-set'>
+    <view class="product-skus {{oItem.options_desc ? '' : 'product-skus-empty'}}">{{oItem.options_desc}}</view>
+    <quantity wx:if="{{oItem.quantity}}" value="{{oItem.quantity}}" bindinput="fnNumChange"></quantity>
+  </view>
+</view>

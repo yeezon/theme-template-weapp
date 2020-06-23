@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+var getDisTypeDesc = function (type) {
+  var desc = '活动'
+  if (type === 'amount_off') {
+    desc = '满减'
+  } else if (type === 'percent_off') {
+    desc = '满折'
+  } else if (type === 'coupon') {
+    desc = '满赠券'
+  }
+  return desc
+}
+
+module.exports = getDisTypeDesc

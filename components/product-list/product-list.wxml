@@ -1,0 +1,8 @@
+<!--components/product-list/product-list.wxml-->
+<view class='product-list'>
+  <view class='product-list-items'>
+    <block wx:for="{{products}}" wx:key="{{item.id}}">
+      <product-item product="{{item}}"></product-item>
+    </block>
+  </view>
+</view>

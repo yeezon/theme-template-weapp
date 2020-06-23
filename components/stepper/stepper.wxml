@@ -1,0 +1,8 @@
+<!--components/stepper/stepper.wxml-->
+
+<view class="stepper custom-class {{minType ? 'min-stepper' : ''}}">
+  <view class="minus-class stepper__minus {{ value <= min ? 'stepper__minus--disabled' : '' }}" bindtap="onMinus" />
+  <input type="{{ integer ? 'number' : 'digit' }}" class="input-class stepper__input {{ disabled || disableInput ? 'stepper__input--disabled' : '' }}" value="{{ value }}" disabled="{{ disabled || disableInput }}" bindinput="onInput" bindblur="onBlur"
+  />
+  <view class="plus-class stepper__plus {{ value >= max ? 'stepper__plus--disabled' : '' }}" bindtap="onPlus" />
+</view>

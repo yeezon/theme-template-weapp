@@ -1,0 +1,5 @@
+<scroll-view class="new-scroll-view" scroll-y style="height: calc(100vh - {{navBarHeight}}px {{cutHeight ? '- '+cutHeight+'rpx' : ''}} {{checkIpx && isIpx ? '- 68rpx' : ''}});margin-top: calc({{navBarHeight}}px {{marginTop ? '+ '+marginTop+'rpx' : ''}})"
+  enable-back-to-top scroll-top="{{scrollTop}}" scroll-with-animation bindscroll="onScroll" bindscrolltolower="bindscrolltolower" bindtouchmove='bindtouchmove'>
+  <slot></slot>
+  <view wx:if="{{checkIpx && isIpx}}" class="fix-iphonex-bottom"></view>
+</scroll-view>

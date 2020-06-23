@@ -1,0 +1,23 @@
+/* pages/collection/collection.wxss */
+
+/* page {
+  background: #f6f4f9;
+} */
+
+.collection-con {
+  padding: 30rpx 0;
+}
+
+.collection-con .image-con {
+  padding: 0 30rpx;
+}
+
+.collection-con .image-con image {
+  width: 100%;
+  border-radius: 8rpx;
+}
+
+.collection-con product-set-title {
+  display: block;
+  padding: 10rpx 0;
+}

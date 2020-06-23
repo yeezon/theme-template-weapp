@@ -1,0 +1,48 @@
+
+page {
+  background: #f6f4f9;
+}
+
+.items {
+  padding: 20rpx;
+  background: rgba(255, 255, 255, 0.692);
+}
+
+.item {
+  overflow: hidden;
+  position: relative;
+  margin: 20rpx 0 0;
+  height: 365rpx;
+  border-radius: 10rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.item:first-child {
+  margin: 0;
+}
+
+.anchor {
+  overflow: hidden;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+  width: 264rpx;
+  height: 84rpx;
+  border-radius: 42rpx;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.anchor_img {
+  display: block;
+  margin: 0 0 0 5rpx;
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

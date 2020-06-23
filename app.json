@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/cart/cart",
+    "pages/orderDetails/orderDetails",
+    "pages/address/address",
+    "pages/addressForm/addressForm",
+    "pages/discovery/discovery",
+    "pages/level/level",
+    "pages/coupon/coupon",
+    "pages/points/points",
+    "pages/pointsTip/pointsTip",
+    "pages/user/user",
+    "pages/user/edit",
+    "pages/security/security",
+    "pages/changePassword/changePassword",
+    "pages/socialSync/socialSync",
+    "pages/checkout/index",
+    "pages/orderList/orderList",
+    "pages/discounts/discounts",
+    "pages/services/detail",
+    "pages/services/services",
+    "pages/orderApply/applyForm",
+    "pages/products/products",
+    "pages/web/index",
+    "pages/weLives/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#a6a6a6",
+    "selectedColor": "#E94A46",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "assets/tab/shop.png",
+        "selectedIconPath": "assets/tab/shop_active.png"
+      },
+      {
+        "pagePath": "pages/discovery/discovery",
+        "text": "发现",
+        "iconPath": "assets/tab/discovery.png",
+        "selectedIconPath": "assets/tab/discovery_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "assets/tab/cart.png",
+        "selectedIconPath": "assets/tab/cart_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "assets/tab/mine.png",
+        "selectedIconPath": "assets/tab/mine_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "live-player-plugin": {
+      "version": "1.0.18",
+      "provider": "wx2b03c6e691cd7370"
+    }
+  }
+}

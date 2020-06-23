@@ -1,0 +1,29 @@
+<view class="mask" wx:if="{{ selfShow }}">
+  <view class="captcha-modal">
+    <header class="header">
+      <image
+        class="icon-close"
+        src="../../../../assets/icons/close_icon.svg"
+        bindtap="handleCloseTap" />
+    </header>
+    <section class="section">
+      <h1 class="title">获取手机验证码</h1>
+      <view class="input-bar" hover-class="none" hover-stop-propagation="false">
+        <input
+          class="captcha-input"
+          placeholder="验证码"
+          value="{{ captchaValue }}"
+          bindinput="handleInputChange" />
+        <image class="captcha-img" src="{{ captchaUrl }}" />
+        <view class="re-get-text" bindtap="handleRegetCaptcha">看不清?</view>
+      </view>
+    </section>
+    <footer class="footer">
+      <view
+        class="btn-confirm"
+        bindtap="handleConfirmTap">
+        确定
+      </view>
+    </footer>
+  </view>
+</view>

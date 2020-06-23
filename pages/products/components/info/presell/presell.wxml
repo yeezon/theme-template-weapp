@@ -1,0 +1,44 @@
+<!--pages/products/components/info/presell/presell.wxml-->
+<view class="product_info-seckill">
+  <view class="s-bar">
+    <bar info="{{oNowEventInfo}}" price="{{nEventPrice}}" bindstart="fnStart" bindend="fnEnd"></bar>
+  </view>
+  <view class="info" wx:if="{{isStart}}">
+    <view class="name">{{product.name}}</view>
+    <view class="desc" wx:if="{{product.short_desc}}">{{product.short_desc}}</view>
+  </view>
+  <view class="s-cont">
+    <view class="s-price">
+      <view class="s-dt">预售价</view>
+      <view class="s-dd">
+        <price value="{{nEventPrice}}" font-size="48"></price>
+        <block wx:if="{{sku.price > nEventPrice}}">
+          <text class="s-original_price">售价</text>
+          <price value="{{sku.price}}" font-size="24" type="del"></price>
+        </block>
+      </view>
+    </view>
+
+    <view class="s-item s-award" wx:if="{{nOrderCount > 0}}">
+      <view class="s-dt">已预定</view>
+      <view class="s-dd">{{nOrderCount}}件</view>
+    </view>
+
+    <view class="s-award" wx:if="{{tips}}">
+      <view class="s-dt">奖励</view>
+      <view class="s-dd">{{tips}}</view>
+    </view>
+
+    <view class="s-item s-award">
+      <view class="s-dt">发货</view>
+      <view class="s-dd" wx:if="{{!oNowEventInfo.delivery_type}}">付款成功 {{ oNowEventInfo.delivery_days }} 天后发货</view>
+      <view class="s-dd" wx:else>{{ oNowEventInfo.delivery_at}} 后开始发货</view>
+    </view>
+
+     <view class="s-item i-sale_sum" wx:if="{{nSale}}">
+        <view class="s-dt">销量</view>
+        <view class="s-dd">{{ nSale }}</view>
+      </view>
+  </view>
+</view>
+

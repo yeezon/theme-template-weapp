@@ -1,0 +1,34 @@
+<!--pages/products/components/info/info.wxml-->
+<!-- <wxs module="nDiscountType" src="../../modules/nDiscountType.wxs"></wxs> -->
+
+<!-- 商品信息 -->
+<!-- 1秒杀 -->
+<block wx:if="{{nDiscountType === 1}}">
+  <seckill product="{{proDetails}}" marketing="{{oMarketing}}" sku="{{oNowSku}}"  bindstart="fnDiscountStart"  bindend="fnDiscountEnd" binddiscountHandle="setDiscountHandle"></seckill>
+</block>
+<!-- 2限时 -->
+<block wx:if="{{nDiscountType === 2}}">
+  <limit proDetails="{{proDetails}}" marketing="{{oMarketing}}" sku="{{oNowSku}}" bindstart="fnDiscountStart" bindend="fnDiscountEnd" binddiscountHandle="setDiscountHandle"></limit>
+</block>
+<!-- 10预售 -->
+<block wx:if="{{nDiscountType === 10}}">
+  <presell product="{{proDetails}}" marketing="{{oMarketing}}" sku="{{oNowSku}}" bindstart="fnDiscountStart" bindend="fnDiscountEnd" binddiscountHandle="setDiscountHandle"></presell>
+</block>
+<!--  -->
+<block wx:if="{{!isDiscountStarted}}">
+  <view class="info">
+    <view class="name">{{proDetails.name}}</view>
+    <view class="desc" wx:if="{{proDetails.short_desc}}">{{proDetails.short_desc}}</view>
+  </view>
+  <view class="pro-details-price">
+    <view class="price">
+      <price value="{{sku ? sku.price : proDetails.price_min}}" font-size="32"></price>
+      <price wx:if="{{proDetails.compare_price_min < proDetails.compare_price_max}}" value="{{proDetails.compare_price_max}}" font-size="26" type="del"></price>
+    </view>
+  </view>
+  <!--  -->
+  <!-- 营销活动 -->
+  <view class="product-info-discounts" wx:if="{{discounts.length}}">
+    <text class="product-info-discounts_item" wx:for="{{discounts}}" wx:key="index">{{item.name}}</text>
+  </view>
+</block>

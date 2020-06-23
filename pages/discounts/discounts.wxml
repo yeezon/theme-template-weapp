@@ -1,0 +1,55 @@
+<!--pages/discounts/discounts.wxml-->
+<wxs src="./../../filter/toFixed.wxs" module="filter" />
+
+<nav-bar navigateBack="true">
+  <view slot="center">{{ oDiscount.name || oMarketing.title }}</view>
+</nav-bar>
+
+<scroll-view wx:if="{{!isLoading}}" bindscrolltolower="">
+  <view class="s-details">
+    <block wx:if="{{oMarketing.id}}">
+      <!-- 新营销活动 倒计时秒杀 -->
+      <limit marketing="{{oMarketing}}"></limit>
+    </block>
+    <block wx:else>
+      <!-- 旧营销活动 -->
+      <block wx:for="{{oDiscount.details}}" wx:for-item="oActive" wx:key="{{oActive.id}}">
+        <view class="s-details_item" wx:key="{{index + oDiscount.discount_type}}" wx:if="{{oDiscount.discount_type === 'amount_off'}}">
+          <span>{{ oActive.type_id === 1 ? '每满' : '满' }} 
+            <currency value="{{oActive.active_amount}}" /> 减<currency value="{{oActive.discount_amount}}" />
+          </span>
+        </view>
+        <view class="s-details_item" wx:key="{{index + oDiscount.discount_type}}" wx:elif="{{oDiscount.discount_type === 'percent_off'}}">
+          <span wx:if="{{oActive.type_id === 1}}">
+            满 {{ oActive.active_amount }} 件 打 {{ filter.toFixed(oActive.discount_percent / 10, 1) }} 折
+          </span>
+          <span wx:else>
+            满 <currency value="{{oActive.active_amount}}" /> 打 {{ filter.toFixed(oActive.discount_percent / 10, 1) }} 折
+          </span> 
+        </view>
+        <view
+          class="s-details_item"
+          wx:key="{{index + oDiscount.discount_type}}"
+          wx:elif="{{oDiscount.discount_type === 'coupon'}}">
+          满 <currency value="{{oActive.active_amount}}" /> 赠送 <currency value="{{oActive.coupon_discount_amount}}" /> 优惠券
+        </view>
+        <view
+          class="s-details_item"
+          wx:key="{{index + oDiscount.discount_type}}"
+          wx:elif="{{oDiscount.discount_type === 'free_shipping'}}">
+          <span wx:if="{{oActive.active_amount === 0}}">免邮促销</span>
+          <span wx:else>满 <currency value="{{oActive.active_amount}}" /> 享受免邮促销</span>
+        </view>
+      </block>
+    </block>
+  </view>
+
+  <!-- <product-list  /> -->
+  <view class="products-list-wrapper">
+    <product-list wx:if="{{ listStyle === 2 }}" products="{{products}}" />
+    <product-vertical-list wx:if="{{ listStyle === 1 }}" products="{{products}}" />
+    <!-- load more -->
+    <view wx:if="{{loadedAll}}" class='pro-loaded-all'>没有更多了~</view>
+  </view>
+
+</scroll-view>

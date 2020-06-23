@@ -1,0 +1,66 @@
+/* components/nav-bar/nav-bar.wxss */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 36rpx;
+  user-select: none;
+  box-sizing: border-box;
+  /* background-color: #fff; */
+  z-index: 998;
+}
+
+.nav-bar-content {
+  display: flex;
+  height: 44px;
+  /* line-height: 44px; */
+  align-items: center;
+}
+
+.nav-bar-content .nav-bar-left {
+  position: relative;
+  display: flex;
+  width: 193rpx;
+  height: 100%;
+  padding: 0 28rpx 0 0;
+}
+
+.nav-bar-content .nav-bar-center {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  width: 0;
+  /* white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: normal; */
+}
+
+.nav-bar-content .nav-bar-center_ellipsis view {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-bar-content .nav-bar-right {
+  width: 165rpx;
+  padding: 0 28rpx;
+}
+
+/*  */
+
+.nav-bar-back {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 4rpx;
+  height: 100%;
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+}
+
+.nav-bar-back .img {
+  width: 46rpx;
+  height: 45rpx;
+}

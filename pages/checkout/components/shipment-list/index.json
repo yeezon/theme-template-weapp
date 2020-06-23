@@ -1,0 +1,7 @@
+
+{
+  "component": true,
+  "usingComponents": {
+    "shipment": "./components/shipment/index"
+  }
+}

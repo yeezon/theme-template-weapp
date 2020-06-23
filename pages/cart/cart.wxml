@@ -1,0 +1,21 @@
+
+<!--  -->
+<nav-bar>
+  <view slot="center">{{titile}}</view>
+</nav-bar>
+
+<ui-scroll-view bindscrolltolower="scrolltolower" checkIpx="{{false}}">
+  <!-- <view wx:if="{{cart}}" class='cart-wrap'> -->
+  <!-- 购物车商品列表 -->
+  <!-- <cart-pro-list id="cart-pro-list" cart="{{cart}}" bindcheckedAll="checkedAll" bindamount="getSettlement" bindproductChecked="productChecked" bindcartEmpty="cartEmpty"></cart-pro-list> -->
+  <!-- </view> -->
+
+  <view>
+    <cart></cart>
+  </view>
+
+
+</ui-scroll-view>
+
+<!-- 登录modal  -->
+<login-modal show="{{showLoginModal}}"></login-modal>

@@ -1,0 +1,4 @@
+<!--components/apply-sale/apply-sale.wxml-->
+<button  class="order-btn"  hover-class="order-btn-hover" bindtap='FnApply'>申请售后</button>
+<sale-due  wx:if="isShowDue" is-show-due="{{isShowDue}}" bindclose="FnChangeDue"></sale-due>
+<apply-due wx:if="isShowApply" isShowApply="{{isShowApply}}" isVirtual="{{isVirtual}}" orderNo="{{order.order_no}}" bindclose="FnChangeApply"></apply-due>

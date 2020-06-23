@@ -1,0 +1,68 @@
+
+<wxs module="hasObjectKey" src="./modules/hasObjectKey.wxs"></wxs>
+
+<view class="checkout_sums">
+  <view class="checkout_sums-item">
+    <text>商品金额总计</text>
+    <view class="checkout_sums-count">
+      <price fontSize="28" value="{{ data.oRes.item_amount }}"></price>
+    </view>
+  </view>
+  <view class="checkout_sums-item">
+    <text>运费总计</text>
+    <view class="checkout_sums-count">
+      <price fontSize="28" value="{{ data.oRes.shipment_amount }}"></price>
+    </view>
+  </view>
+  <block wx:if="{{ discount.discounts && discount.discounts.length > 0 }}">
+    <block wx:for="{{ discount.discounts }}" wx:key="index">
+      <view wx:if="{{ item.discount_amount }}" class="checkout_sums-item">
+        <text>{{ item.name }}</text>
+        <view class="checkout_sums-count">-<price fontSize="28" value="{{ item.discount_amount }}"></price></view>
+      </view>
+    </block>
+  </block>
+  <!-- 订单详情记录 -->
+  <block wx:if="{{ records.length > 0 }}">
+    <block wx:for="{{ records }}" wx:key="index">
+      <view wx:if="{{ item.amount }}" class="checkout_sums-item">
+        <text>{{ item.name }}</text>
+        <view class="checkout_sums-count">-<price fontSize="28" value="{{ item.amount }}"></price></view>
+      </view>
+    </block>
+  </block>
+  <view wx:if="{{ coupon.code }}" class="checkout_sums-item">
+    <text>优惠券</text>
+    <view class="checkout_sums-count">-<price fontSize="28" value="{{ couponSum }}"></price></view>
+  </view>
+  <!-- 会员优惠 -->
+  <view wx:if="{{ data.oRes.level_discount_amount }}" class="checkout_sums-item">
+    <text>会员优惠</text>
+    <view class="checkout_sums-count">-<price fontSize="28" value="{{ data.oRes.level_discount_amount }}"></price></view>
+  </view>
+  <!-- 积分抵现 -->
+  <view wx:if="{{ data.oRes.point_disocunt_amount }}" class="checkout_sums-item">
+    <text>积分抵现</text>
+    <view class="checkout_sums-count">-<price fontSize="28" value="{{ data.oRes.point_disocunt_amount }}"></price></view>
+  </view>
+  <block wx:if="{{ hasObjectKey(data.others) }}">
+    <block wx:for="{{ data.others }}" wx:key="index">
+      <view wx:if="{{ item.amount }}" class="checkout_sums-item">
+        <text>{{ item.name }}</text>
+        <view class="checkout_sums-count"><price fontSize="28" value="{{ item.amount }}"></price></view>
+      </view>
+    </block>
+  </block>
+  <view wx:if="{{ (data.fix_amount || data.fix_amount === 0) && data.fix_amount !== data.oRes.final_amount && !data.Calc }}" class="checkout_sums-item">
+    <text>原价</text>
+    <view class="checkout_sums-count total">
+      <price fontSize="28" value="{{ data.oRes.final_amount }}"></price>
+    </view>
+  </view>
+  <view class="checkout_sums-item">
+    <text>实付金额</text>
+    <view class="checkout_sums-count total">
+      <price fontSize="28" value="{{ (data.fix_amount || data.oRes.final_amount) }}"></price>
+    </view>
+  </view>
+</view>

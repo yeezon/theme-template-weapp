@@ -1,0 +1,32 @@
+/**
+ * 订单状态 转换 文字
+ */
+var orderStatus = function(status) {
+  var statusText = ''
+  switch (status) {
+    case 0:
+      statusText = '待支付'
+      break;
+    case 1:
+      statusText = '已取消'
+      break;
+    case 2:
+      statusText = '退单中'
+      break;
+    case 3:
+      statusText = '已退单'
+      break;
+    case 4:
+      statusText = '已完成'
+      break;
+    case 5:
+      statusText = '已过期'
+      break;
+    default:
+      statusText = '已关闭'
+      break;
+  }
+  return statusText
+}
+
+module.exports = orderStatus

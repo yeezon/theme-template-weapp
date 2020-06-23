@@ -1,0 +1,9 @@
+<!--pages/products/components/info/presell/components/bar/bar.wxml-->
+<view class="product_info-limit-bar">
+  <text wx:if="{{isStarted}}" class="s-h">全款预售</text>
+  <text wx:if="{{isStarted}}" class="s-tips">预售剩余</text>
+  <count-down start-date="{{oInfo.start_at}}" end-date="{{oInfo.end_at}}" bindstart="fnStart" bindendcount="fnEnd"></count-down>
+  <navigator class="s-fr" wx:if="{{oInfo.handle}}" url="/pages/discounts/discounts?handle={{oInfo.handle}}">
+    <image src="../../../../../../../assets/icons/right-white.svg" class="icon"></image>
+  </navigator>
+</view>

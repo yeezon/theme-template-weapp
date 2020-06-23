@@ -1,0 +1,3 @@
+<block wx:if="{{nodes.length}}" wx:for="{{nodes}}" wx:key="index">
+  <rich-text class="rich-text"  nodes="{{item.value}}"></rich-text>
+</block>

@@ -1,0 +1,17 @@
+<!--components/product-horizon-item/product-horizon-item.wxml-->
+
+<view class="product-horizon-item" id="{{product.handle}}" bindtap='onTap'>
+  <image class="product-horizon-item_img" src="https:{{product.feature_image.src}}" mode='aspectFill'>
+    <!-- <view wx:if="{{!product.sku_stock}}" class="soldout-tag">售罄</view> -->
+  </image>
+  <view class="product-horizon-item-con">
+    <view class="product-horizon-item_brand">{{product.vendor_name}}</view>
+    <view class="product-horizon-item_name">{{product.name}}</view>
+    <view class="product-horizon-item_price">
+      <price value="{{product.price_min}}" font-size="26"></price>
+      <text wx:if="{{product.price_min < product.price_max}}" class="price_line">~</text>
+      <price wx:if="{{product.price_min < product.price_max}}" value="{{product.price_max}}" font-size="28"></price>
+      <!-- <price wx:if="{{product.min_price < product.max_market_price}}" value="{{product.max_market_price}}" font-size="20" type="del"></price> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+<!--pages/servicesApply/servicesApply.wxml-->
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+
+<ui-scroll-view>
+  <view class="s-order-apply">
+    <view class="s-apply-top">
+      <view class="s-title">选择订单中的商品</view>
+    </view>
+    <!-- -->
+    <view wx:if="{{canAfterSale.length}}" class="s-apply-cont">
+      <view wx:for="{{orderData}}" wx:for-item="shipment" wx:key="index">
+        <view wx:for="{{shipment.items}}" wx:for-index="idx" wx:key="idx">
+          <product
+            wx:if="{{!item.trade_after_sale_id}}"
+            item="{{item}}"
+            isSupport="{{shipment.support_this_service}}"
+            isCheck="{{sProduct[item.id].is_check}}"
+            bindcheck="fnCheck"
+            >
+          </product>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="s-apply-cont">
+      <view class="s-apply-cont_empty">该订单中暂无可申请售后的商品</view>
+    </view>
+    <!--  -->
+    <view class="s-apply-bar">
+      <view class="s-bar-inner">
+        <view class="s-bar-left" bindtap="fnAllCheck">
+          
+          <!-- <su-button type="text" class="s-check" @click="fnAllCheck">
+            <sk-icon wx:if="nCheck && !hasUnCheck" class="s-check_ico i-on" name="cart-check-on" slot="icon"></sk-icon>
+            <sk-icon wx:if="nCheck && hasUnCheck" class="s-check_ico" name="cart-check" slot="icon"></sk-icon>
+            <sk-icon wx:if="!nCheck && hasUnCheck" class="s-check_ico abc" name="cart-check" slot="icon"></sk-icon>
+          </su-button> -->
+          <view class="checkbox__inner {{nCheck && !hasUnCheck ? 'is-checked' : ''}}"></view>
+          <text class="s-bar-select">全选</text>
+        </view>
+        <view class="s-bar-price">
+          <view class="s-bar-quit">
+            <text>总计：</text>
+            <price textColor="#333" value="{{sProductSum}}" font-size="28"></price>
+            <!-- <su-currency :val="Number(sProductSum)"></su-currency> -->
+          </view>
+        </view>
+      </view>
+      <view class="s-next">
+        <view wx:if="{{!nCheck}}" class="su-button">下一步</view>
+        <view wx:else class="su-button check" bindtap="FnNext">下一步</view>
+        <!-- <su-button :disabled="Boolean(!nCheck)" :class="{'check': nCheck}" @click="FnNext">下一步</su-button> -->
+      </view>
+    </view>
+  </view>
+  <!--  -->
+</ui-scroll-view>
+
+
+<!-- 登录modal  -->
+<login-modal show="{{showLoginModal}}"></login-modal>

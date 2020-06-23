@@ -1,0 +1,97 @@
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.input-container:nth-child(2) {
+  margin-top: 20rpx;
+}
+
+.input-container
+.input-wrap {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+}
+
+.input-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.input-container
+.input-tip {
+  color: rgb(245, 108, 108);
+}
+
+.input-container
+.input-wrap
+.input {
+  flex: 1;
+  height: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #d5d5d5;
+  border-radius: 8rpx;
+}
+
+.input-container
+.input-wrap
+.btn-get-code {
+  width: 260rpx;
+  text-align: center;
+  color: #fb544e;
+  background: #f5f7fa;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  border: 1rpx solid #d5d5d5;
+  border-radius: 8rpx;
+}
+
+.input-container
+.input-wrap
+.btn-get-code.forbid {
+  color: #909399;
+}
+
+.input-container:nth-child(2) .input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-container:nth-child(2) .btn-get-code {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.sub-btn {
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 60rpx auto auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 8rpx;
+  background: #fb544e;
+}
+
+.get-phone-number {
+  position: absolute;
+  top: 16rpx;
+  right: 30rpx;
+  margin: 0;
+  padding: 0;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  border: none;
+  background: none;
+  color: #fb544e;
+  z-index: 2;
+}

@@ -1,0 +1,80 @@
+
+/* pages/services/components/s-apply-schedule.wxml.wxss */
+
+.s-apply-schedule {
+  position: relative;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  z-index: 0;
+  font-size: 24rpx;
+}
+
+.schedule-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  padding-left: 20rpx;
+  line-height: 46rpx;
+  text-align: center;
+  color: #fff;
+  background: #d5d5d5;
+}
+
+.tail {
+  position: absolute;
+  display: inline-block;
+  left: 100%;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-width: 24rpx;
+  border-color: transparent transparent transparent #d5d5d5;
+  border-style: dashed dashed dashed solid;
+  line-height: 0;
+  z-index: 1;
+}
+
+.tail-c {
+  top: -4rpx;
+  border-width: 28rpx;
+  border-color: transparent transparent transparent #fff!important;
+}
+
+.schedule-step.show {
+  display: inline-block;
+}
+
+.schedule-step.done {
+  background: #f44;
+}
+
+.schedule-step.done .tail {
+  border-color: transparent transparent transparent #f44;
+}
+
+.schedule-step:last-child .tail-cont {
+  display: none;
+}
+
+.s-step-tag {
+  width: 36rpx;
+  height: 36rpx;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  color: #d5d5d5;
+  background: #fff;
+  margin-right: 5rpx;
+}
+
+.s-step-tag.done {
+  color: #f44;
+}

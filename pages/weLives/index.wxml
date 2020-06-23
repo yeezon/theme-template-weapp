@@ -1,0 +1,37 @@
+<nav-bar navigateBack="true">
+  <view slot="center">{{ title }}</view>
+</nav-bar>
+<scroll-view>
+  <view class="items">
+    <view class="item" wx:for="{{ items }}" wx:key="index" style="background-image: url({{ item.cover_img }});">
+      <view class="anchor">
+        <image class="anchor_img" src="{{ item.anchor_img }}"></image>
+        <view class="anchor_infos">
+          <text class="anchor_name">{{ item.anchor_name }}</text>
+          <text class="live_satus">{{ item.live_satus }}</text>
+        </view>
+      </view>
+      <!-- <view class="tag">
+        <text class="tag_text">{{ item.live_satus }}</text>
+      </view> -->
+      <!-- <view class="infos">
+        <view class="name">{{ item.name }}</view>
+        <view class="goods">
+          <view class="good" wx:for="{{ item.goods }}" wx:for-index="idx" wx:for-item="good" wx:key="{{ idx }}" style="background-image: url({{ good.cover_img }});">
+            <price value="{{ good.price }}" font-size="28"></price>
+          </view>
+        </view>
+      </view> -->
+      <!-- <view class="datas">
+        <view class="look">
+          <image class="look_icon" src="{{ item.anchor_img }}"></image>
+          <text class="look_text">30w</text>
+        </view>
+        <view class="zan">
+          <image class="zan_icon" src="{{ item.anchor_img }}"></image>
+          <text class="zan_text">30w</text>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</scroll-view>

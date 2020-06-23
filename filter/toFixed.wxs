@@ -1,0 +1,7 @@
+var toFixed = function (value, decimal) {
+  return value.toFixed(decimal)
+}
+
+module.exports = {
+  toFixed: toFixed
+}

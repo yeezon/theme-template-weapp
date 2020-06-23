@@ -1,0 +1,99 @@
+<!--pages/services/services.wxml-->
+<wxs module="formatTime" src="../../filter/formatTime.wxs"></wxs>
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+<ui-scroll-view bindscrolltolower="loadMore">
+  <view class="select-container">
+    <view class="picker-container">
+      <picker class="select-tool" bindchange="afterSaleTypeChange" value="{{typeIdx}}" range="{{type}}">
+        <view class="picker-wrap">
+          <view class="picker">
+            {{type[typeIdx]}}
+            <!-- <view class="triangle-up"></view> -->
+            <view class="triangle-down"></view>
+          </view>
+        </view>
+      </picker>
+      <picker class="select-tool" bindchange="applyDateChange" value="{{dateIdx}}" range="{{date}}">
+        <view class="picker-wrap">
+          <view class="picker">
+            {{date[dateIdx]}}
+            <!-- <view class="triangle-up"></view> -->
+            <view class="triangle-down"></view>
+        </view>
+        </view>
+      </picker>
+    </view>
+    <!--  -->
+    <view class="input-container">
+      <input class="input" placeholder="输入订单号/商品名搜索" value="{{searchKey}}" bindinput="bindKeyInput"/>
+      <text class="search-btn" bindtap="serachFn">搜索</text>
+    </view>
+  </view>
+  <!--  -->
+  <view class="list-wrap" wx:if="{{list.length}}">
+    <view class="s-order-item" wx:for="{{list}}" wx:key="{{index}}">
+      <view class="s-order-header">
+        <view class="s-order-type">
+          <text>售后类型：{{item.typeText}}</text>
+        </view>
+        <view class="s-order-info">
+          <text>{{formatTime(item.created_at, 'yyyy.MM.dd hh:mm')}}</text>
+          <text class="s-info-line">|</text>
+          <text>订单号：{{item.trade_no}}</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class="s-order-list">
+        <view class="s-order-list_item">
+          <view class="s-order-pro">
+            <view class="s-pro-list">
+              <!--  -->
+              <view class="s-pro" wx:for="{{item.items}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+                <image src="{{_item.img_url}}" class="s-pro-img"/>
+                <view class="s-pro-info">
+                  <text class="s-pro-name">{{_item.product_name}}</text>
+                  <view class="s-pro-sku">
+                    <text>{{_item.options_desc || ''}}</text>
+                  </view>
+                </view>
+              </view>
+              <!--  -->
+            </view>
+          </view>
+          <!--  -->
+          <view class="s-status s-status_list">
+            <view class="{{item.reject ? 's-warming':''}}">
+              <text>{{item.currentStatusText}}</text>
+            </view>
+            <view wx:if="{{item.refunded}}">
+              <text>实退： <price value="{{item.refund_amount}}" font-size="28"></price></text>
+            </view>
+          </view>
+          <!--  -->
+        </view>
+        <view class="s-order-confg">
+            <text wx:if="{{item.canCancel}}" bindtap="cancelApply" data-id="{{item.id}}" data-text="{{item.typeText}}">取消申请</text>
+            <navigator url="/pages/services/detail?order_no={{item.trade_no}}&sale_id={{item.id}}"><text>查看详情</text></navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <!-- 加载更多 -->
+  <view class="loadmore" hidden="{{!isLoading}}">
+    <view class="loading"></view>
+    <view class="loadmore__tips">加载中...</view>
+  </view>
+      <!--  -->
+  <!-- <view wx:else class="s-no-orders">
+    <text>暂无售后订单</text>
+  </view> -->
+  <!--  -->
+  <view wx:if="{{!hasMore}}" class="loaded-all">没有更多了~</view>
+</ui-scroll-view>
+
+
+<!-- 登录modal  -->
+<login-modal show="{{showLoginModal}}"></login-modal>

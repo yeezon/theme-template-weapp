@@ -1,0 +1,73 @@
+/* 变量 */
+:host {
+  --SkSkuOptions-color: #777;
+  --SkSkuOptions-color-hover: #4685ee;
+  --SkSkuOptions-border-color: #777;
+  --SkSkuOptions-border-color-hover: #4685ee;
+  --SkSkuOptions-background-color: transparent;
+  --SkSkuOptions-background-color-hover: rgba(70, 133, 238, .05);
+}
+
+.sk-sku-options {
+  margin: 0;
+  padding: 0;
+}
+.s-label {
+  display: block;
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1;
+}
+.s-label:first-child {
+  margin: 0;
+}
+.s-key {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 0;
+}
+.s-btn {
+  margin: 0;
+  padding: 8px 14px;
+  border: 0 solid;
+  border-color: var(--border-color);
+  border-width: 1px;
+  border-radius: 3px;
+  border-style: dashed;
+  color: var(--SkSkuOptions-color);
+  font-size: 13px;
+  line-height: 13px;
+  background-color: var(--SkSkuOptions-background-color);
+  opacity: .6;
+  transform: scale(1); /* 修复 父辈以上元素 使用 transform 导致 .5px 边框缺失问题 */
+}
+.s-btn.i-can {
+  border-style: solid;
+  opacity: 1;
+}
+@media screen and (min-width: 769px) {
+  .s-btn:hover {
+    opacity: 1;
+  }
+  .s-btn.i-can:hover {
+    color: var(--SkSkuOptions-color-hover);
+    border-color: var(--SkSkuOptions-border-color-hover);
+  }
+}
+@media screen and (max-width: 768px) {
+  .s-btn:active {
+    opacity: 1;
+  }
+  .s-btn.i-can:active {
+    color: var(--SkSkuOptions-color-hover);
+    border-color: var(--SkSkuOptions-border-color-hover);
+  }
+}
+.s-btn.i-on {
+  border-style: solid;
+  color: var(--SkSkuOptions-color-hover);
+  border-color: var(--SkSkuOptions-border-color-hover);
+  background-color: var(--SkSkuOptions-background-color-hover);
+  opacity: 1;
+}

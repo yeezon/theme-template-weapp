@@ -1,0 +1,13 @@
+<!--pages/user/edit.wxml-->
+<nav-bar navigateBack="true">
+  <view slot="center">{{title}}</view>
+</nav-bar>
+<scroll-view>
+  <view class="input-container">
+    <view class="text">{{inputInfo.label}}</view>
+    <view class="input-wrap">
+      <input class="input" placeholder='{{inputInfo.desc}}' bindinput="bindKeyInput" value="{{inputValue}}"></input>
+    </view>
+  </view>
+  <view class="sub-btn" bindtap="fnSubmit">确认</view>
+</scroll-view>

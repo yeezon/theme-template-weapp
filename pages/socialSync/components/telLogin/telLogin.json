@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "captcha-modal": "../captcha-modal/captcha-modal"
+  }
+}

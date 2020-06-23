@@ -1,0 +1,21 @@
+/* components/quantity/quantity.wxss */
+.quantity {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #d5d5d5;
+  height: 100%;
+}
+.quantity text {
+  display: inline-block;
+  padding: 8rpx 22rpx;
+  color: #999;
+}
+
+.quantity input {
+  width: 3em;
+  font-size: 24rpx;
+  text-align: center;
+}

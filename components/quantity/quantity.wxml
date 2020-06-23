@@ -1,0 +1,8 @@
+<!--components/quantity/quantity.wxml-->
+<view class='quantity'>
+  <!-- <image bindlongtap='fnMinus'></image> -->
+  <text bindtap='fnMinus'>-</text>
+  <input type="number" bindinput="fnChange" value="{{nVal}}"></input>
+  <text bindtap='fnAdd'>+</text>
+  <!-- <image bindlongtap='fnAdd'></image> -->
+</view>

@@ -1,0 +1,51 @@
+
+var getTypeDesc = function (shipType) {
+  var _cont
+  switch (shipType) {
+    case 0 :
+      _cont = '普通快递'
+      break
+    case 1 :
+      _cont = '顺丰速运'
+      break
+    case 2 :
+      _cont = 'EMS'
+      break
+    case 3 :
+      _cont = '平邮/挂号信'
+      break
+    case 4 :
+      _cont = '商家配送'
+      break
+    case 5 :
+      _cont = '自提'
+      break
+    default:
+      _cont = ''
+  }
+  return _cont
+}
+
+var getShipType = function (oMethodsMap, nSetMethodID) {  
+  var _oShipMethod = (oMethodsMap || {})[(nSetMethodID || null)] || {}
+  return getTypeDesc(_oShipMethod.ship_type)
+}
+
+var getAmount = function (oMethodsMap, nSetMethodID) {  
+  var _oShipMethod = oMethodsMap[nSetMethodID] || {}
+  return (_oShipMethod.amount || null)
+}
+
+var getDiscount = function (oMethodsMap, nSetMethodID) {  
+  var _oShipMethod = oMethodsMap[nSetMethodID] || {}
+  var _oDiscount = (_oShipMethod.discount || {})
+  return (_oDiscount.name || '')
+}
+
+module.exports = {
+  getTypeDesc: getTypeDesc,
+  getShipType: getShipType,
+  getAmount: getAmount,
+  getDiscount: getDiscount
+}
+  

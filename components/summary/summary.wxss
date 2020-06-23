@@ -1,0 +1,34 @@
+/* components/summary/summary.wxss */
+
+.new-summary .details {
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.new-summary-title {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.new-summary .title {
+  flex: 1;
+  font-size: 28rpx;
+  color: #262626;
+  font-weight: bold;
+}
+
+.new-summary .button {
+  text-align: center;
+  font-size: 28rpx;
+  color: #a6a6a6;
+  margin-left: 20rpx;
+}
+
+.new-summary .button  .button-image {
+  display: inline-block;
+  width: 18rpx;
+  height: 22rpx;
+  margin-left: 8rpx;
+}

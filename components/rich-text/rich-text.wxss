@@ -1,0 +1,56 @@
+/* components/rich-text/rich-text.wxss */
+
+.rich-text {
+  font-size: 28rpx;
+  line-height: 1.7em;
+  padding: 0 30rpx;
+  color: #4c4c4c;
+}
+
+.rich-text .rt-h2 {
+  margin: 0 0 10rpx;
+  font-size: 36rpx;
+  line-height: 60rpx;
+}
+
+.rich-text .rt-p {
+  padding: 10rpx 0;
+  line-height: 1.7em;
+}
+
+.rich-text .rt-img, .rich-text .rt-p .rt-img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.rich-text .rt-img + .rt-br {
+  display: none;
+}
+
+.rich-text .rt-em {
+  display: block;
+  margin: 20rpx 0 0;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 1.7em;
+  font-style: normal;
+  color: #a6a6a6;
+}
+
+.rich-text .rt-div {
+  font-size: 28rpx;
+  padding: 10rpx 0;
+  line-height: 1.7em;
+  background: #fff;
+}
+
+.new-article-pro .new-pro-list-today-item {
+  padding: 0 30rpx 0 0;
+  border: 1rpx solid #dedede;
+  border-radius: 8rpx;
+}
+
+.new-article-pro .new-pro-list-today-item .new-pro-list-today-item_img {
+  border-radius: 8rpx 0 0 8rpx;
+}

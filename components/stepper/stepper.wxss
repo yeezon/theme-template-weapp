@@ -1,0 +1,120 @@
+/* components/stepper/stepper.wxss */
+
+stepper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepper {
+  font-size: 0;
+  box-sizing: border-box;
+}
+
+.stepper__input, .stepper__minus, .stepper__plus {
+  display: inline-flex;
+  vertical-align: middle;
+  background-color: rgb(243, 243, 243);
+}
+
+.stepper__minus, .stepper__plus {
+  width: 80rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #fff;
+  position: relative;
+  padding: 10rpx;
+}
+
+.stepper__minus::before, .stepper__plus::before {
+  width: 18rpx;
+  height: 2rpx;
+}
+
+.stepper__minus::after, .stepper__plus::after {
+  width: 2rpx;
+  height: 18rpx;
+}
+
+.stepper__minus::after, .stepper__minus::before, .stepper__plus::after,
+.stepper__plus::before {
+  content: '';
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7d7e80;
+}
+
+.stepper__minus:active, .stepper__plus:active {
+  background-color: #e8e8e8;
+}
+
+.stepper__minus--disabled, .stepper__plus--disabled {
+  background-color: #f8f8f8;
+}
+
+.stepper__minus--disabled::after, .stepper__minus--disabled::before,
+.stepper__plus--disabled::after, .stepper__plus--disabled::before {
+  background-color: #c9c9c9;
+}
+
+.stepper__minus--disabled:active, .stepper__plus--disabled:active {
+  background-color: #f8f8f8;
+}
+
+.stepper__minus {
+  border-radius: 4rpx 0 0 4rpx;
+  box-sizing: border-box;
+}
+
+.stepper__minus::after {
+  display: none;
+}
+
+.stepper__plus {
+  border-radius: 0 4rpx 4rpx 0;
+}
+
+.stepper__input {
+  width: 80rpx;
+  height: 52rpx;
+  padding: 2rpx;
+  min-height: 0;
+  border-width: 2rpx 0;
+  border-radius: 0;
+  box-sizing: content-box;
+  color: #666;
+  font-size: 26rpx;
+  text-align: center;
+  -webkit-appearance: none;
+}
+
+.stepper__input--disabled {
+  color: #c9c9c9;
+  background-color: #f8f8f8;
+}
+
+
+/*  */
+.min-stepper .stepper__minus, .min-stepper .stepper__plus {
+  width: 48rpx;
+  height: 48rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #fff;
+  position: relative;
+  padding: 10rpx;
+}
+
+.min-stepper .stepper__input {
+  width: 72rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  padding: 0;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

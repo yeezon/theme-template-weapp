@@ -1,0 +1,17 @@
+
+<wxs module="getOptions" src="./modules/getOptions.wxs"></wxs>
+
+<view class="checkout_shipment_pro">
+  <block wx:for="{{ carts }}" wx:key="id">
+    <view class="checkout_shipment_pro-item">
+      <view class="img"><image class="img" src="{{ item.image_src }}" :alt="item.name" mode="aspectFill" /></view>
+      <view class="info">
+        <view class="name">{{ item.name }}</view>
+        <view class="sku">{{ getOptions(item.options_desc) }}</view>
+      </view>
+      <view class="count">
+        <price class="price" fontSize="30" value="{{ item.price }}"></price><text class="times"> x {{ item.quantity }}</text>
+      </view>
+    </view>
+  </block>
+</view>

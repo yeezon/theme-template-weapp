@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "nav-bar": "../../components/nav-bar/nav-bar",
+    "price": "../../components/price/price",
+    "stepper": "../../components/stepper/stepper",
+    "skus-popup": "../../components/skus-popup/skus-popup",
+    "cart": "./components/cart/cart",
+    "login-modal": "../../components/login-modal/login-modal",
+    "ui-scroll-view": "../../components/scroll-view/scroll-view"
+  }
+}

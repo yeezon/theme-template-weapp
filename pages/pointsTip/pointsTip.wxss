@@ -1,0 +1,10 @@
+/* pages/pointsTip/pointsTip.wxss */
+.pointsTip{
+    padding: 20rpx 40rpx;
+}
+.pointsTip-item{
+    margin-top: 28rpx;
+    font-size: 28rpx;
+    line-height: 1.7;
+    color: #777;
+}

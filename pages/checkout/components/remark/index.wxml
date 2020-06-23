@@ -1,0 +1,5 @@
+
+<label class="checkout-remark">
+  <view class="label">留言</view>
+  <input bindinput="fnInput" value="{{ value }}" class="cont" type="text" placeholder="给卖家留言" />
+</label>

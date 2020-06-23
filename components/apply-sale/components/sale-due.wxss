@@ -1,0 +1,27 @@
+/* components/apply-sale/components/sale-due.wxss */
+.dialog-container {
+  width:80%;
+  padding:40rpx;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  z-index: 998;
+  margin-left: -40%;
+  border-radius: 8rpx;
+}
+ .s-title{
+  font-weight: bold;
+  margin: 0 0 72rpx;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close-image {
+  width:36rpx;
+  height: 36rpx;
+}

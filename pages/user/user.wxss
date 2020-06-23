@@ -1,0 +1,26 @@
+/* pages/user/user.wxss */
+page {
+  background: #f6f4f9;
+}
+
+.avatar {
+  margin: 2rpx 2rpx 2rpx auto;
+  width: 124rpx;
+  height: 124rpx;
+  border: 6rpx solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2rpx #d5d5d5;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.border-bottom {
+  padding-left:48rpx;
+  padding-right:48rpx;
+  background: #fff;
+}
+.border-bottom view {
+  height:1rpx;
+  background: #f4f4f4;
+}
