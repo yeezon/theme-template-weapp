@@ -8,8 +8,8 @@ scroll-view::-webkit-scrollbar {
 page {
   --statusBar: 0px;
   --homeIndicator: 0px;
-  --navBar: 44px;
-  --tabBar: 49px;
+  --navBar: 45px;
+  --tabBar: 50px;
 
   --borderColor: #d5d5d5;
   --backgroundColor: #f6f4f9;

@@ -1,0 +1,14 @@
+<view class="sk-form-form_item {{ data.column_required ? 'sk-form-form_item_required' : '' }}">
+  <view class="sk-form-form_item_name">{{ data.column_name }}</view>
+  <view class="sk-form-form_item_desc">{{ data.column_desc }}</view>
+  <view class="sk-form-form_item_model">
+    <checkbox-group bindchange="fnCheckboxChange">
+      <label wx:for="{{ oConfig.values }}" wx:key="index" class="sk-form-form_item_model-label">
+        <checkbox class="sk-form-form_item_checkbox" value="{{ item }}" placeholder="请输入" />
+        <text class="sk-form-form_item_checkbox_label">{{ item }}</text>
+      </label>
+    </checkbox-group>
+    <!-- 隐藏输入 -->
+    <input  style="display: none;" type="text" name="{{ data.id }}" value="{{ value }}" />
+  </view>
+</view>

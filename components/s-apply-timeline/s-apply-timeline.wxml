@@ -1,0 +1,21 @@
+<wxs module="formatTime" src="../../filter/formatTime.wxs"></wxs>
+
+<view class="s-apply-timeline">
+  <view class="s-apply-timeline-item" wx:for="{{trackers}}" wx:key="index">
+    <view class="s-apply-timeline-item__tail"></view>
+    <view class="s-apply-timeline-item__node"></view>
+    <view class="s-apply-timeline-item__wrapper">
+      <view class="s-apply-timeline-item__time">
+      {{formatTime(item.created_at, 'yyyy-MM-dd hh:mm:ss')}}</view>
+      <view class="s-apply-timeline-item__cont">
+        <image wx:if="{{item.type === 0}}" class="s-icon" src="../../assets/icons/order_apply_user.svg" mode='aspectFit'></image>
+        <image wx:if="{{item.type !== 0}}" class="s-icon" src="../../assets/icons/order_apply_merchant.svg" mode='aspectFit'></image>
+        <!-- <sk-icon :name="tracker.type === 0 ? 'order_apply_user' : 'order_apply_merchant'" class="s-icon"></sk-icon> -->
+        <view class="s-desc-wrap">
+          <view class="s-title">{{item.title}}</view>
+          <view class="s-info">{{item.detail}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

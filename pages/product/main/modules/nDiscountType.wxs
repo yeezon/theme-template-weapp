@@ -1,0 +1,7 @@
+var nDiscountType = function(oEventSkuMap, oNowSku) {
+  // console.log(JSON.stringify(((oEventSkuMap || {})[(oNowSku || {}).id] || {})))
+  // console.log(oNowSku)
+  return ((oEventSkuMap || {})[(oNowSku || {}).id] || {})[c_id] || null
+}
+
+module.exports = nDiscountType

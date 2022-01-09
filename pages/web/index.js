@@ -1,5 +1,5 @@
 
-const oApp = getApp()
+const oApp = (global.getApp && global.getApp()) || {}
 
 Page({
   data: {
@@ -7,7 +7,9 @@ Page({
     oShare: {}
   },
   onLoad (oQuery) {
-    let _url = oQuery.url || (oApp.configs || {}).host_url || ''
+    const oConfig = (global.yhsd || {}).config || {}
+
+    let _url = oQuery.url || oConfig.host_url || ''
 
     if (oApp.globalData.toURL) {
       _url = oApp.globalData.toURL
@@ -17,8 +19,8 @@ Page({
       _url = decodeURIComponent(oQuery.q)
 
       // 自动部署小程序，默认所有域名转成当前设置域名
-      if (oApp.configs.is_ext) {
-        _url = _url.replace(/^http[s]?:\/\/[^\/\?]+/i, oApp.configs.host_url)
+      if (oConfig.is_ext) {
+        _url = _url.replace(/^http[s]?:\/\/[^\/\?]+/i, oConfig.host_url)
       }
     }
 
@@ -29,7 +31,7 @@ Page({
       } else if (/^\/\//i.test(_url)) { // 相对协议修正
         _url = `https:${_url}`
       } else if (/^\/[^\/]/i.test(_url)) { // 相对路径补全
-        _url = `${oApp.configs.host_url}${_url}`
+        _url = `${oConfig.host_url}${_url}`
       } else { // 无协议支持
         _url = `https://${_url}`
       }

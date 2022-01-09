@@ -4,7 +4,7 @@
   <view class='card-carousel-con' style="height:calc({{'100vw + ' + (wrapHeight + 'rpx')}});{{wrapHeight > 0 ? 'overflow:hidden;' : ''}}">
     <view wx:for="{{images}}" wx:key="{{index}}" class="card-carousel-item" style="top: {{curIndex === index ? '0' : (curIndex > index ? '-102vw' : ((index - curIndex) * 100) + 'rpx')}};  z-index: calc(99 - {{index}});" data-index="{{index}}" data-active="{{index === curIndex}}" data-type="{{item.redirect_type}}"
       id="{{item.redirect_type !== 1 ? item.redirect_type === 2 ? item.sc_id : item.redirect_type === 3 ? item.sp_id : '' : ''}}" bindtap="fnTap">
-      <image src='https:{{item.src}}' mode='aspectFill'>
+      <image src='https:{{item.src}}' mode='aspectFit'>
         <!-- <view class='card-carousel-item_text'>
           <text class='card-carousel-item_main-title'>韩国女生都在买的甜美复古风</text>
           <text class='card-carousel-item_sub-title'>sweet retro look</text>

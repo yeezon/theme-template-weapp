@@ -1,30 +1,32 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/mine/mine",
-    "pages/cart/cart",
-    "pages/orderDetails/orderDetails",
-    "pages/address/address",
-    "pages/addressForm/addressForm",
-    "pages/discovery/discovery",
-    "pages/level/level",
+    "pages/account/index",
+    "pages/cart/index",
+    "pages/order/index",
+    "pages/addresses/index",
+    "pages/address/index",
+    "pages/discovery/index",
+    "pages/member/index",
     "pages/coupon/coupon",
     "pages/points/points",
     "pages/pointsTip/pointsTip",
-    "pages/user/user",
-    "pages/user/edit",
+    "pages/personal/index",
+    "pages/personalEdit/index",
     "pages/security/security",
     "pages/changePassword/changePassword",
     "pages/socialSync/socialSync",
     "pages/checkout/index",
-    "pages/orderList/orderList",
+    "pages/orders/index",
     "pages/discounts/discounts",
-    "pages/services/detail",
+    "pages/servicesDetail/detail",
     "pages/services/services",
-    "pages/orderApply/applyForm",
-    "pages/products/products",
+    "pages/orderApply/index",
+    "pages/applyForm/index",
+    "pages/product/index",
     "pages/web/index",
-    "pages/weLives/index"
+    "pages/weLives/index",
+    "pages/form/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -44,19 +46,19 @@
         "selectedIconPath": "assets/tab/shop_active.png"
       },
       {
-        "pagePath": "pages/discovery/discovery",
+        "pagePath": "pages/discovery/index",
         "text": "发现",
         "iconPath": "assets/tab/discovery.png",
         "selectedIconPath": "assets/tab/discovery_active.png"
       },
       {
-        "pagePath": "pages/cart/cart",
+        "pagePath": "pages/cart/index",
         "text": "购物车",
         "iconPath": "assets/tab/cart.png",
         "selectedIconPath": "assets/tab/cart_active.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/account/index",
         "text": "个人中心",
         "iconPath": "assets/tab/mine.png",
         "selectedIconPath": "assets/tab/mine_active.png"
@@ -66,7 +68,7 @@
   "sitemapLocation": "sitemap.json",
   "plugins": {
     "live-player-plugin": {
-      "version": "1.0.18",
+      "version": "1.3.2",
       "provider": "wx2b03c6e691cd7370"
     }
   }

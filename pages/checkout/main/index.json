@@ -1,0 +1,14 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "load-tips": "/components/load-tips/load-tips",
+    "price": "/components/price/price",
+    "address": "./components/address/index",
+    "payment": "./components/payment/index",
+    "shipment-list": "./components/shipment-list/index",
+    "remark": "./components/remark/index",
+    "sums": "./components/sums/index",
+    "bar": "./components/bar/index"
+  }
+}

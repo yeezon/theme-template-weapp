@@ -4,10 +4,6 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    navBarHeight: {
-      type: [Number, String],
-      value: ''
-    },
     title: {
       type: String
     },
@@ -29,19 +25,11 @@ Component({
    * 组件的初始数据
    */
   data: {
-    statusBarHeight: 0
+    safeAreaTop: wx.getSystemInfoSync()?.safeArea?.top || 0
   },
 
   ready() {
-    try {
-      var res = wx.getSystemInfoSync()
-      this.setData({
-        statusBarHeight: res.statusBarHeight,
-        navBarHeight: res.statusBarHeight + 44
-      })
-    } catch (e) {
-      // Do something when catch error
-    }
+
   },
 
   /**
@@ -50,13 +38,14 @@ Component({
   methods: { 
     back: function() {
       const pages = getCurrentPages()
+
       if (pages.length === 1) {
         wx.switchTab({
           url: '../index/index'
         })
       } else {
         wx.navigateBack({
-          delta: 1,
+          delta: 1
         })
       }
     }

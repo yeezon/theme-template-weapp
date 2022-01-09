@@ -1,0 +1,64 @@
+<wxs module="formatAddress" src="/filter/formatAddress.wxs"></wxs>
+
+<view class="view">
+  <nav-bar navigateBack="true">
+    <view slot="center">{{title}}</view>
+  </nav-bar>
+  <scroll-view class="main" scroll-y="{{ true }}">
+    <view class="address-list">
+      <block wx:if="{{addresses.length}}">
+        <view class="address-item" wx:for="{{addresses}}" wx:key="index">
+          <view wx:if="{{addresType === 'select'}}" class="check-wrap" data-id="{{item.id}}" data-data="{{item}}"
+            bindtap="checkAddress">
+            <image class="check-wrap-img" wx:if="{{nNowAddressId == item.id}}" src="/assets/icons/check_plain_icon.svg" mode="aspectFit"></image>
+            <view wx:else class="check-icon"></view>
+          </view>
+          <!--  -->
+          <view class="address-info" data-id="{{item.id}}" data-data="{{item}}" bindtap="checkAddress">
+            <view class="info">
+              <text class="name">{{item.name}}</text>
+              <text class="mobile">{{item.mobile}}</text>
+              <view class="tag" wx:if="{{item.is_default}}">默认</view>
+            </view>
+            <view class="address">{{formatAddress(item.location_full_titles)}} {{item.detail}}</view>
+          </view>
+          <!--  -->
+          <view class="edit-wrap" data-type="edit" data-data="{{item}}" bindtap="editAddress">
+            <image class="edit-wrap-img" src="/assets/icons/address_edit_icon.svg" mode="aspectFit"></image>
+          </view>
+        </view>
+      </block>
+      <!--  -->
+      <view wx:else>
+        <view class="no-data-content">
+          <view class="no-data-text">暂无可用收货地址</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!--  -->
+  <view class="adress-bottom {{addresses.length === 0 ? 'no-address' : ''}}">
+    <view class="get-wechat-btn" bindtap="getWechatAddress">
+      <image class="get-wechat-btn-img" src="/assets/icons/wechat_icon.svg" mode="aspectFit"></image>
+      <text>获取微信地址</text>
+    </view>
+    <view class="self-btn" data-type="new" bindtap="editAddress">
+      <image class="self-btn-img" src="/assets/icons/add_icon.svg" mode="aspectFit"></image>
+      <text>新增收货地址</text>
+    </view>
+  </view>
+</view>
+
+<!-- <mask show="{{tipsShow}}">
+  <view class="confirm-model">
+    <view class="title">获取授权</view>
+    <view class="content">
+      <view class="text">请允许授权获取您的微信地址信息</view>
+    </view>
+    <view class="bottom">
+      <button bindtap="closeTips">取消</button>
+      <button class="confirm-btn" open-type='openSetting' bindopensetting="opensettingFn"
+        bindtap="closeTips">去授权</button>
+    </view>
+  </view>
+</mask> -->

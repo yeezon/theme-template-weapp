@@ -3,7 +3,6 @@
   "usingComponents": {
     "product-list": "../product-list/product-list",
     "product-horizon-list": "../product-horizon-list/product-horizon-list",
-    "product-vertical-list": "../product-vertical-list/product-vertical-list",
-    "product-set-title": "../product-set-title/product-set-title"
+    "product-vertical-list": "../product-vertical-list/product-vertical-list"
   }
 }

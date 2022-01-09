@@ -1,0 +1,26 @@
+
+<wxs module="hasAddress" src="./modules/hasAddress.wxs"></wxs>
+
+<view class="checkout">
+  <nav-bar navigateBack="true">
+    <view slot="center">{{title}}</view>
+  </nav-bar>
+  <scroll-view class="main" scroll-y="{{ true }}">
+    <view class="cont {{isLoading ? 'i-loading' : '' }}">
+      <view wx:if="{{ !isLoading }}" class="checkout-main_view">
+        <address address="{{ oAddressData }}"></address>
+        <payment class="cells" paymentMethod="{{ oPaymentMethod }}" paymentData="{{ oPaymentData }}" hasAddress="{{ hasAddress(oAddressData) }}" bind:change="fnPayChange"></payment>
+        <shipment-list shipments="{{ shipments }}" bind:change="fnShipmentsChange"></shipment-list>
+        <remark class="cells" bind:input="setRemarkData" value="{{ remarksData }}"></remark>
+        <!-- <view class="cells"> -->
+          <!-- <YkCheckoutCoupon :coupon='oCouponData' @change="fnCouponChange" /> -->
+          <!-- <YkCheckoutPoints wx:if="isSignin" :sum="oSum" :disabled='oDiscount.reward_point_enabled' @change="fnPointChange" /> -->
+        <!-- </view> -->
+        <sums class="cells" discount="{{ oDiscount }}" coupon="{{ oCouponData }}" data="{{ oSum }}"></sums>
+      </view>
+    </view>
+    <!-- scroll-view 会吸收 margin -->
+    <view style="height: 1px;"></view>
+  </scroll-view>
+  <bar class="bar" address="{{ oAddressData }}" amount="{{ oSum.fix_amount }}" point="{{ nGivePoint }}" bind:submit="fnSubmit"></bar>
+</view>

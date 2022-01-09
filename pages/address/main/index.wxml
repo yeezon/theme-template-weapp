@@ -1,0 +1,58 @@
+<view class="view">
+  <nav-bar navigateBack="true">
+    <view wx:if="{{editType === 'edit'}}" slot="left" class="nav-bar-left" bindtap='deleteAddress'>
+      <image class="nav-bar-left-icon" src="/assets/icons/address_delete_icon.svg" mode="aspectFit"></image>
+    </view>
+    <view slot="center">{{title}}</view>
+  </nav-bar>
+  <scroll-view class="main" scroll-y="{{ true }}">
+    <view class="adress-form-wrap">
+      <view class="adress-form-list">
+        <view class="adress-input-wrap">
+          <input class="adress-form-input" type="text" maxlength="{{10}}" data-type="name" value="{{areaForm.name}}"
+            placeholder="收货人姓名" bindinput="onInput"></input>
+        </view>
+        <view class="adress-input-wrap">
+          <input class="adress-form-input" type="number" data-type="mobile" value="{{areaForm.mobile}}"
+            placeholder="手机号码" bindinput="onInput"></input>
+        </view>
+        <view class="adress-input-wrap">
+          <input class="adress-form-input" disabled="{{true}}" type="text">
+          <area-picker bindchange="areaChange" value="{{ areaForm.district_code }}"></area-picker>
+          <!--  -->
+          <!-- <picker class="area-picker" mode="region" bindchange="areaChange" value="{{region}}">
+          <view class="area-picker-text {{region.length > 1 ? 'selected' : ''}}">
+            {{region[0]}} {{region[1]}} {{region[2]}}
+          </view>
+          <image class="area-picker-image" src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23060606%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3E%E7%94%BB%E6%9D%BF%2011%3C%2Ftitle%3E%3Cg%20id%3D%22%E8%BE%93%E5%87%BA%22%3E%3Cg%20id%3D%22%E6%97%A5%E5%8E%86%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M5.84%2C19a1%2C1%2C0%2C0%2C1-.72-.31%2C1%2C1%2C0%2C0%2C1%2C0-1.41L12.71%2C10%2C5.15%2C2.72a1%2C1%2C0%2C0%2C1%2C0-1.41%2C1%2C1%2C0%2C0%2C1%2C1.42%2C0l8.31%2C8a1%2C1%2C0%2C0%2C1%2C0%2C1.44l-8.31%2C8A1%2C1%2C0%2C0%2C1%2C5.84%2C19Z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'
+            mode="aspectFit"></image>
+        </picker> -->
+          </input>
+        </view>
+        <view class="adress-input-wrap">
+          <!-- <textarea auto-height="{{true}}" class="adress-form-textarea" data-type="detail" value="{{areaForm.detail}}" placeholder="详细地址" bindinput="onInput"></textarea> -->
+          <input class="adress-form-input" type="text" data-type="detail" value="{{areaForm.detail}}" placeholder="详细地址"
+            bindinput="onInput"></input>
+        </view>
+        <view class="adress-input-wrap">
+          <input class="adress-form-input" type="text" data-type="zipcode" value="{{areaForm.zipcode}}"
+            placeholder="邮政编码" bindinput="onInput"></input>
+        </view>
+        <view class="adress-input-wrap">
+          <input class="adress-form-input" type="text" data-type="id_card" value="{{areaForm.id_card}}"
+            placeholder="身份证" bindinput="onInput"></input>
+        </view>
+        <!-- <view class='adress-form-tips'><text>如订单含跨境商品，收货人姓名必须与所填身份证姓名对应，否则不能过关！</text></view> -->
+      </view>
+    </view>
+  </scroll-view>
+  <!--  -->
+  <view class="adress-bottom">
+    <view class="adress-form-defult" bindtap='areaDefaultChange'>
+      <image class="adress-form-defult-img" wx:if="{{areaForm.is_default}}" src="/assets/icons/check_plain_icon.svg" mode="aspectFit"></image>
+      <view wx:else class="check-icon"></view>
+      <text class="adress-form-defult-text">设为默认地址</text>
+    </view>
+    <view class="adress-form-confirm" bindtap="saveArea">确定并保存</view>
+  </view>
+</view>

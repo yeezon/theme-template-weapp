@@ -1,0 +1,7 @@
+
+module.exports = function (paymentMethods) {
+  var oOffline = (paymentMethods || {}).offline || {}
+  var oMethods = oOffline.methods || {}
+
+  return !!(oMethods.cod || []).length
+}

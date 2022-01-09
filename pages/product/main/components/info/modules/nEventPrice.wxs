@@ -1,0 +1,9 @@
+
+module.exports = function (oEventSkuMap, sku) {
+  oEventSkuMap = oEventSkuMap || {}
+  sku = sku || {}
+
+  var _oEventSku = oEventSkuMap[sku.id] || {}
+
+  return _oEventSku.event_price || null
+}

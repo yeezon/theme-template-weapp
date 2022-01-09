@@ -1,0 +1,7 @@
+<view class="sk-form-form_item {{ data.column_required ? 'sk-form-form_item_required' : '' }}">
+  <view class="sk-form-form_item_name">{{ data.column_name }}</view>
+  <view class="sk-form-form_item_desc">{{ data.column_desc }}</view>
+  <view class="sk-form-form_item_model">
+    <textarea class="sk-form-form_item_textarea" type="text" name="{{ data.id }}" rows="5" placeholder="请输入"></textarea>
+  </view>
+</view>

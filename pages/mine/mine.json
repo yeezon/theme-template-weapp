@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "badge": "../../components/badge/badge",
-    "row-list": "../../components/row-list/row-list"
-  }
-}

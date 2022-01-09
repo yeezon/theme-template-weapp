@@ -1,4 +1,4 @@
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 Page({
 
@@ -7,7 +7,7 @@ Page({
    */
   data: {
     title: '物流信息',
-    navBarHeight: app.globalData.navBarHeight,
+    navBarHeight: 44,
     info: null,
     shipmentName: '',
     shipmentUrl: '',

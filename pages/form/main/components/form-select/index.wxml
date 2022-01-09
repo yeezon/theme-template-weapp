@@ -1,0 +1,11 @@
+<view class="sk-form-form_item {{ data.column_required ? 'sk-form-form_item_required' : '' }}">
+  <view class="sk-form-form_item_name">{{ data.column_name }}</view>
+  <view class="sk-form-form_item_desc">{{ data.column_desc }}</view>
+  <view class="sk-form-form_item_model">
+    <picker bindchange="fnChange" range="{{ oConfig.values }}">
+      <view class="sk-form-form_item_select">{{ value || '请选择' }}</view>
+    </picker>
+    <!-- 隐藏输入 -->
+    <input  style="display: none;" type="text" name="{{ data.id }}" value="{{ value }}" />
+  </view>
+</view>

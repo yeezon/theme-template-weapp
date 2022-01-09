@@ -1,0 +1,25 @@
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-size: 14px;
+  background-color: #f6f4f9;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.bar {
+  z-index: 9;
+}
+
+.cells {
+  display: block;
+  margin: 15px 0;
+  border: 0 solid #d5d5d5;
+  border-width: 1rpx 0;
+  background-color: #fff;
+}

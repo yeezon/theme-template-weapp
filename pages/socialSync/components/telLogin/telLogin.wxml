@@ -1,4 +1,6 @@
-<!-- input area -->
+<wxs module="btnCodeTip" src="./modules/btnCodeTip.wxs"></wxs>
+<wxs module="captchaUrl" src="./modules/captchaUrl.wxs"></wxs>
+
 <view class="input-list">
   <view class="input-container">
     <view class="input-wrap">
@@ -27,7 +29,7 @@
       <view
         class="{{ canIGetCode ? 'btn-get-code' : 'btn-get-code forbid' }}"
         bindtap="handleGetCode">
-        {{ btnCodeTip }}
+        {{ btnCodeTip(canIGetCode, rts) }}
       </view>
     </view>
     <view class="input-tip" wx:if="{{ codeTip }}">{{ codeTip }}</view>
@@ -38,7 +40,7 @@
 <view class="sub-btn" bindtap="handleSubmitTap">绑定</view>
 <captcha-modal
   show="{{ isShowCaptchaModal }}"
-  captchaUrl="{{ captchaUrl }}"
+  captchaUrl="{{ captchaUrl(captchaPath, globalCaptchaPath) }}"
   captchaId="{{ captchaId }}"
   mobile="{{ tel }}"
   bindregetcaptcha="handleRegetCaptcha"

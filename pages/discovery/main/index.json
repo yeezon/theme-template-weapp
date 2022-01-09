@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "product-list": "/components/product-list/product-list",
+    "product-vertical-list": "/components/product-vertical-list/product-vertical-list",
+    "popup": "/components/popup/popup",
+    "search-summary": "/components/summary/summary"
+  }
+}

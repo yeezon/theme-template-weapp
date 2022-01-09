@@ -75,7 +75,7 @@
         </view>
         <view class="s-order-confg">
             <text wx:if="{{item.canCancel}}" bindtap="cancelApply" data-id="{{item.id}}" data-text="{{item.typeText}}">取消申请</text>
-            <navigator url="/pages/services/detail?order_no={{item.trade_no}}&sale_id={{item.id}}"><text>查看详情</text></navigator>
+            <navigator url="/pages/servicesDetail/detail?order_no={{item.trade_no}}&sale_id={{item.id}}"><text>查看详情</text></navigator>
         </view>
       </view>
     </view>

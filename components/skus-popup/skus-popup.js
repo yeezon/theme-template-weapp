@@ -1,5 +1,5 @@
 // components/skus-popup/skus-popup.js
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 import {
   previewImage
@@ -30,10 +30,6 @@ Component({
       type: Number,
       value: 1
     },
-    checkIpx: {
-      type: Boolean,
-      value: true
-    },
     marketing: {
       type: Object,
       value: {}
@@ -48,7 +44,6 @@ Component({
     variants: [],
     sold_out: false,
     oNowSku: {},
-    isIpx: app.globalData.isIpx,
     oEventSkuMap: {},
     oNowEventSku: {},
     oNowEventInfo: {},

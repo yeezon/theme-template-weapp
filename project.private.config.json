@@ -1,0 +1,108 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/cart/index",
+          "pathName": "pages/cart/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/product/index?handle=xxx",
+          "pathName": "pages/product/index",
+          "query": "handle=p000062",
+          "scene": null
+        },
+        {
+          "name": "pages/account/index",
+          "pathName": "pages/account/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/checkout/index",
+          "pathName": "pages/checkout/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addresses/index?type=select&id=xxx",
+          "pathName": "pages/addresses/index",
+          "query": "type=select&id=503888",
+          "scene": null
+        },
+        {
+          "name": "pages/address/index?type=edit&id=xxx",
+          "pathName": "pages/address/index",
+          "query": "type=edit&id=503905",
+          "scene": null
+        },
+        {
+          "name": "pages/orders/index?status=xxx",
+          "pathName": "pages/orders/index",
+          "query": "status=0",
+          "scene": null
+        },
+        {
+          "name": "pages/order/index?id=xxx",
+          "pathName": "pages/order/index",
+          "query": "id=2019081710973390332",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/index?type=xxx",
+          "pathName": "pages/personal/index",
+          "query": "type=null",
+          "scene": null
+        },
+        {
+          "name": "pages/personalEdit/index?key=xxx&value=xxx",
+          "pathName": "pages/personalEdit/index",
+          "query": "key=indentity_card&value=null",
+          "scene": null
+        },
+        {
+          "name": "pages/member/index",
+          "pathName": "pages/member/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/discovery/index",
+          "pathName": "pages/discovery/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/form/index",
+          "pathName": "pages/form/index",
+          "query": "handle=659",
+          "scene": null
+        },
+        {
+          "name": "pages/services/services",
+          "pathName": "pages/services/services",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/servicesDetail/detail",
+          "pathName": "pages/servicesDetail/detail",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

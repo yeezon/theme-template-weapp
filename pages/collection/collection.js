@@ -1,6 +1,6 @@
 // pages/collection/collection.js
 
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 Page({
 
@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    titile: '商品合辑',
+    title: '商品合辑',
     id: '',
     collection: {},
   },
@@ -84,7 +84,7 @@ Page({
         wx.hideLoading()
         this.setData({
           collection: res,
-          titile: res.name
+          title: res.name
         })
       })
   }

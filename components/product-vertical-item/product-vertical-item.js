@@ -25,7 +25,7 @@ Component({
     onTap: function(e) {
       const id = e.currentTarget.id
       wx.navigateTo({
-        url: `../products/products?id=${id}`
+        url: `../product/index?handle=${id}`
       })
     },
     getDiscount: function () {

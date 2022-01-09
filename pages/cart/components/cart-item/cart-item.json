@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "price": "../../../../components/price/price",
-    "quantity": "../../../../components/quantity/quantity"
-  }
-}

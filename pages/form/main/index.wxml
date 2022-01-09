@@ -1,0 +1,32 @@
+<view class="c-form">
+  <view wx:if="{{ !oForm.name }}" class="tip">
+    <text wx:if="{{ isLoading }}">加载中...</text>
+    <text wx:if="{{ !isLoading && errorTip }}">{{ errorTip }}</text>
+    <text wx:if="{{ !isLoading && !errorTip }}">暂无信息</text>
+  </view>
+  <view wx:if="{{ !isLoading && oForm.name }}" class="sk-form-cont">
+    <view class="sk-form-name">{{ oForm.name || '' }}</view>
+    <view class="sk-form-desc">{{ oForm.describe || '' }}</view>
+    <view class="sk-form-form_box">
+      <form class="sk-form-form {{ isSuccess ? 'i-success' : '' }}" bindsubmit="fnSubmit">
+        <block wx:for="{{ formColumns }}" wx:key="id">
+          <form-text wx:if="{{ item.column_type === 'text' }}" data="{{ item }}"></form-text>
+          <form-textarea wx:if="{{ item.column_type === 'textarea' }}" data="{{ item }}"></form-textarea>
+          <form-radio wx:if="{{ item.column_type === 'radio' }}" data="{{ item }}"></form-radio>
+          <form-select wx:if="{{ item.column_type === 'select' }}" data="{{ item }}"></form-select>
+          <form-checkbox wx:if="{{ item.column_type === 'checkbox' }}" data="{{ item }}"></form-checkbox>
+        </block>
+        <view wx:if="{{ formErrors.length > 0 }}" class="sk-form-form_errors">
+          <view wx:for="{{ formErrors }}" wx:key="index" class="sk-form-form_errors_item">{{ item }}</view>
+        </view>
+        <view class="sk-form-form_item_submit_wrap">
+          <button class="sk-form-form_item_submit" style="background-color: {{ oForm.button_background_color || '#3975f9' }};" form-type="submit">{{ oForm.button_text || '提交' }}</button>
+        </view>
+      </form>
+      <view class="sk-form-success">
+        <image class="sk-form-success_img" src="https://asset.ibanquan.com/image/60c825e00fe59d0024ebb4dc/s.gif" mode="aspectFit" />
+        <view class="sk-form-success_text">操作成功</view>
+      </view>
+    </view>
+  </view>
+</view>

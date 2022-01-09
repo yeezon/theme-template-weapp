@@ -1,0 +1,28 @@
+
+<wxs module="handles" src="./modules/handles.wxs"></wxs>
+
+<view class="checkout_ship">
+  <product carts="{{ (shipment.carts || []) }}"></product>
+  <view class="cell" wx:if="{{ (shipment.id || shipment.id === 0) }}" bindtap="fnOpen">
+    <view class="checkout_ship-title">
+      <text wx:if="{{ order }}" class="checkout_ship-title_pre">包裹 {{ order }}</text>
+      <text class="checkout_ship-title_cont">配送方式</text>
+    </view>
+    <view wx:if="{{ handles.getShipType(oMethodsMap, nSetMethodID) }}"><text>{{ handles.getShipType(oMethodsMap, nSetMethodID) }}</text><text> - </text><text wx:if="{{ !handles.getAmount(oMethodsMap, nSetMethodID) }}">免邮</text><price wx:else fontSize="28" value="{{ handles.getAmount(oMethodsMap, nSetMethodID) }}"></price><text wx:if="{{ handles.getDiscount(oMethodsMap, nSetMethodID) }}">（{{ handles.getDiscount(oMethodsMap, nSetMethodID) }}）</text></view>
+    <view wx:else>请选择</view>
+    <image class="checkout_ship-arrow" src="/assets/icons/right.svg" mode="widthFix"></image>
+  </view>
+  <view wx:else class="checkout_ship-err">配送信息获取错误，请刷新重试</view>
+  <popup show="{{ on }}" bind:maskTap="fnClose">
+    <view class="checkout_ship-popup">
+      <view class="title">选择配送方式</view>
+      <radio-group bindchange="setMethod">
+        <block wx:for="{{ shipment.shipment_methods }}" wx:key="index">
+            <radio class="radio" checked="{{ nSetMethodID === item.id }}" value="{{ item.id }}">
+              <text>{{ handles.getTypeDesc(item.ship_type) }}</text><text> - </text><text wx:if="{{ !item.amount }}">免邮</text><price wx:else value="{{ item.amount }}" fontSize="28" /><text wx:if="{{ item.discount }}">（{{ item.discount.name }}）</text>
+            </radio>
+        </block>
+      </radio-group>
+    </view>
+  </popup>
+</view>

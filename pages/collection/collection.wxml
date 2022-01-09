@@ -1,7 +1,7 @@
 <!--pages/collection/collection.wxml-->
 
 <nav-bar navigateBack="true">
-  <view slot="center">{{titile}}</view>
+  <view slot="center">{{title}}</view>
 </nav-bar>
 
 <ui-scroll-view>

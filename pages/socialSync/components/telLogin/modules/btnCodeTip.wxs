@@ -1,0 +1,11 @@
+
+module.exports = function (canIGetCode, rts) {
+  canIGetCode = canIGetCode || false
+  rts = rts || 0
+
+  if (canIGetCode) {
+    return '获取验证码'
+  } else {
+    return ('重新获取(' + rts + ')')
+  }
+}

@@ -11,7 +11,7 @@
 
 .sku-popup-content {
   position: relative;
-  padding: 28rpx 32rpx 100rpx;
+  padding: 14px 16px calc(var(--tabBar) + var(--homeIndicator));
 }
 
 .sku-popup-content .sku-popup-close {
@@ -134,19 +134,15 @@ button::after {
 .sku-confirm-btn {
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: var(--homeIndicator);
   width: 100%;
-  height: 96rpx;
+  height: var(--tabBar);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32rpx;
   color: #fff;
   z-index: 999;
-}
-
-.sku-confirm-btn.isIpx {
-  bottom: 68rpx;
 }
 
 .sku-confirm-btn_hover {

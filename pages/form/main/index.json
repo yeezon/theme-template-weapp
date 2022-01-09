@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "form-text": "./components/form-text",
+    "form-textarea": "./components/form-textarea",
+    "form-radio": "./components/form-radio",
+    "form-checkbox": "./components/form-checkbox",
+    "form-select": "./components/form-select"
+  }
+}

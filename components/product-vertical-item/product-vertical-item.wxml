@@ -1,6 +1,6 @@
 <!--components/product-vertical-item/product-vertical-item.wxml-->
 <view class='product-vertical-item' id="{{product.id}}" bindtap='onTap'>
-  <image src='https:{{product.feature_image.src}}' mode='aspectFill'>
+  <image src='https:{{product.feature_image.src}}' mode='aspectFit'>
     <!-- <view wx:if="{{!product.sku_stock}}" class="soldout-tag">售罄</view> -->
   </image>
   <view class='product-vertical-item_info'>

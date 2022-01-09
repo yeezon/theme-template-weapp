@@ -1,5 +1,5 @@
 // components/scroll-view/scroll-view.js
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 Component({
   /**
@@ -21,20 +21,13 @@ Component({
     scrollTop: {
       type: [String, Number],
       value: 0
-    },
-    checkIpx: {
-      type: Boolean,
-      value: true
     }
   },
 
   /**
    * 组件的初始数据
    */
-  data: {
-    navBarHeight: app.globalData.navBarHeight,
-    isIpx: app.globalData.isIpx
-  },
+  data: {},
 
   /**
    * 组件的方法列表

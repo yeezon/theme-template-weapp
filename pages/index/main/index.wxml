@@ -1,0 +1,25 @@
+
+<view class="index">
+  <nav-bar wx:if="{{ title }}">
+    <view slot="center">{{ title }}</view>
+  </nav-bar>
+
+  <scroll-view class="main" scroll-y="{{ true }}">
+    <view wx:if="{{ !isLoading && !err }}" id='index-products-wrap'>
+      <block wx:for="{{ layoutMap }}" wx:key="index">
+        <view wx:if="{{ item.tag === 'p6' }}" class="img-type img-type_{{ item.data.style }}" style="background-color: {{ item.data.background.color }}">
+          <image class="set_img" src="https:{{ item.data.img.image.src }}" mode="{{item.data.style === 4 ? 'widthFix' : 'widthFix'}}" bindtap="toPage" data-url="{{ item.data.img.link.href }}"></image>
+        </view>
+        <view wx:else>
+          <product-set productSet="{{ item }}" ids="{{ item.data.products }}"></product-set>
+        </view>
+      </block>
+    </view>
+    <view class="tip" wx:if="{{ !isLoading && err }}">
+      <view class="err">{{ err }}</view>
+    </view>
+    <view class="tip" wx:if="{{ isLoading }}">
+      <view class="tip-loading">加载中...</view>
+    </view>
+  </scroll-view>
+</view>

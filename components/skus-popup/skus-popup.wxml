@@ -5,7 +5,7 @@
     <view class="sku-popup-content">
       <image class="sku-popup-close" src='../../assets/icons/close_icon.svg' mode='aspectFit' bindtap="fnCloseSku"></image>
       <view class="pro-info">
-        <image wx:if="{{oNowSku.id && oNowSku.feature_image || proDetails.feature_image.src}}" src='https:{{oNowSku.id && oNowSku.feature_image ? oNowSku.feature_image.src : proDetails.feature_image.src}}' mode='aspectFill' data-urls="{{[]}}" data-current="{{oNowSku.id && oNowSku.feature_image ? oNowSku.feature_image.src : proDetails.feature_image.src}}"
+        <image wx:if="{{oNowSku.id && oNowSku.feature_image || proDetails.feature_image.src}}" src='https:{{oNowSku.id && oNowSku.feature_image ? oNowSku.feature_image.src : proDetails.feature_image.src}}' mode='aspectFit' data-urls="{{[]}}" data-current="{{oNowSku.id && oNowSku.feature_image ? oNowSku.feature_image.src : proDetails.feature_image.src}}"
           bindtap="previewImage"></image>
         <view class="select-info">
           <view>{{proDetails.name}}</view>
@@ -31,14 +31,14 @@
       </view>
       <!--  -->
     </view>
-    <button wx:if="{{sold_out}}" class="sku-confirm-btn sold_out {{checkIpx && isIpx ? 'isIpx' : ''}}">已售罄</button>
-    <button wx:elif="{{ showType === 'selectSKU'}}" class="sku-confirm-btn selectBtn {{checkIpx && isIpx ? 'isIpx' : ''}}" hover-class='sku-confirm-btn_hover' bindtap='confirm'>
+    <button wx:if="{{sold_out}}" class="sku-confirm-btn sold_out">已售罄</button>
+    <button wx:elif="{{ showType === 'selectSKU'}}" class="sku-confirm-btn selectBtn" hover-class='sku-confirm-btn_hover' bindtap='confirm'>
       <text>确认</text>
     </button>
-    <button wx:elif="{{ showType === 'addCart'}}" class="sku-confirm-btn addBtn {{checkIpx && isIpx ? 'isIpx' : ''}}" hover-class='sku-confirm-btn_hover' bindtap='confirm'>
+    <button wx:elif="{{ showType === 'addCart'}}" class="sku-confirm-btn addBtn" hover-class='sku-confirm-btn_hover' bindtap='confirm'>
       <text>加入购物车</text>
     </button>
-    <button wx:elif="{{ showType === 'buyNow'}}" class="sku-confirm-btn buyBtn {{checkIpx && isIpx ? 'isIpx' : ''}}" hover-class='sku-confirm-btn_hover' bindtap='confirm'>
+    <button wx:elif="{{ showType === 'buyNow'}}" class="sku-confirm-btn buyBtn" hover-class='sku-confirm-btn_hover' bindtap='confirm'>
       <text>立即购买</text>
     </button>
   </view>

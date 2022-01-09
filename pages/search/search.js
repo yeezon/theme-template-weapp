@@ -1,5 +1,5 @@
 // pages/search/search.js
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 Page({
 
@@ -8,7 +8,7 @@ Page({
    */
   data: {
     title: '搜索',
-    navBarHeight: app.globalData.navBarHeight,
+    navBarHeight: 44,
     searchKey: '', // 搜索关键字
     searchDatas: [], // 搜索关键字数据
     autoFocus: false, // 输入框自动获取焦点

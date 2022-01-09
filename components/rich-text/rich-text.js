@@ -1,5 +1,5 @@
 // components/rich-text/rich-text.js
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 Component({
   /**
@@ -98,7 +98,7 @@ Component({
     gotoDetails: function(e) {
       const id = e.currentTarget.id
       wx.navigateTo({
-        url: `../products/products?id=${id}`
+        url: `../product/index?handle=${id}`
       })
     },
   }

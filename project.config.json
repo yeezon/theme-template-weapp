@@ -1,69 +1,139 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"enhance": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"uglifyFileName": true,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"bundle": true,
-		"useIsolateContext": true,
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.11.3",
-	"appid": "",
-	"projectname": "You",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": false,
+    "userConfirmedBundleSwitch": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.21.3",
+  "appid": "",
+  "projectname": "You",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/cart/index",
+          "pathName": "pages/cart/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/product/index?handle=xxx",
+          "pathName": "pages/product/index",
+          "query": "handle=p000062",
+          "scene": null
+        },
+        {
+          "name": "pages/account/index",
+          "pathName": "pages/account/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/checkout/index",
+          "pathName": "pages/checkout/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addresses/index?type=select&id=xxx",
+          "pathName": "pages/addresses/index",
+          "query": "type=select&id=503888",
+          "scene": null
+        },
+        {
+          "name": "pages/address/index?type=edit&id=xxx",
+          "pathName": "pages/address/index",
+          "query": "type=edit&id=503905",
+          "scene": null
+        },
+        {
+          "name": "pages/orders/index?status=xxx",
+          "pathName": "pages/orders/index",
+          "query": "status=0",
+          "scene": null
+        },
+        {
+          "name": "pages/order/index?id=xxx",
+          "pathName": "pages/order/index",
+          "query": "id=2019081710973390332",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/index?type=xxx",
+          "pathName": "pages/personal/index",
+          "query": "type=null",
+          "scene": null
+        },
+        {
+          "name": "pages/personalEdit/index?key=xxx&value=xxx",
+          "pathName": "pages/personalEdit/index",
+          "query": "key=indentity_card&value=null",
+          "scene": null
+        },
+        {
+          "name": "pages/member/index",
+          "pathName": "pages/member/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/discovery/index",
+          "pathName": "pages/discovery/index",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

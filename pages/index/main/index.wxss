@@ -1,0 +1,57 @@
+
+.index {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tip {
+  margin: 25vh 60rpx 60rpx;
+  height: auto;
+  line-height: 1.7em;
+  font-size: 28rpx;
+}
+
+.err {
+  color: #fb544e;
+  text-align: center;
+}
+
+.tip-loading {
+  margin: 25vh 60rpx 60rpx;
+  height: auto;
+  line-height: 1.7em;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.img-type {
+  line-height: 1;
+  font-size: 0;
+}
+.img-type_1 {
+  text-align: center;
+}
+.img-type_2 {
+  text-align: left;
+}
+.img-type_3 {
+  text-align: right;
+}
+.img-type_1 .set_img {
+  width: 70%;
+}
+.img-type_2 .set_img,
+.img-type_3 .set_img {
+  width: 50%;
+}
+.img-type_4 .set_img {
+  width: 100%;
+}

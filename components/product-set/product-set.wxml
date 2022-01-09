@@ -1,9 +1,4 @@
-<!--components/product-set/product-set.wxml-->
 <view class='product-set'>
-  <!-- <product-set-title wx:if="{{productSet.show_name || productSet.show_title}}" main-title="{{productSet.proSet.name}}" sub-title="{{productSet.proSet.title}}"></product-set-title>
-  <view wx:if="{{productSet.show_pic}}" class='product-set-img'>
-    <image class='product-set_img' src='https:{{productSet.proSet.img_path}}' mode='widthFix' bindtap='toPage'></image>
-  </view> -->
   <view class='product-set-list'>
     <product-list wx:if="{{productSet.tag === 'p3'}}" products="{{products}}"></product-list>
     <product-horizon-list wx:if="{{productSet.tag === 'c44'}}" products="{{products}}"></product-horizon-list>

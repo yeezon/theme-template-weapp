@@ -1,7 +1,7 @@
 <!--components/product-horizon-item/product-horizon-item.wxml-->
 
 <view class="product-horizon-item" id="{{product.handle}}" bindtap='onTap'>
-  <image class="product-horizon-item_img" src="https:{{product.feature_image.src}}" mode='aspectFill'>
+  <image class="product-horizon-item_img" src="https:{{product.feature_image.src}}" mode='aspectFit'>
     <!-- <view wx:if="{{!product.sku_stock}}" class="soldout-tag">售罄</view> -->
   </image>
   <view class="product-horizon-item-con">

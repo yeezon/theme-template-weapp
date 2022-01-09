@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "price": "/components/price/price",
+    "count-down": "/components/count-down/count-down",
+    "apply-sale": "/components/apply-sale/apply-sale"
+  }
+}

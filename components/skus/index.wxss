@@ -30,11 +30,10 @@
 .s-btn {
   margin: 0;
   padding: 8px 14px;
-  border: 0 solid;
+  border: 0 dashed;
   border-color: var(--border-color);
-  border-width: 1px;
+  border-width: 1rpx;
   border-radius: 3px;
-  border-style: dashed;
   color: var(--SkSkuOptions-color);
   font-size: 13px;
   line-height: 13px;

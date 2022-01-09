@@ -1,18 +1,20 @@
-<view class="nav-bar" style="height: {{ navBarHeight }}px;background-color: {{backgroundColor}}">
-  <view class="nav-bar-content" style="padding-top: {{statusBarHeight}}px">
-    <view class="nav-bar-left">
-      <view wx:if="{{navigateBack}}" class="nav-bar-back" bindtap="back">
-        <image class="img" src='../../assets/icons/back_icon.svg' mode='aspectFit'></image>
+<view class="nav-bar" style="--statusBar: {{safeAreaTop}}px;">
+  <view class="nav-bar-inner" style="background-color: {{backgroundColor}}">
+    <view class="nav-bar-content" style="background-color: {{backgroundColor}}">
+      <view class="nav-bar-left">
+        <view wx:if="{{navigateBack}}" class="nav-bar-back" bindtap="back">
+          <image class="img" src='../../assets/icons/back_icon.svg' mode='aspectFit'></image>
+        </view>
+        <slot name="left"></slot>
       </view>
-      <slot name="left"></slot>
-    </view>
-    <view class="nav-bar-center">
-      <view class='nav-bar-center_ellipsis'>
-        <slot name="center"></slot>
+      <view class="nav-bar-center">
+        <view class='nav-bar-center_ellipsis'>
+          <slot name="center"></slot>
+        </view>
       </view>
-    </view>
-    <view class="nav-bar-right">
-      <slot name="right"></slot>
+      <view class="nav-bar-right">
+        <slot name="right"></slot>
+      </view>
     </view>
   </view>
 </view>

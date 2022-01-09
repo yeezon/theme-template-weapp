@@ -1,0 +1,18 @@
+
+<wxs module="getAddressText" src="./modules/getAddressText.wxs"></wxs>
+
+<view class="checkout-address" bindtap="goTo">
+  <image class="checkout-address_icon" src="/assets/icons/checkout/address.svg" mode="widthFix"></image>
+  <view class="checkout-address-info">
+    <block wx:if="{{ address.id || address.district_code }}">
+      <view class="checkout-address-top">
+        <text class="checkout-address-name">{{ address.name }}</text>
+        <text class="checkout-address-phone">{{ address.mobile || address.telephone }}</text>
+      </view>
+      <text class="checkout-address-address">{{ getAddressText(address.location_full_titles) }}</text>
+      <text class="checkout-address-address_detail">{{ address.detail }}</text>
+    </block>
+    <text wx:else>添加地址</text>
+  </view>
+  <image class="checkout-address-arrow" src="/assets/icons/right.svg" mode="widthFix"></image>
+</view>

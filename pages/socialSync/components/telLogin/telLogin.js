@@ -1,49 +1,22 @@
 import _debounce from "../../../../utils/debounce"
 import Request from "../../../../common/api/request"
-// STATIC DATA
-import { SMS_TIME_INTERVAL, TIPS, CODE_START_TIME } from "./static"
-const computedBehavior = require('miniprogram-computed')
 
-const YouSDK = require('../../../../utils/you_sdk.js')
+import { SMS_TIME_INTERVAL, TIPS, CODE_START_TIME } from "./static"
 
 Component({
-  behaviors: [computedBehavior],
-
-  properties: {
-
-  },
-
+  properties: {},
   data: {
     tel: '',
     code: '',
     rts: 0, // ResidualTimeStamp[剩余时间],
     canIGetCode: true,
     captchaPath: '',
+    globalCaptchaPath: global.captchaPath || '//captcha.ibanquan.com',
     captchaId: 0,
     isShowCaptchaModal: false,
     telTip: '',
     codeTip: ''
   },
-
-  computed: {
-    btnCodeTip(data) {
-      const { canIGetCode, rts } = data
-      if (canIGetCode) {
-        return '获取验证码'
-      } else {
-        return `重新获取(${rts})`
-      }
-    },
-
-    captchaUrl(data) {
-      const { captchaPath } = data
-      const url = captchaPath
-                    ? `${global.captchaPath}${data.captchaPath}`
-                    : captchaPath
-      return url
-    }
-  },
-
   methods: {
     validateInput: _debounce(function (type, value) {
       let tip = ''
@@ -112,7 +85,7 @@ Component({
               title: '绑定成功',
               icon: 'success',
               success: () => {
-                wx.switchTab({ url: '/pages/mine/mine' })
+                wx.switchTab({ url: '/pages/account/index' })
               }
             })
           } else if (code === 201) {

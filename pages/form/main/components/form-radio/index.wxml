@@ -1,0 +1,14 @@
+<view class="sk-form-form_item {{ data.column_required ? 'sk-form-form_item_required' : '' }}">
+  <view class="sk-form-form_item_name">{{ data.column_name }}</view>
+  <view class="sk-form-form_item_desc">{{ data.column_desc }}</view>
+  <view class="sk-form-form_item_model">
+    <radio-group bindchange="fnRadioChange">
+      <label wx:for="{{ oConfig.values }}" wx:key="index" class="sk-form-form_item_model-label">
+        <radio class="sk-form-form_item_radio" value="{{ item }}" placeholder="请输入" />
+        <text class="sk-form-form_item_radio_label">{{ item }}</text>
+      </label>
+    </radio-group>
+    <!-- 隐藏输入 -->
+    <input  style="display: none;" type="text" name="{{ data.id }}" value="{{ value }}" />
+  </view>
+</view>

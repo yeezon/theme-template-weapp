@@ -1,7 +1,7 @@
 <button class="list-wrap" hover-class="list-wrap-active" send-message-img open-type='{{openType}}' bindtap="onClick">
   <view class="list__body list__{{mode}}">
 
-    <image wx:if="{{src}}" class="list__image" src="{{src}}" mode="aspectFill"></image>
+    <image wx:if="{{src}}" class="list__image" src="{{src}}" mode="aspectFit"></image>
 
     <image wx:if="{{!src && iconSrc}}" class="list__icon" src="{{iconSrc}}" mode='aspectFit'></image>
 

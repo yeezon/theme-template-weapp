@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "price": "/components/price/price",
+    "limit": "./limit/limit",
+    "seckill": "./seckill/seckill",
+    "presell": "./presell/presell"
+  }
+}

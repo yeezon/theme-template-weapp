@@ -1,5 +1,5 @@
 // components/popup/popup.js
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 Component({
   externalClasses: ['custom-class', 'content-class'],
@@ -27,9 +27,7 @@ Component({
   /**
    * 组件的初始数据
    */
-  data: {
-    isIpx: app.globalData.isIpx
-  },
+  data: {},
 
   /**
    * 组件的方法列表

@@ -1,0 +1,29 @@
+
+<view class="member">
+  <nav-bar navigateBack="true">
+    <view slot="center">{{title}}</view>
+  </nav-bar>
+  <scroll-view class="main" scroll-y="{{ true }}">
+    <view class="level-container">
+      <view class="level-title">会员等级 {{myLevel.name}}</view>
+      <view class="level-desc">您的会员经验值为{{ isHighest ? '，已达到最高等级' : totalCredit }}</view>
+      <!--  -->
+      <view class="levels-wrap">
+        <!--  -->
+        <view class="level-row" wx:for="{{levelsMap}}" wx:for-item="levels" wx:key="index">
+
+          <view class="level-item" wx:for="{{levels}}" wx:for-index="idx" wx:key="idx">
+            <view class="level-bar"></view>
+            <view class="level-sign">
+              <view class="level-sign-icon" style="{{ 'background-image: url(' + item.avatar_url + ')' }}"> </view>
+              <view class="level-sign-desc">
+                <text>{{ item.name }}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!--  -->
+      </view>
+    </view>
+  </scroll-view>
+</view>

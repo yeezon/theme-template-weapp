@@ -48,7 +48,7 @@ Component({
         return
       }
       wx.navigateTo({
-        url: `/pages/orderApply/orderApply?orderNo=${this.data.orderNo}&type=${this.data.selectItem}`
+        url: `/pages/orderApply/index?orderNo=${this.data.orderNo}&type=${this.data.selectItem}`
       })
       this.triggerEvent('close')
     }

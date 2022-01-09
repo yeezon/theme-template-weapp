@@ -1,6 +1,5 @@
-// components/summary/summary.js
-// const app = getApp()
-// const pixelRatio = app.globalData.sysInfo.pixelRatio
+
+// const app = (global.getApp && global.getApp()) || {}
 
 Component({
   /**

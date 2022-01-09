@@ -1,6 +1,6 @@
 <!--components/product-item/product-item.wxml-->
 <view class='product-item' data-handle="{{product.handle}}" bindtap='onTap'>
-  <image class='product-item_img' src='https:{{product.feature_image.src}}' mode='aspectFill'>
+  <image class='product-item_img' src='https:{{product.feature_image.src}}' mode='aspectFit'>
     <!-- <view wx:if="{{!product.sku_stock}}" class="soldout-tag">售罄</view> -->
   </image>
   <view class='product-item_brand'>{{product.vendor.name}}</view>

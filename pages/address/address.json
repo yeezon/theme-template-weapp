@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "nav-bar": "../../components/nav-bar/nav-bar",
-    "mask": "../../components/mask/mask",
-    "login-modal": "../../components/login-modal/login-modal",
-    "ui-scroll-view": "../../components/scroll-view/scroll-view"
-  }
-}

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "cart-item": "./components/cart-item",
+    "price": "/components/price/price"
+  }
+}

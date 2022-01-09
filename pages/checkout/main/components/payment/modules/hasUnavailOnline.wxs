@@ -1,0 +1,6 @@
+
+module.exports = function (paymentMethods) {
+  var oOnline = (paymentMethods || {}).online || {}
+
+  return !oOnline.avail
+}

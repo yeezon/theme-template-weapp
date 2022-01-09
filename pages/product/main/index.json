@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "price": "/components/price/price",
+    "popup": "/components/popup/popup",
+    "mask": "/components/mask/mask",
+    "ui-rich-text": "/components/rich-text/rich-text",
+    "skus-popup": "/components/skus-popup/skus-popup",
+    "badge": "/components/badge/badge",
+    "info": "./components/info/info"
+  }
+}

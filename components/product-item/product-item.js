@@ -36,7 +36,7 @@ Component({
     onTap: function (e) {
       const handle = e.currentTarget.dataset.handle
       wx.navigateTo({
-        url: `../products/products?handle=${handle}`
+        url: `../product/index?handle=${handle}`
       })
     },
     fnIntersection:function () {

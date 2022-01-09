@@ -1,55 +1,70 @@
-/* components/nav-bar/nav-bar.wxss */
 
 .nav-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  font-size: 36rpx;
-  user-select: none;
   box-sizing: border-box;
-  /* background-color: #fff; */
+  width: 100%;
+  height: calc(var(--statusBar) + var(--navBar));
+  user-select: none;
   z-index: 998;
 }
 
+.nav-bar-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: var(--statusBar);
+  width: 100%;
+}
+
 .nav-bar-content {
+  position: relative;
   display: flex;
-  height: 44px;
-  /* line-height: 44px; */
+  width: 100%;
+  height: var(--navBar);
   align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 
 .nav-bar-content .nav-bar-left {
-  position: relative;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
-  width: 193rpx;
+  align-items: center;
+  justify-content: flex-start;
   height: 100%;
-  padding: 0 28rpx 0 0;
 }
 
 .nav-bar-content .nav-bar-center {
+  z-index: 1;
   position: relative;
+  display: flex;
   flex: 1;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  width: 0;
-  /* white-space: nowrap;
-  text-overflow: ellipsis;
-  font-weight: normal; */
+  height: 100%;
 }
 
-.nav-bar-content .nav-bar-center_ellipsis view {
+.nav-bar-content .nav-bar-center_ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
+  max-width: 100%;
 }
 
 .nav-bar-content .nav-bar-right {
-  width: 165rpx;
-  padding: 0 28rpx;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
 }
-
-/*  */
 
 .nav-bar-back {
   display: inline-flex;

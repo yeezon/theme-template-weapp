@@ -1,0 +1,6 @@
+
+module.exports = function (paymentMethods) {
+  var oOffline = (paymentMethods || {}).offline || {}
+
+  return !oOffline.avail
+}

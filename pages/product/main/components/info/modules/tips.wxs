@@ -1,0 +1,27 @@
+
+module.exports = function (oEventSkuMap, sku, marketing) {
+  oEventSkuMap = oEventSkuMap || {}
+  sku = sku || {}
+  marketing = marketing || {}
+
+  var _oEventSku = oEventSkuMap[sku.id || null] || {}
+  var nPoint = _oEventSku.point || 0
+  var nCredit = _oEventSku.credit || 0
+  var isReward = (marketing.store || {}).reward_point_enabled || false
+  var isCredit = (marketing.store || {}).credit_enabled || false
+
+  var _isReward = isReward && nPoint
+  var _isCredit = isCredit && nCredit
+
+  var tips = ''
+
+  if (_isReward && _isCredit) {
+    tips = '购买得 ' + nPoint + ' 积分及 ' + nCredit + ' 经验值'
+  } else if (_isReward) {
+    tips = '购买得 ' +  nPoint + ' 积分'
+  } else if (_isCredit) {
+    tips = '购买得 ' + nCredit + ' 经验值'
+  }
+
+  return tips
+}

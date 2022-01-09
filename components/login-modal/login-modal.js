@@ -1,5 +1,5 @@
 
-const app = getApp()
+const app = (global.getApp && global.getApp()) || {}
 
 Component({
   /**

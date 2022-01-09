@@ -1,0 +1,26 @@
+<wxs module="formatTime" src="/filter/formatTime.wxs"></wxs>
+
+<view class="view">
+  <nav-bar navigateBack="true">
+    <view slot="center">{{title}}</view>
+  </nav-bar>
+  <scroll-view class="main" scroll-y="{{ true }}">
+    <row-list title="头像" bind:tap="handleAvatarTap">
+      <image class="avatar" src="{{userInfo.avatar_url}}"></image>
+    </row-list>
+    <row-list title="昵称" desc="{{userInfo.name}}" data-key="name" data-value="{{userInfo.name}}" bind:click="fnGoTo"></row-list>
+    <row-list title="邮箱地址" desc="{{userInfo.notify_email}}" data-key="notify_email" data-value="{{userInfo.notify_email}}" bind:click="fnGoTo"></row-list>
+    <row-list title="手机号码" desc="{{userInfo.notify_phone}}" data-key="notify_phone" data-value="{{userInfo.notify_phone}}" bind:click="fnGoTo"></row-list>
+    <row-list title="真实姓名" desc="{{userInfo.real_name}}" data-key="real_name" data-value="{{userInfo.real_name}}" bind:click="fnGoTo"></row-list>
+    <row-list title="身份证号码" desc="{{userInfo.indentity_card}}" data-key="indentity_card" data-value="{{userInfo.indentity_card}}" bind:click="fnGoTo"></row-list>
+    <picker mode="date" value="{{userInfo.birthday ? formatTime(userInfo.birthday, 'yyyy-MM-dd') : ''}}" bindchange="bindDateChange">
+      <row-list title="生日" desc="{{userInfo.birthday ? formatTime(userInfo.birthday, 'yyyy-MM-dd') : ''}}"></row-list>
+    </picker>
+    <view class="border-bottom">
+      <view class="border-bottom-border"></view>
+    </view>
+    <picker bindchange="bindSexChange" range="0" range="{{sexOptions}}">
+      <row-list title="性别" desc="{{userInfo.sex}}"></row-list>
+    </picker>
+  </scroll-view>
+</view>

@@ -39,9 +39,6 @@ Component({
     oCannotChooseMap: {}
   },
 
-  computed: { // methods 需要复制这些方法，Computed 仅仅用在模板上，因结果会缓存，在 JS 里不是实时数据
-  },
-
   observers: {
     skuId (nVal) {
       nVal = nVal || null // properties 声明会根据 type 做纠正，Number 会导致 null 变成 0

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nav-bar": "/components/nav-bar/nav-bar",
+    "row-list": "/components/row-list/row-list"
+  }
+}

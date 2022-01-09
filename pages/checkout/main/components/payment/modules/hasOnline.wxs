@@ -1,0 +1,9 @@
+
+module.exports = function (paymentMethods) {
+  var oOnline = (paymentMethods || {}).online || {}
+  var oMethods = oOnline.methods || {}
+  var banks = oMethods.bank || []
+  var thirdpartys = oMethods.thirdparty || []
+
+  return !!(banks.length || thirdpartys.length)
+}

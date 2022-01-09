@@ -85,7 +85,7 @@ Component({
           })
         } else if (type === 3) {
           wx.navigateTo({
-            url: `../products/products?id=${id}`
+            url: `../product/index?handle=${id}`
           })
         }
       } else {

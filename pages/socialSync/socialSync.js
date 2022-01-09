@@ -103,7 +103,7 @@ Page({
     }) => {
       if(res.code === 200) {
         wx.switchTab({
-          url: '/pages/mine/mine',
+          url: '/pages/account/index',
           success: () => {
             wx.showToast({
               title: '账号绑定成功'

@@ -1,0 +1,79 @@
+
+<view class="product">
+  <nav-bar navigateBack="true">
+    <view slot="center">{{proDetails.name || title}}</view>
+  </nav-bar>
+  <scroll-view class="scroll" scroll-y="{{ true }}">
+    <block wx:if="{{ proDetails }}">
+      <!-- 商品轮播图 -->
+      <view class="swiper-con" style="width: 100%; height: 100vw;">
+        <swiper wx:if="{{proDetails.images.length}}" class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{true}}" bindchange="swiperChange">
+          <block wx:for="{{proDetails.images}}" wx:key="index">
+            <swiper-item>
+              <image src="{{'https:'+item.src}}" class="slide-image" mode='aspectFill' data-current="{{item.src}}" data-urls="{{proDetails.images}}" bindtap="previewImage" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <!--  -->
+        <view class="swiper-index">
+          <text class="current">{{swiperIndex}}</text>/{{proDetails.images.length}}</view>
+      </view>
+
+      <!-- 商品详情  -->
+      <view class="pro-details-con">
+
+      <info proDetails="{{proDetails}}" discounts="{{discounts}}" oNowSku="{{oNowSku}}" oMarketing="{{oMarketing}}" binddiscountHandle="setDiscountHandle" bindsetDiscountType="setDiscountType" binddiscountEnd="fnDiscountEnd"></info>
+        <!--  -->
+        <!-- 服务简介 -->
+        <!-- <view wx:if="{{tags.length}}" class="pro-service" bindtap='showServiceFn'>
+          <view class="pro-service-item" wx:for="{{tags}}" wx:key="index">
+            <image src="{{item.icon_src ? 'https:' + item.icon_src : '/assets/icons/cart_checked_icon.svg'}}" mode="aspectFit"></image>
+            <text>{{item.name}}</text>
+          </view>
+          <view class="pro-service-more">
+            <image src="/assets/icons/more_icon.svg"></image>
+          </view>
+        </view> -->
+        <!--  -->
+        <!-- SKU select -->
+        <view wx:if="{{ proDetails && proDetails.options.length }}" class="pro-sku-select" data-type="selectSKU" bindtap="fnShowSku">
+          <view wx:if="{{oNowSku.id}}" class="text">已选：{{oNowSku.option_1}} {{oNowSku.option_2}} {{oNowSku.option_3}}</view>
+          <view wx:else class="text">选择规格数量</view>
+          <image src="/assets/icons/more_icon.svg"></image>
+        </view>
+        <!--  -->
+      </view>
+
+      <view class='pro-details-wrap'>
+        <!-- 商品详情 -->
+        <view class="pro-details-images" wx:if="{{proDetails.content_html}}">
+          <ui-rich-text html="{{proDetails.content_html}}"></ui-rich-text>
+        </view>
+      </view>
+    </block>
+    <view class="pro-empty_tip" wx:if="{{ !isLoading && !proDetails }}">
+      <view>商品已下架或不存在</view>
+    </view>
+  </scroll-view>
+
+  <!-- bottom bar  -->
+  <view wx:if="{{ proDetails.id }}" class="bottom-bar">
+    <view class="bottom-bar-content">
+      <view class="icon-btn" bindtap='gotoShop'>
+        <image src='/assets/tab/shop.png' mode='aspectFit'></image>
+        <text>商城</text>
+      </view>
+      <view class="icon-btn" bindtap='toCart'>
+        <image src='/assets/tab/cart.png' mode='aspectFit'>
+          <badge wx:if="{{cartCount}}" value="{{cartCount}}"></badge>
+        </image>
+        <text>购物车</text>
+      </view>
+      <!-- <view class="btn bottom-bar_icon-btn">提醒我</view> -->
+      <!-- 预售不能经过购物车 -->
+      <view wx:if="{{nDiscountType !== 10}}" class="btn bottom-bar_icon-btn" data-type="addCart" bindtap="fnShowSku">加入购物车</view>
+      <view class="btn bottom-bar_icon-btn buy_now" data-type="buyNow" bindtap="fnShowSku">立即购买</view>
+    </view>
+  </view>
+  <skus-popup wx:if="{{ proDetails.id }}" sku="{{oNowSku.id}}" show="{{isShowSku}}" proDetails="{{proDetails}}" marketing="{{oMarketing}}" showType="{{showType}}" bind:close="fnCloseSku" bind:autoSelect="autoSelect" bind:confirm="confirmSKU"></skus-popup>
+</view>
